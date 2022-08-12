@@ -1,4 +1,4 @@
-# example
+# help_ukraine_widget_example
 
 A new Flutter project.
 
