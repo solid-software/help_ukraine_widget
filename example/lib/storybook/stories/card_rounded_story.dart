@@ -32,17 +32,21 @@ WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
               max: 400,
             );
 
-            final onClose = context.knobs.boolean(
+            final hasCloseButton = context.knobs.boolean(
               label: 'With Close Button',
               initialValue: true,
-            ) ? () { return; } : null;
+            );
 
             return Center(
               child: CardRounded(
                 height: height,
                 width: width,
                 backgroundColor: color,
-                onClose: onClose,
+                onClose: hasCloseButton
+                    ? () {
+                        return;
+                      }
+                    : null,
               ),
             );
           },
