@@ -9,7 +9,7 @@ class CardRounded extends StatelessWidget {
   /// A child widget for [Card].
   final Widget? child;
 
-  /// A variable to set the background color of the card.
+  /// The background color of the card.
   final Color? backgroundColor;
 
   /// A variable that sets the height of the card.
