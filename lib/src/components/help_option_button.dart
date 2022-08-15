@@ -49,11 +49,11 @@ class _HelpOptionButtonState extends State<HelpOptionButton> {
   bool _isHovered = false;
 
   void _onEnter(PointerEnterEvent event) {
-    setState(() => _isHover = true);
+    setState(() => _isHovered = true);
   }
 
   void _onExit(PointerExitEvent event) {
-    setState(() => _isHover = false);
+    setState(() => _isHovered = false);
   }
 
   @override
@@ -64,7 +64,7 @@ class _HelpOptionButtonState extends State<HelpOptionButton> {
       child: GestureDetector(
         onTap: widget.onTap,
         child: Container(
-          color: _isHover
+          color: _isHovered
               ? widget.hoverColor ?? Theme.of(context).highlightColor
               : null,
           child: Container(
