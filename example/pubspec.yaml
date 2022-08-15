@@ -11,9 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  advanced_storybook: ^1.0.2
   widgetbook: ^2.4.1
-  ionicons: ^0.2.1
+  flutter_sfsymbols: ^2.0.0
 
   help_ukraine_widget:
     path: ..
@@ -25,3 +24,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: sficonsets
+      fonts:
+        - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf

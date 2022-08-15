@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:ionicons/ionicons.dart';
 
 import 'package:widgetbook/widgetbook.dart';
 
 WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
-      name: 'ActionButtonComponent',
+      name: 'HelpOptionButton',
       useCases: [
         WidgetbookUseCase(
           name: 'Default',
@@ -40,7 +40,7 @@ WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
                 title: title,
                 backgroundColor: color,
                 isExpandedCenter: isExpandedCenter,
-                icon: Ionicons.chevron_down,
+                icon: SFSymbols.chevron_down,
               ),
             );
           },

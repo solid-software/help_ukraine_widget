@@ -25,6 +25,9 @@ class HelpOptionButton extends StatefulWidget {
   /// hovering over it.
   final Color? hoverColor;
 
+  /// A variable that is used to set the size of the icon.
+  final double iconSize;
+
   ///Constructor
   const HelpOptionButton({
     Key? key,
@@ -33,6 +36,7 @@ class HelpOptionButton extends StatefulWidget {
     this.onTap,
     this.isExpandedCenter = false,
     required this.icon,
+    this.iconSize = 14,
     this.backgroundColor,
     this.hoverColor,
   }) : super(key: key);
@@ -43,8 +47,6 @@ class HelpOptionButton extends StatefulWidget {
 
 class _HelpOptionButtonState extends State<HelpOptionButton> {
   bool _isHover = false;
-
-  static const _iconSize = 14.0;
 
   void _onEnter(PointerEnterEvent event) {
     setState(() => _isHover = true);
@@ -82,7 +84,7 @@ class _HelpOptionButtonState extends State<HelpOptionButton> {
                   const Spacer()
                 else
                   const SizedBox(width: 5),
-                Icon(widget.icon, size: _iconSize),
+                Icon(widget.icon, size: widget.iconSize),
               ],
             ),
           ),

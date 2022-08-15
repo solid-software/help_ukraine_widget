@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// It's a stateless widget that takes in a card and returns a card
+/// This is a card widget with a rounded border, that has optional close button
+/// at the top right.
 class CardRounded extends StatelessWidget {
   /// A child widget for [Card].
   final Widget? child;
@@ -17,11 +18,8 @@ class CardRounded extends StatelessWidget {
   /// A variable that sets the width of the card.
   final double? width;
 
-  /// A variable that sets the close button on the card.
-  final bool withCloseButton;
-
-  /// A function that calls when close button pressed, if withCloseButton
-  /// is false, it is necessary.
+  /// A function that calls when close button pressed, if it is null it will
+  /// not appear
   final VoidCallback? onClose;
 
   static const _elevation = 4.0;
@@ -34,7 +32,6 @@ class CardRounded extends StatelessWidget {
     this.backgroundColor,
     this.height,
     this.width,
-    this.withCloseButton = false,
     this.onClose,
   }) : super(key: key);
 
@@ -54,7 +51,7 @@ class CardRounded extends StatelessWidget {
       ),
     );
 
-    if (withCloseButton) {
+    if (onClose != null) {
       const offset = -5.0;
       _closeButton = Positioned(
         right: offset,

@@ -39,37 +39,5 @@ class StoryBook extends StatelessWidget {
         )
       ],
     );
-    // return FlutterBook(
-    //   categories: [
-    //     Category(
-    //       categoryName: 'Library',
-    //       organizers: [
-    //         Folder(
-    //           folderName: 'Components',
-    //           organizers: [
-    //             Component(
-    //               componentName: 'ActionButton',
-    //               states: [
-    //                 actionButtonStoryState,
-    //               ],
-    //             ),
-    //             Component(
-    //               componentName: 'ActionsList',
-    //               states: [
-    //                 actionsListStoryState,
-    //               ],
-    //             ),
-    //             Component(
-    //               componentName: 'Card',
-    //               states: [
-    //                 cardStoryState,
-    //               ],
-    //             ),
-    //           ],
-    //         ),
-    //       ],
-    //     ),
-    //   ],
-    // );
   }
 }

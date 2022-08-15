@@ -3,7 +3,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
-      name: 'CardComponent',
+      name: 'CardRounded',
       useCases: [
         WidgetbookUseCase(
           name: 'Default',
@@ -31,17 +31,17 @@ WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
               max: 400,
             );
 
-            final withButton = context.knobs.boolean(
-              label: 'With Close Button',
-              initialValue: true,
-            );
+            final onClose = context.knobs
+                    .boolean(label: 'With Close Button', initialValue: true)
+                ? () {}
+                : null;
 
             return Center(
               child: CardRounded(
                 height: height,
                 width: width,
                 backgroundColor: color,
-                withCloseButton: withButton,
+                onClose: onClose,
               ),
             );
           },
