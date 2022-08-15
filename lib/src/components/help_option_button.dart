@@ -30,12 +30,12 @@ class HelpOptionButton extends StatefulWidget {
 
   ///Constructor
   const HelpOptionButton({
+    required this.icon,
+    required this.title,
     Key? key,
     this.height = 51,
-    required this.title,
     this.onTap,
     this.isExpandedCenter = false,
-    required this.icon,
     this.iconSize = 14,
     this.backgroundColor,
     this.hoverColor,
