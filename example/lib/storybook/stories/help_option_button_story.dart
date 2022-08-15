@@ -4,7 +4,7 @@ import 'package:ionicons/ionicons.dart';
 
 import 'package:widgetbook/widgetbook.dart';
 
-WidgetbookComponent get actionButtonComponent => WidgetbookComponent(
+WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
       name: 'ActionButtonComponent',
       useCases: [
         WidgetbookUseCase(
@@ -35,7 +35,7 @@ WidgetbookComponent get actionButtonComponent => WidgetbookComponent(
             );
 
             return Center(
-              child: ActionButtonComponent(
+              child: HelpOptionButton(
                 onTap: onTap,
                 title: title,
                 backgroundColor: color,

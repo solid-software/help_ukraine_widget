@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
-WidgetbookComponent get cardComponent => WidgetbookComponent(
+WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
       name: 'CardComponent',
       useCases: [
         WidgetbookUseCase(
@@ -37,7 +37,7 @@ WidgetbookComponent get cardComponent => WidgetbookComponent(
             );
 
             return Center(
-              child: CardComponent(
+              child: CardRounded(
                 height: height,
                 width: width,
                 backgroundColor: color,

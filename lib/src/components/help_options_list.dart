@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:help_ukraine_widget/src/components/action_button_component.dart';
+import 'package:help_ukraine_widget/src/components/help_option_button.dart';
 
 /// It's a class that represents an item in the list of actions
-class ActionsListItem {
+class HelpOptionsListItem {
   /// Constructor
-  const ActionsListItem({
+  const HelpOptionsListItem({
     required this.title,
     required this.icon,
     this.ontap,
@@ -20,12 +20,12 @@ class ActionsListItem {
   final Color? backgroundColor;
 }
 
-class ActionsListComponent extends StatelessWidget {
+class HelpOptionsList extends StatelessWidget {
   /// It's a list of [ActionsListItem] objects.
-  final List<ActionsListItem> actions;
+  final List<HelpOptionsListItem> actions;
 
   ///Constructor
-  const ActionsListComponent({Key? key, required this.actions})
+  const HelpOptionsList({Key? key, required this.actions})
       : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class ActionsListComponent extends StatelessWidget {
       itemBuilder: (context, index) {
         final action = actions[index];
 
-        return ActionButtonComponent(
+        return HelpOptionButton(
           title: action.title,
           icon: action.icon,
           onTap: action.ontap,

@@ -25,9 +25,9 @@ class StoryBook extends StatelessWidget {
         WidgetbookCategory(
           name: 'Components',
           widgets: [
-            actionButtonComponent,
-            actionsListComponent,
-            cardComponent,
+            helpOptionButtonStory,
+            helpOptionsListStory,
+            cardRoundedStory,
           ],
         ),
         WidgetbookCategory(

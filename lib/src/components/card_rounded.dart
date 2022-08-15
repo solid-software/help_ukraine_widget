@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// It's a stateless widget that takes in a card and returns a card
-class CardComponent extends StatelessWidget {
-  /// A child widget for [CardComponent].
+class CardRounded extends StatelessWidget {
+  /// A child widget for [Card].
   final Widget? child;
 
   /// A variable to set the background color of the card.
@@ -28,7 +28,7 @@ class CardComponent extends StatelessWidget {
   static const _borderRadius = 13.0;
 
   ///Constructor
-  const CardComponent({
+  const CardRounded({
     Key? key,
     this.child,
     this.backgroundColor,
