@@ -18,8 +18,9 @@ class CardRounded extends StatelessWidget {
   /// A variable that sets the width of the card.
   final double? width;
 
-  /// A function that calls when close button pressed, if it is null it will
-  /// not appear
+  /// Action to perform when the "Close" button is tapped.
+  ///
+  /// Note that the "Close" button appears only when this variable is set to a non-null value.
   final VoidCallback? onClose;
 
   static const _elevation = 4.0;
