@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  widgetbook: ^2.4.1
   flutter_sfsymbols: ^2.0.0
+  widgetbook: ^2.4.1
 
   help_ukraine_widget:
     path: ..
