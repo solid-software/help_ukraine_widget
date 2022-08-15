@@ -12,10 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_sfsymbols: ^2.0.0
-  widgetbook: ^2.4.1
-
   help_ukraine_widget:
     path: ..
+  widgetbook: ^2.4.1
 
 dev_dependencies:
   flutter_test:
