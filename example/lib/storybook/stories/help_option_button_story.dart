@@ -10,20 +10,15 @@ WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
         WidgetbookUseCase(
           name: 'Default',
           builder: (context) {
-            final onTap = context.knobs
-                    .boolean(label: 'Have Hover Effect', initialValue: true)
-                ? () {}
-                : null;
-
             final title = context.knobs.text(
               label: 'Button Title',
               initialValue: 'See what you can do',
             );
-
-            final isExpandedCenter = context.knobs.boolean(
-              label: 'Is expanded on center',
-              initialValue: false,
-            );
+            
+            final onTap = context.knobs
+                    .boolean(label: 'Have Hover Effect', initialValue: true)
+                ? () {}
+                : null;
 
             final color = context.knobs.options(
               label: 'Color',
@@ -39,7 +34,6 @@ WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
                 onTap: onTap,
                 title: title,
                 backgroundColor: color,
-                isExpandedCenter: isExpandedCenter,
                 icon: SFSymbols.chevron_down,
               ),
             );

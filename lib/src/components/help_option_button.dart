@@ -12,9 +12,6 @@ class HelpOptionButton extends StatefulWidget {
   /// A callback for the button.
   final VoidCallback? onTap;
 
-  /// Used to set the alignment of the button.
-  final bool isExpandedCenter;
-
   /// A variable that is used to set the icon of the button.
   final IconData icon;
 
@@ -35,7 +32,6 @@ class HelpOptionButton extends StatefulWidget {
     Key? key,
     this.height = 51,
     this.onTap,
-    this.isExpandedCenter = false,
     this.iconSize = 14,
     this.backgroundColor,
     this.hoverColor,
@@ -72,6 +68,7 @@ class _HelpOptionButtonState extends State<HelpOptionButton> {
             color: widget.backgroundColor,
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   widget.title,
@@ -80,10 +77,6 @@ class _HelpOptionButtonState extends State<HelpOptionButton> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                if (widget.isExpandedCenter)
-                  const Spacer()
-                else
-                  const SizedBox(width: 5),
                 Icon(widget.icon, size: widget.iconSize),
               ],
             ),
