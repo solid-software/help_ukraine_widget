@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:help_ukraine_widget/src/components/hover_wrapper.dart';
 
 /// [HelpOptionButton] uses for actions
-class HelpOptionButton extends StatefulWidget {
+class HelpOptionButton extends StatelessWidget {
   /// A variable that is used to set the height of the button.
   final double height;
 
@@ -15,7 +16,7 @@ class HelpOptionButton extends StatefulWidget {
   /// A variable that is used to set the icon of the button.
   final IconData icon;
 
-  /// A variable to set a bacground color for button;
+  /// A variable to set a background color for button;
   final Color? backgroundColor;
 
   /// A variable that is used to set the color of the button when the mouse is
@@ -38,49 +39,26 @@ class HelpOptionButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HelpOptionButton> createState() => _HelpOptionButtonState();
-}
-
-class _HelpOptionButtonState extends State<HelpOptionButton> {
-  bool _isHovered = false;
-
-  void _onEnter(PointerEnterEvent event) {
-    setState(() => _isHovered = true);
-  }
-
-  void _onExit(PointerExitEvent event) {
-    setState(() => _isHovered = false);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: _onEnter,
-      onExit: _onExit,
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: Container(
-          color: _isHovered
-              ? widget.hoverColor ?? Theme.of(context).highlightColor
-              : null,
-          child: Container(
-            height: widget.height,
-            color: widget.backgroundColor,
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.title,
-                  style: const TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Icon(widget.icon, size: widget.iconSize),
-              ],
+    return HoverWrapper(
+      backgroundColor: backgroundColor,
+      highlightColor: hoverColor ?? Theme.of(context).highlightColor,
+      onTap: onTap,
+      child: Container(
+        height: height,
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
+            Icon(icon, size: iconSize),
+          ],
         ),
       ),
     );
