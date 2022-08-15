@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterbook/flutterbook.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:ionicons/ionicons.dart';
 
-import 'stories/stories.dart';
+import 'package:help_ukraine_widget_example/storybook/stories/stories.dart';
 
 /// Direct widgets gallery
 class StoryBook extends StatelessWidget {
@@ -37,17 +35,5 @@ class StoryBook extends StatelessWidget {
         ),
       ],
     );
-    // return MaterialApp(
-    //   home: Scaffold(
-    //     body: AdvancedStorybook(
-    //       stories: [
-    //         Story(
-    //           key: 'Action Button',
-    //           builder: (context) => const ActionButtonStory(),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }

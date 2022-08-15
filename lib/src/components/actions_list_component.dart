@@ -22,6 +22,7 @@ class ActionsListComponent extends StatelessWidget {
   const ActionsListComponent({Key? key, required this.actions})
       : super(key: key);
 
+  /// It's a list of [ActionsListItem] objects.
   final List<ActionsListItem> actions;
 
   @override
