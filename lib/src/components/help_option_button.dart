@@ -46,7 +46,7 @@ class HelpOptionButton extends StatefulWidget {
 }
 
 class _HelpOptionButtonState extends State<HelpOptionButton> {
-  bool _isHover = false;
+  bool _isHovered = false;
 
   void _onEnter(PointerEnterEvent event) {
     setState(() => _isHover = true);
