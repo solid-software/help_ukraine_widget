@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 #  advanced_storybook: ^1.0.2
-  flutterbook: ^0.1.6
+  widgetbook: ^2.4.1
   ionicons: ^0.2.1
 
   help_ukraine_widget:

@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// [ActionButton] uses for actions
+/// [ActionButtonComponent] uses for actions
 class ActionButtonComponent extends StatelessWidget {
-  const ActionButtonComponent({
-    Key? key,
-    this.height = 51,
-    required this.title,
-    this.onTap,
-    this.isExpandedCenter = false,
-    required this.icon,
-    this.backgroundColor,
-  }) : super(key: key);
-
   /// A variable that is used to set the height of the button.
   final double height;
 
@@ -31,6 +21,17 @@ class ActionButtonComponent extends StatelessWidget {
   final Color? backgroundColor;
 
   static const _iconSize = 14.0;
+
+  ///Constructor
+  const ActionButtonComponent({
+    Key? key,
+    this.height = 51,
+    required this.title,
+    this.onTap,
+    this.isExpandedCenter = false,
+    required this.icon,
+    this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

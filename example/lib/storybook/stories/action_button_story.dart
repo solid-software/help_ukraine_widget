@@ -1,23 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:flutterbook/flutterbook.dart';
-
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:ionicons/ionicons.dart';
 
-/// A way to create a component state.
-ComponentState get actionButtonStoryState => ComponentState(
-      stateName: 'Default Action Button',
-      builder: (context, c) {
-        final onTap =
-            c.boolean(label: 'Have Hover Effect', initial: true) ? () {} : null;
+import 'package:widgetbook/widgetbook.dart';
 
-        final title =
-            c.text(label: 'Button Title', initial: 'See what you can do');
+WidgetbookComponent get actionButtonComponent => WidgetbookComponent(
+      name: 'ActionButtonComponent',
+      useCases: [
+        WidgetbookUseCase(
+          name: 'Default',
+          builder: (context) {
+            final onTap = context.knobs
+                    .boolean(label: 'Have Hover Effect', initialValue: true)
+                ? () {}
+                : null;
 
-        return ActionButtonComponent(
-          onTap: onTap,
-          title: title,
-          icon: Ionicons.chevron_down,
-        );
-      },
+            final title = context.knobs.text(
+              label: 'Button Title',
+              initialValue: 'See what you can do',
+            );
+
+            final isExpandedCenter = context.knobs.boolean(
+              label: 'Is expanded on center',
+              initialValue: false,
+            );
+
+            final color = context.knobs.options(
+              label: 'Color',
+              options: const [
+                Option(label: 'Grey', value: Colors.black12),
+                Option(label: 'Red', value: Colors.red),
+                Option(label: 'Blue', value: Colors.blue),
+              ],
+            );
+
+            return Center(
+              child: ActionButtonComponent(
+                onTap: onTap,
+                title: title,
+                backgroundColor: color,
+                isExpandedCenter: isExpandedCenter,
+                icon: Ionicons.chevron_down,
+              ),
+            );
+          },
+        ),
+      ],
     );

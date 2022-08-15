@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/src/components/action_button_component.dart';
 
+/// It's a class that represents an item in the list of actions
 class ActionsListItem {
+  /// Constructor
   const ActionsListItem({
     required this.title,
     required this.icon,
@@ -19,11 +21,12 @@ class ActionsListItem {
 }
 
 class ActionsListComponent extends StatelessWidget {
-  const ActionsListComponent({Key? key, required this.actions})
-      : super(key: key);
-
   /// It's a list of [ActionsListItem] objects.
   final List<ActionsListItem> actions;
+
+  ///Constructor
+  const ActionsListComponent({Key? key, required this.actions})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +40,7 @@ class ActionsListComponent extends StatelessWidget {
           icon: action.icon,
           onTap: action.ontap,
           isExpandedCenter: action.isExpandedCenter,
+          backgroundColor: action.backgroundColor,
         );
       },
     );
