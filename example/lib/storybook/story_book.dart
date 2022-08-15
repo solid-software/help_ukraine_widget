@@ -5,6 +5,7 @@ import 'package:widgetbook/widgetbook.dart';
 
 /// Direct widgets gallery
 class StoryBook extends StatelessWidget {
+  /// Constructor
   const StoryBook({Key? key}) : super(key: key);
 
   @override

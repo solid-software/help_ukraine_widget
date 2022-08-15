@@ -35,19 +35,11 @@ class HoverWrapper extends StatefulWidget {
 class _HoverWrapperState extends State<HoverWrapper> {
   bool _isHovered = false;
 
-  void _onEnter(PointerEnterEvent event) {
-    setState(() => _isHovered = true);
-  }
-
-  void _onExit(PointerExitEvent event) {
-    setState(() => _isHovered = false);
-  }
-
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onEnter: _onEnter,
-      onExit: _onExit,
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
         onTap: widget.onTap,
         behavior: HitTestBehavior.opaque,

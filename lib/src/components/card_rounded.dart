@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
@@ -21,7 +20,8 @@ class CardRounded extends StatelessWidget {
 
   /// Action to perform when the "Close" button is tapped.
   ///
-  /// Note that the "Close" button appears only when this variable is set to a non-null value.
+  /// Note that the "Close" button appears only when this variable is set
+  /// to a non-null value.
   final VoidCallback? onClose;
 
   static const _elevation = 4.0;

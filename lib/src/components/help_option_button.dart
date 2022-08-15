@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/src/components/hover_wrapper.dart';
 
@@ -26,14 +25,17 @@ class HelpOptionButton extends StatelessWidget {
   /// A variable that is used to set the size of the icon.
   final double iconSize;
 
+  static const _defaultHeight = 51.0;
+  static const _defaultIconSize = 14.0;
+
   ///Constructor
   const HelpOptionButton({
     required this.icon,
     required this.title,
     Key? key,
-    this.height = 51,
+    this.height = _defaultHeight,
+    this.iconSize = _defaultIconSize,
     this.onTap,
-    this.iconSize = 14,
     this.backgroundColor,
     this.hoverColor,
   }) : super(key: key);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
+///
 WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
       name: 'CardRounded',
       useCases: [
@@ -31,10 +32,10 @@ WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
               max: 400,
             );
 
-            final onClose = context.knobs
-                    .boolean(label: 'With Close Button', initialValue: true)
-                ? () {}
-                : null;
+            final onClose = context.knobs.boolean(
+              label: 'With Close Button',
+              initialValue: true,
+            ) ? () { return; } : null;
 
             return Center(
               child: CardRounded(
