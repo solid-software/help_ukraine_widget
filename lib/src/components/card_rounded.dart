@@ -49,7 +49,10 @@ class CardRounded extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 12,
+        ),
       ),
     );
 
@@ -89,7 +92,11 @@ class _CloseButton extends StatelessWidget {
         backgroundColor: Colors.black87,
         highlightColor: Colors.blue,
         onTap: onTap,
-        child: const Icon(Icons.close, size: 10, color: Colors.white),
+        child: const Icon(
+          Icons.close,
+          size: 10,
+          color: Colors.white,
+        ),
       ),
     );
   }
