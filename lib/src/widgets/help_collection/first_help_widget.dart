@@ -29,6 +29,7 @@ class FirstHelpWidget extends StatelessWidget {
               const SizedBox(width: 10),
               Column(
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
