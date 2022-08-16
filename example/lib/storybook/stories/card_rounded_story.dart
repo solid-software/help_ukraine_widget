@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
-///
+/// Definition of available states and customizable
+/// parameters for [CardRounded].
 WidgetbookComponent get cardRoundedStory => WidgetbookComponent(
       name: 'CardRounded',
       useCases: [
