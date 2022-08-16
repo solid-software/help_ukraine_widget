@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_sfsymbols: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -16,3 +17,9 @@ dev_dependencies:
   solid_lints: ^0.0.12
 
 flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: sficonsets
+      fonts:
+        - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
