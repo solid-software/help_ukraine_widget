@@ -9,8 +9,10 @@ class FirstHelpWidget extends StatelessWidget {
 
   static const _defaultTitle = 'Stop War! You can help!';
 
+  final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
   ///Constructor
-  const FirstHelpWidget({
+  FirstHelpWidget({
     Key? key,
     this.title = _defaultTitle,
   }) : super(key: key);
@@ -18,45 +20,43 @@ class FirstHelpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
+      controller: _controller,
       options: defaultOptionsList,
-      optionsCardBuilder: (controller) {
-        return CardRounded(
-          key: const ValueKey(2),
-          child: LinksCardWidget(
-            options: controller.options,
-            onClose: controller.onClose,
-          ),
-        );
-      },
-      mainCardBuilder: (controller) {
-        return CardRounded(
-          key: const ValueKey(1),
-          onClose: controller.onClose,
-          child: Row(
-            children: [
-              const DefaultUkraineFlagWidget(),
-              const SizedBox(width: 10),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ),
-                  DetailsButton(
-                    title: 'See what you can do',
-                    hoverColor: Colors.blueAccent,
-                    onTap: controller.onDetails,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
+      collapsedView: const DefaultUkraineFlagWidget(),
+      optionsView: CardRounded(
+        key: const ValueKey(2),
+        child: LinksCardWidget(
+          onClose: _controller.goBack,
+          options: [],
+        ),
+      ),
+      mainView: CardRounded(
+        key: const ValueKey(1),
+        onClose: _controller.close,
+        child: Row(
+          children: [
+            const DefaultUkraineFlagWidget(),
+            const SizedBox(width: 10),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                DetailsButton(
+                  title: 'See what you can do',
+                  hoverColor: Colors.blueAccent,
+                  onTap: _controller.showOptions,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

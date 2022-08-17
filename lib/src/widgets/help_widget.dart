@@ -23,6 +23,24 @@ class _OptionsBuilderController {
   List<HelpOptionButton> options = [];
 }
 
+enum HelpWidgetView { collapsed, main, options }
+
+class HelpWidgetViewController extends ValueNotifier<HelpWidgetView> {
+  HelpWidgetViewController(super.value);
+
+  void showOptions() {
+    value = HelpWidgetView.options;
+  }
+
+  void goBack() {
+    value = HelpWidgetView.main;
+  }
+
+  void close() {
+    value = HelpWidgetView.collapsed;
+  }
+}
+
 /// It's a widget that displays a flag, and when you click on it, it displays
 /// a card with a title and a description, and when you click on the
 /// description, it displays a card with a list of options.
@@ -37,21 +55,28 @@ class HelpWidget extends StatefulWidget {
   /// It's a list of buttons that will be displayed in the options card.
   final List<HelpOptionButton> options;
 
+  final Widget collapsedView;
+
   /// It's a builder a function type for main card of widget.
-  final MainCardBuilder mainCardBuilder;
+  final Widget mainView;
 
   /// It's a builder a function type for options card of widget.
-  final OptionsBuilder optionsCardBuilder;
+  final Widget optionsView;
+
+  final HelpWidgetViewController _controller;
 
   ///Constructor
   const HelpWidget({
     Key? key,
     this.axis = Axis.vertical,
-    required this.mainCardBuilder,
+    required this.collapsedView,
+    required this.mainView,
     required this.options,
-    required this.optionsCardBuilder,
+    required this.optionsView,
+    required HelpWidgetViewController controller,
     // required this.controller,
-  }) : super(key: key);
+  })  : _controller = controller,
+        super(key: key);
 
   @override
   State<HelpWidget> createState() => _HelpWidgetState();
@@ -62,54 +87,15 @@ class _HelpWidgetState extends State<HelpWidget> {
 
   Widget? _switchWidget;
 
-  Widget? _mainCardWidget;
   Widget? _flagCardWidget;
-  Widget? _optionsCardWidget;
-
-  _MainBuilderController _mainBuilderController() {
-    final controller = _MainBuilderController();
-    controller.onClose = () {
-      _isPositiveDirection = false;
-      setState(() => _switchWidget = _flagCardWidget);
-    };
-    controller.onDetails = () {
-      _isPositiveDirection = true;
-      setState(() => _switchWidget = _optionsCardWidget);
-    };
-
-    return controller;
-  }
-
-  _OptionsBuilderController _optionsBuilderController() {
-    final controller = _OptionsBuilderController();
-    controller.options = widget.options;
-    controller.onClose = () {
-      _isPositiveDirection = false;
-      setState(() {
-        _switchWidget = _mainCardWidget;
-      });
-    };
-
-    return controller;
-  }
-
-  void _onFlag() {
-    _isPositiveDirection = true;
-    setState(() {
-      _switchWidget = _mainCardWidget;
-    });
-  }
 
   @override
   void initState() {
     super.initState();
 
     _flagCardWidget = const _FlagCard();
+
     _switchWidget = _flagCardWidget;
-
-    _mainCardWidget = widget.mainCardBuilder(_mainBuilderController());
-
-    _optionsCardWidget = widget.optionsCardBuilder(_optionsBuilderController());
   }
 
   @override
@@ -117,12 +103,48 @@ class _HelpWidgetState extends State<HelpWidget> {
     return GestureDetector(
       onTap: _switchWidget == _flagCardWidget ? _onFlag : null,
       behavior: HitTestBehavior.opaque,
-      child: _AnimationBuilder(
-        axis: widget.axis,
-        isPositiveDirection: _isPositiveDirection,
-        child: _switchWidget,
-      ),
+      child: ValueListenableBuilder<HelpWidgetView>(
+          valueListenable: widget._controller,
+          builder: (context, view, _) {
+            return _AnimationBuilder(
+              axis: widget.axis,
+              isPositiveDirection: _isPositiveDirection,
+              child: ViewSwitcher(
+                view: view,
+                flagView: const _FlagCard(),
+                mainView: widget.mainView,
+                optionsView: widget.optionsView,
+              ),
+            );
+          }),
     );
+  }
+}
+
+class ViewSwitcher extends StatelessWidget {
+  final HelpWidgetView view;
+  final Widget flagView;
+  final Widget mainView;
+  final Widget optionsView;
+
+  const ViewSwitcher({
+    Key? key,
+    required this.view,
+    required this.flagView,
+    required this.mainView,
+    required this.optionsView,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    switch (view) {
+      case HelpWidgetView.collapsed:
+        return flagView;
+      case HelpWidgetView.main:
+        return mainView;
+      case HelpWidgetView.options:
+        return optionsView;
+    }
   }
 }
 
