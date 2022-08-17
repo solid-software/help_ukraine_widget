@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
+/// [FourthHelpWidget] is modification of a [HelpWidget] described as fourth
+/// type.
 class FourthHelpWidget extends StatelessWidget {
   /// A title of widget.
   final String title;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
+/// [SecondHelpWidget] is modification of a [HelpWidget] described as second
+/// type.
 class SecondHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;

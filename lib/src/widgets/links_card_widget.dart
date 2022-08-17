@@ -3,10 +3,16 @@ import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
+/// It's a widget that represents options from
+/// that can be tapped to open a link.
 class LinksCardWidget extends StatefulWidget {
+  /// It's a list of buttons that will be displayed in the card.
   final List<HelpOptionButton> options;
+  /// It's a callback that will be called when the user taps
+  /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  ///Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,

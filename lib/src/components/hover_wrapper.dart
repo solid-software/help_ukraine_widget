@@ -11,7 +11,7 @@ class HoverWrapper extends StatefulWidget {
   /// A tap callback for the button.
   final VoidCallback? onTap;
 
-  /// A direct button bacground color.
+  /// A direct button background color.
   final Color? backgroundColor;
 
   /// A direct button highlight hover color.

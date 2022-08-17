@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
+/// [FirstHelpWidget] is modification of a [HelpWidget] described as first
+/// type.
 class FirstHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;

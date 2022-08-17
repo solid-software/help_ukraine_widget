@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
+/// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
+  /// It's a function that calls on button tap.
   final VoidCallback onTap;
+
+  /// It's a color that changes when you hover over the button.
   final Color hoverColor;
+
+  /// It's a variable that stores the title of the button.
   final String title;
 
   ///Constructor
@@ -28,7 +34,6 @@ class DetailsButton extends StatelessWidget {
           children: [
             Text(
               title,
-              // 'See what you can do',
               style: Theme.of(context).textTheme.headline6?.copyWith(
                     fontWeight: FontWeight.w500,
                     color: hoverColor,

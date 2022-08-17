@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
-///
+/// Definition of using 4 different widget inherited from [HelpWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
       name: 'HelpWidget',
       useCases: [

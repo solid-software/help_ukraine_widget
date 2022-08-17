@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
+/// [ThirdHelpWidget] is modification of a [HelpWidget] described as third type.
 class ThirdHelpWidget extends StatelessWidget {
   /// A title of widget.
   final String title;
