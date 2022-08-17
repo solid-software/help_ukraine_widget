@@ -73,7 +73,7 @@ class ThirdHelpWidget extends StatelessWidget {
           ],
         ),
       ),
-      collapsedView: const UkraineFlagWidget(),
+      collapsedView: const FlagCard(),
     );
   }
 }
