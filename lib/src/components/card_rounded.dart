@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/hover_wrapper.dart';
@@ -18,7 +19,7 @@ class CardRounded extends StatelessWidget {
   /// A variable that sets the width of the card.
   final double? width;
 
-  /// A variable that sets the padding of the card.
+  /// A padding for the cards content.
   final EdgeInsets? padding;
 
   /// Action to perform when the "Close" button is tapped.
@@ -50,13 +51,16 @@ class CardRounded extends StatelessWidget {
     this.width,
     this.onClose,
     this.closeButtonAlignment = Alignment.topRight,
-    this.customButtonIcon,
-    this.padding,
+    this.customButtonIcon = SFSymbols.xmark,
+    this.padding = const EdgeInsets.symmetric(
+      vertical: 12,
+      horizontal: 12,
+    ),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Widget _closeButton;
+    final Widget _positionedButton;
 
     final card = Material(
       elevation: _elevation,
@@ -66,40 +70,30 @@ class CardRounded extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        padding: padding ??
-            const EdgeInsets.symmetric(
-              vertical: 12,
-              horizontal: 12,
-            ),
+        padding: padding,
         child: child,
       ),
     );
 
     if (onClose != null) {
-      if (closeButtonAlignment == Alignment.topRight) {
-        _closeButton = Positioned(
-          right: _defaultOffset,
-          top: _defaultOffset,
-          child: _CloseButton(onTap: onClose, iconData: customButtonIcon),
-        );
-      } else if (closeButtonAlignment == Alignment.bottomRight) {
-        _closeButton = Positioned(
-          right: _defaultOffset,
-          bottom: _defaultOffset,
-          child: _CloseButton(onTap: onClose, iconData: customButtonIcon),
-        );
-      } else {
-        throw Exception(
-          'Card supports only Alignment.topRight and Alignment.bottomRight',
-        );
-      }
+      final button = _CloseButton(onTap: onClose, iconData: customButtonIcon);
+
+      _positionedButton = Positioned(
+        right: _defaultOffset,
+        top: closeButtonAlignment == Alignment.topRight ? _defaultOffset : null,
+        bottom: closeButtonAlignment == Alignment.bottomRight
+            ? _defaultOffset
+            : null,
+        child: button,
+      );
+
     } else {
-      _closeButton = const SizedBox();
+      _positionedButton = const SizedBox();
     }
 
     return Stack(
       clipBehavior: Clip.none,
-      children: [card, _closeButton],
+      children: [card, _positionedButton],
     );
   }
 }
@@ -108,12 +102,15 @@ class _CloseButton extends StatelessWidget {
   final VoidCallback? onTap;
   final IconData? iconData;
 
-  const _CloseButton({Key? key, this.onTap, this.iconData}) : super(key: key);
+  const _CloseButton({
+    Key? key,
+    this.onTap,
+    this.iconData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const _size = 20.0;
-
     const _iconSize = 10.0;
 
     return Container(
@@ -126,7 +123,7 @@ class _CloseButton extends StatelessWidget {
         highlightColor: Colors.blue,
         onTap: onTap,
         child: Icon(
-          iconData ?? Icons.close,
+          iconData,
           size: _iconSize,
           color: Colors.white,
         ),

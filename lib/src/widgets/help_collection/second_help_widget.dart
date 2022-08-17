@@ -2,29 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 class SecondHelpWidget extends StatelessWidget {
-  const SecondHelpWidget({Key? key}) : super(key: key);
+  /// A title of a widget.
+  final String title;
+
+  static const _defaultTitle = 'Stop War! You can help!';
+
+  ///Constructor
+  const SecondHelpWidget({
+    Key? key,
+    this.title = _defaultTitle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
-      mainCardTitle: 'Stop War! You can help!',
       options: defaultOptionsList,
-      optionsCardBuilder: (options, onClose) {
+      optionsCardBuilder: (controller) {
         return CardRounded(
           key: const ValueKey(2),
           child: LinksCardWidget(
-            options: options,
-            onHidePressed: onClose,
+            options: controller.options,
+            onClose: controller.onClose,
           ),
         );
       },
-      mainCardBuilder: (flag, title, desc, onDetails, onClose) {
+      mainCardBuilder: (controller) {
         return Stack(
           key: const ValueKey(1),
           clipBehavior: Clip.none,
           children: [
             CardRounded(
-              onClose: onClose,
+              onClose: controller.onClose,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -43,16 +51,16 @@ class SecondHelpWidget extends StatelessWidget {
                   DetailsButton(
                     title: 'See what you can do',
                     hoverColor: Colors.blueAccent,
-                    onTap: onDetails,
+                    onTap: controller.onDetails,
                   ),
                 ],
               ),
             ),
-            Positioned(
+            const Positioned(
               top: -26,
               left: 105,
               // right: 0,
-              child: flag,
+              child: DefaultUkraineFlagWidget(),
             ),
           ],
         );

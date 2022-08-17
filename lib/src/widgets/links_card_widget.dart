@@ -5,12 +5,12 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 class LinksCardWidget extends StatefulWidget {
   final List<HelpOptionButton> options;
-  final VoidCallback onHidePressed;
+  final VoidCallback onClose;
 
   const LinksCardWidget({
     Key? key,
     required this.options,
-    required this.onHidePressed,
+    required this.onClose,
   }) : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class _LinksCardWidgetState extends State<LinksCardWidget> {
           children: widget.options,
         ),
         const Divider(height: 20),
-        _LinksCardButton(onTap: widget.onHidePressed),
+        _LinksCardButton(onTap: widget.onClose),
       ],
     );
   }

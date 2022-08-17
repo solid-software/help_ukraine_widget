@@ -1,5 +1,5 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 class DetailsButton extends StatelessWidget {
   final VoidCallback onTap;
@@ -16,7 +16,7 @@ class DetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const arrowRotateAngle = -math.pi / 2;
+    const iconSize = 17.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -34,10 +34,7 @@ class DetailsButton extends StatelessWidget {
                     color: hoverColor,
                   ),
             ),
-            Transform.rotate(
-              angle: arrowRotateAngle,
-              child: Icon(Icons.chevron_left, color: hoverColor),
-            ),
+            Icon(SFSymbols.chevron_down, color: hoverColor, size: iconSize),
           ],
         ),
       ),

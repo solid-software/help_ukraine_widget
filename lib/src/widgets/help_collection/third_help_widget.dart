@@ -3,32 +3,43 @@ import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 class ThirdHelpWidget extends StatelessWidget {
+  /// A title of widget.
+  final String title;
+
+  ///A description for widget.
+  final String description;
+
+  static const _defaultTitle = 'Stop War!';
+  static const _defaultDescription = 'Help Ukraine!';
+
   ///Constructor
-  const ThirdHelpWidget({Key? key}) : super(key: key);
+  const ThirdHelpWidget({
+    Key? key,
+    this.title = _defaultTitle,
+    this.description = _defaultDescription,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
       axis: Axis.horizontal,
-      mainCardTitle: 'Stop War!',
-      mainCardDescription: 'Help Ukraine!',
       options: defaultOptionsList,
-      optionsCardBuilder: (options, onClose) {
+      optionsCardBuilder: (controller) {
         return CardRounded(
           customButtonIcon: SFSymbols.chevron_left,
-          onClose: onClose,
+          onClose: controller.onClose,
           closeButtonAlignment: Alignment.bottomRight,
           key: const ValueKey(2),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: options,
+            children: controller.options,
           ),
         );
       },
-      mainCardBuilder: (flag, title, desc, onDetails, onClose) {
+      mainCardBuilder: (controller) {
         return CardRounded(
           key: const ValueKey(1),
-          onClose: onClose,
+          onClose: controller.onClose,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -39,16 +50,15 @@ class ThirdHelpWidget extends StatelessWidget {
                       color: Colors.blueAccent,
                     ),
               ),
-              if (desc != null)
-                Text(
-                  desc,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: Colors.yellow,
-                      ),
-                ),
+              Text(
+                description,
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.yellow,
+                    ),
+              ),
               const SizedBox(height: 15),
-              _ActionButton(onTap: onDetails),
+              _ActionButton(onTap: controller.onDetails),
             ],
           ),
         );

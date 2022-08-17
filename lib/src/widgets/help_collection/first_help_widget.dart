@@ -2,30 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 class FirstHelpWidget extends StatelessWidget {
+  /// A title of a widget.
+  final String title;
+
+  static const _defaultTitle = 'Stop War! You can help!';
+
   ///Constructor
-  const FirstHelpWidget({Key? key}) : super(key: key);
+  const FirstHelpWidget({
+    Key? key,
+    this.title = _defaultTitle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
-      mainCardTitle: 'Stop War! You can help!',
       options: defaultOptionsList,
-      optionsCardBuilder: (options, onClose) {
+      optionsCardBuilder: (controller) {
         return CardRounded(
           key: const ValueKey(2),
           child: LinksCardWidget(
-            options: options,
-            onHidePressed: onClose,
+            options: controller.options,
+            onClose: controller.onClose,
           ),
         );
       },
-      mainCardBuilder: (flag, title, desc, onDetails, onClose) {
+      mainCardBuilder: (controller) {
         return CardRounded(
           key: const ValueKey(1),
-          onClose: onClose,
+          onClose: controller.onClose,
           child: Row(
             children: [
-              flag,
+              const DefaultUkraineFlagWidget(),
               const SizedBox(width: 10),
               Column(
                 mainAxisSize: MainAxisSize.min,
@@ -40,7 +47,7 @@ class FirstHelpWidget extends StatelessWidget {
                   DetailsButton(
                     title: 'See what you can do',
                     hoverColor: Colors.blueAccent,
-                    onTap: onDetails,
+                    onTap: controller.onDetails,
                   ),
                 ],
               ),
