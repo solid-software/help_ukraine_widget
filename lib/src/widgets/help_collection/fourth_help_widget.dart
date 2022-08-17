@@ -11,20 +11,24 @@ class FourthHelpWidget extends StatelessWidget {
   ///A description for widget.
   final String description;
 
+  /// A description for the button that will be shown on the main card.
+  final String detailsButtonDescription;
+
   static const _defaultTitle = 'Help 🇺🇦 Ukraine win!';
   static const _defaultDescription = '#StandWithUkraine';
+  static const _defaultDetailsButtonDesc = 'See how to help';
 
   ///Constructor
   const FourthHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,
+    this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
-      options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
           padding: const EdgeInsets.symmetric(vertical: 13),
@@ -33,7 +37,7 @@ class FourthHelpWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               LinksCardWidget(
-                options: controller.options,
+                options: defaultOptionsList,
                 onClose: controller.onClose,
               ),
               const SizedBox(height: 5),
@@ -77,7 +81,7 @@ class FourthHelpWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   DetailsButton(
-                    title: 'See how to help',
+                    title: detailsButtonDescription,
                     color: Colors.blueAccent,
                     onTap: controller.onDetails,
                   ),

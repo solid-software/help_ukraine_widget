@@ -62,7 +62,10 @@ class CardRounded extends StatelessWidget {
     final Widget _positionedCloseButton;
 
     final card = Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.symmetric(
+        horizontal: _defaultOffset,
+        vertical: _defaultOffset,
+      ),
       child: Material(
         elevation: _elevation,
         borderRadius: BorderRadius.circular(_borderRadius),
@@ -79,14 +82,8 @@ class CardRounded extends StatelessWidget {
 
     if (onClose != null) {
       final button = _CloseButton(onTap: onClose, iconData: customButtonIcon);
-
-      _positionedCloseButton = Positioned(
-        right: _defaultOffset,
-        top: closeButtonAlignment == Alignment.topRight ? _defaultOffset : null,
-        bottom: closeButtonAlignment == Alignment.bottomRight
-            ? _defaultOffset
-            : null,
-        child: button,
+      _positionedCloseButton = Positioned.fill(
+        child: Align(alignment: closeButtonAlignment, child: button),
       );
     } else {
       _positionedCloseButton = const SizedBox();

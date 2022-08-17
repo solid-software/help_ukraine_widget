@@ -10,9 +10,12 @@ class ThirdHelpWidget extends StatelessWidget {
   ///A description for widget.
   final String description;
 
+  /// A description for the button that will be shown on the main card.
+  final String detailsButtonDescription;
+
   static const _defaultTitle = 'Stop War!';
   static const _defaultDescription = 'Help Ukraine!';
-
+  static const _defaultDetailsButtonDesc = 'See how';
   static const _widgetWidth = 320.0;
 
   ///Constructor
@@ -20,6 +23,7 @@ class ThirdHelpWidget extends StatelessWidget {
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,
+    this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
 
   @override
@@ -29,7 +33,6 @@ class ThirdHelpWidget extends StatelessWidget {
         maxWidth: _widgetWidth,
       ),
       axis: Axis.horizontal,
-      options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
           customButtonIcon: SFSymbols.chevron_left,
@@ -39,7 +42,7 @@ class ThirdHelpWidget extends StatelessWidget {
           key: const ValueKey(2),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: controller.options,
+            children: defaultOptionsList,
           ),
         );
       },
@@ -65,71 +68,14 @@ class ThirdHelpWidget extends StatelessWidget {
                     ),
               ),
               const SizedBox(height: 15),
-              _ActionButton(onTap: controller.onDetails),
+              RoundedButton(
+                onTap: controller.onDetails,
+                title: _defaultDetailsButtonDesc,
+              ),
             ],
           ),
         );
       },
-    );
-  }
-}
-
-class _ActionButton extends StatefulWidget {
-  final VoidCallback onTap;
-
-  static const _width = 135.0;
-  static const _height = 40.0;
-
-  static const _borderRadius = 13.0;
-
-  static const _fontSize = 18.0;
-  static const _iconSize = 15.0;
-
-  const _ActionButton({Key? key, required this.onTap}) : super(key: key);
-
-  @override
-  State<_ActionButton> createState() => _ActionButtonState();
-}
-
-class _ActionButtonState extends State<_ActionButton> {
-  bool _isHovered = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final color = Colors.blueAccent.withOpacity(0.2);
-
-    return HoverWrapper(
-      onHoverChanged: (value) {
-        setState(() => _isHovered = value);
-      },
-      onTap: widget.onTap,
-      child: Container(
-        height: _ActionButton._height,
-        width: _ActionButton._width,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(_ActionButton._borderRadius),
-          color: color,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'See how',
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: Colors.blueAccent,
-                    fontSize: _ActionButton._fontSize,
-                    decoration: _isHovered ? TextDecoration.underline : null,
-                  ),
-            ),
-            const Icon(
-              SFSymbols.chevron_right,
-              size: _ActionButton._iconSize,
-              color: Colors.blueAccent,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

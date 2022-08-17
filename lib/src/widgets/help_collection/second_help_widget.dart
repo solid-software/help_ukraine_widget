@@ -7,14 +7,18 @@ class SecondHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;
 
-  static const _defaultTitle = 'Stop War! You can help!';
+  /// A description for the button that will be shown on the main card.
+  final String detailsButtonDescription;
 
+  static const _defaultTitle = 'Stop War! You can help!';
   static const _widgetWidth = 290.0;
+  static const _defaultDetailsButtonDesc = 'See what you can do';
 
   ///Constructor
   const SecondHelpWidget({
     Key? key,
     this.title = _defaultTitle,
+    this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
 
   @override
@@ -23,7 +27,6 @@ class SecondHelpWidget extends StatelessWidget {
       constraints: const BoxConstraints(
         maxWidth: _widgetWidth,
       ),
-      options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
           padding: const EdgeInsets.symmetric(vertical: 13),
@@ -32,7 +35,7 @@ class SecondHelpWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               LinksCardWidget(
-                options: controller.options,
+                options: defaultOptionsList,
                 onClose: controller.onClose,
               ),
               const SizedBox(height: 5),
@@ -64,7 +67,7 @@ class SecondHelpWidget extends StatelessWidget {
                     color: Colors.black,
                   ),
                   DetailsButton(
-                    title: 'See what you can do',
+                    title: _defaultDetailsButtonDesc,
                     color: HelpColors.blue,
                     onTap: controller.onDetails,
                   ),
@@ -74,8 +77,7 @@ class SecondHelpWidget extends StatelessWidget {
             const Positioned(
               top: -25,
               left: 105,
-              // right: 0,
-              child: DefaultUkraineFlagWidget(),
+              child: UkraineFlagWidget(),
             ),
           ],
         );

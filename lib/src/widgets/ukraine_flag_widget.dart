@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// [DefaultUkraineFlagWidget] is a modification of a [FlagWidget]
-class DefaultUkraineFlagWidget extends StatelessWidget {
-  ///Constructor
-  const DefaultUkraineFlagWidget({Key? key}) : super(key: key);
+/// [UkraineFlagWidget] is a modification of a [FlagWidget]
+class UkraineFlagWidget extends StatelessWidget {
+  ///
+  const UkraineFlagWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

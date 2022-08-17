@@ -34,9 +34,6 @@ class HelpWidget extends StatefulWidget {
   /// A parameter that defines the direction of the animation.
   final Axis axis;
 
-  /// It's a list of buttons that will be displayed in the options card.
-  final List<HelpOptionButton> options;
-
   /// It's a builder a function type for main card of widget.
   final MainCardBuilder mainCardBuilder;
 
@@ -51,8 +48,8 @@ class HelpWidget extends StatefulWidget {
     Key? key,
     this.axis = Axis.vertical,
     required this.mainCardBuilder,
-    required this.options,
-    required this.optionsCardBuilder, this.constraints,
+    required this.optionsCardBuilder,
+    this.constraints,
     // required this.controller,
   }) : super(key: key);
 
@@ -85,7 +82,6 @@ class _HelpWidgetState extends State<HelpWidget> {
 
   _OptionsBuilderController _optionsBuilderController() {
     final controller = _OptionsBuilderController();
-    controller.options = widget.options;
     controller.onClose = () {
       _isPositiveDirection = false;
       setState(() {
@@ -107,7 +103,7 @@ class _HelpWidgetState extends State<HelpWidget> {
   void initState() {
     super.initState();
 
-    _flagCardWidget = const _FlagCard();
+    _flagCardWidget = const FlagCard();
     _switchWidget = _flagCardWidget;
 
     _mainCardWidget = widget.mainCardBuilder(_mainBuilderController());
@@ -127,20 +123,6 @@ class _HelpWidgetState extends State<HelpWidget> {
           isPositiveDirection: _isPositiveDirection,
           child: _switchWidget,
         ),
-      ),
-    );
-  }
-}
-
-class _FlagCard extends StatelessWidget {
-  const _FlagCard({Key key = const ValueKey(0)}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: CardRounded(
-        child: DefaultUkraineFlagWidget(),
       ),
     );
   }
