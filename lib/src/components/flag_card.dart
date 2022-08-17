@@ -5,13 +5,14 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 /// [UkraineFlagWidget] inside
 class FlagCard extends StatelessWidget {
   ///Constructor
-  const FlagCard({Key key = const ValueKey(0)}) : super(key: key);
+  const FlagCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MouseRegion(
+    return MouseRegion(
+      key: key,
       cursor: SystemMouseCursors.click,
-      child: CardRounded(
+      child: const CardRounded(
         child: UkraineFlagWidget(),
       ),
     );

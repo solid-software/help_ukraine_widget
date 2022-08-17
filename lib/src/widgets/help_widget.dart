@@ -1,44 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// A builder a function type for main card of widget.
-typedef MainCardBuilder = Widget Function(_MainBuilderController);
-
-/// A builder a function type for options card of widget.
-typedef OptionsBuilder = Widget Function(_OptionsBuilderController);
-
-class _MainBuilderController {
-  VoidCallback onDetails = () {
-    return;
-  };
-  VoidCallback onClose = () {
-    return;
-  };
-}
-
-class _OptionsBuilderController {
-  VoidCallback onClose = () {
-    return;
-  };
-  List<HelpOptionButton> options = [];
-}
-
-/// It's a widget that displays a flag, and when you click on it, it displays
-/// a card with a title and a description, and when you click on the
-/// description, it displays a card with a list of options.
-///
-/// Has a axis parameter to define direction of animation.
-/// And has 2 builders [MainCardBuilder] and [OptionsBuilder] that you can
-/// use to create your own [HelpWidget].
+/// It's a widget that displays a widget that can be collapsed, a widget that
+/// can be expanded, and a widget that can be displayed when
+/// the widget is expanded.
 class HelpWidget extends StatefulWidget {
   /// A parameter that defines the direction of the animation.
   final Axis axis;
 
-  /// It's a builder a function type for main card of widget.
-  final MainCardBuilder mainCardBuilder;
+  /// It's a parameter that defines the widget that will be displayed when
+  /// the widget is collapsed.
+  final Widget collapsedView;
 
-  /// It's a builder a function type for options card of widget.
-  final OptionsBuilder optionsCardBuilder;
+  /// It's a parameter that defines the widget that will be displayed when
+  /// the widget is on main view.
+  final Widget mainView;
+
+  /// It's a parameter that defines the widget that will be displayed when
+  /// the widget is on options list view.
+  final Widget optionsView;
+
+  final HelpWidgetViewController _controller;
 
   /// It's a parameter that defines the maximum width of the widget.
   final BoxConstraints? constraints;
@@ -46,83 +28,62 @@ class HelpWidget extends StatefulWidget {
   ///Constructor
   const HelpWidget({
     Key? key,
+    required this.collapsedView,
+    required this.optionsView,
+    required this.mainView,
+    required HelpWidgetViewController controller,
     this.axis = Axis.vertical,
-    required this.mainCardBuilder,
-    required this.optionsCardBuilder,
     this.constraints,
     // required this.controller,
-  }) : super(key: key);
+  })  : _controller = controller,
+        super(key: key);
 
   @override
   State<HelpWidget> createState() => _HelpWidgetState();
 }
 
 class _HelpWidgetState extends State<HelpWidget> {
-  bool _isPositiveDirection = false;
-
-  Widget? _switchWidget;
-
-  Widget? _mainCardWidget;
-  Widget? _flagCardWidget;
-  Widget? _optionsCardWidget;
-
-  _MainBuilderController _mainBuilderController() {
-    final controller = _MainBuilderController();
-    controller.onClose = () {
-      _isPositiveDirection = false;
-      setState(() => _switchWidget = _flagCardWidget);
-    };
-    controller.onDetails = () {
-      _isPositiveDirection = true;
-      setState(() => _switchWidget = _optionsCardWidget);
-    };
-
-    return controller;
-  }
-
-  _OptionsBuilderController _optionsBuilderController() {
-    final controller = _OptionsBuilderController();
-    controller.onClose = () {
-      _isPositiveDirection = false;
-      setState(() {
-        _switchWidget = _mainCardWidget;
-      });
-    };
-
-    return controller;
-  }
-
-  void _onFlag() {
-    _isPositiveDirection = true;
-    setState(() {
-      _switchWidget = _mainCardWidget;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    _flagCardWidget = const FlagCard();
-    _switchWidget = _flagCardWidget;
-
-    _mainCardWidget = widget.mainCardBuilder(_mainBuilderController());
-
-    _optionsCardWidget = widget.optionsCardBuilder(_optionsBuilderController());
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       constraints: widget.constraints,
-      child: GestureDetector(
-        onTap: _switchWidget == _flagCardWidget ? _onFlag : null,
-        behavior: HitTestBehavior.opaque,
-        child: _AnimationBuilder(
-          axis: widget.axis,
-          isPositiveDirection: _isPositiveDirection,
-          child: _switchWidget,
-        ),
+      child: ValueListenableBuilder<HelpWidgetView>(
+        valueListenable: widget._controller,
+        builder: (context, view, _) {
+          return GestureDetector(
+            onTap: () {
+              if (view == HelpWidgetView.collapsed) {
+                widget._controller.showMainView();
+              }
+            },
+            child: _AnimationBuilder(
+              axis: widget.axis,
+              isPositiveDirection: widget._controller.isPositiveDirection,
+              child: (() {
+                if (view == HelpWidgetView.collapsed) {
+                  return SizedBox(
+                    key: const ValueKey(0),
+                    child: widget.collapsedView,
+                  );
+                }
+
+                if (view == HelpWidgetView.main) {
+                  return SizedBox(
+                    key: const ValueKey(1),
+                    child: widget.mainView,
+                  );
+                }
+
+                if (view == HelpWidgetView.options) {
+                  return SizedBox(
+                    key: const ValueKey(2),
+                    child: widget.optionsView,
+                  );
+                }
+              })(),
+            ),
+          );
+        },
       ),
     );
   }

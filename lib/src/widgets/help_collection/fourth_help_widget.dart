@@ -18,6 +18,9 @@ class FourthHelpWidget extends StatelessWidget {
   static const _defaultDescription = '#StandWithUkraine';
   static const _defaultDetailsButtonDesc = 'See how to help';
 
+  static const _flagWidth = 13.0;
+  static const _cardHeight = 120.0;
+
   ///Constructor
   const FourthHelpWidget({
     Key? key,
@@ -28,69 +31,64 @@ class FourthHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HelpWidget(
-      optionsCardBuilder: (controller) {
-        return CardRounded(
-          padding: const EdgeInsets.symmetric(vertical: 13),
-          key: const ValueKey(2),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              LinksCardWidget(
-                options: defaultOptionsList,
-                onClose: controller.onClose,
-              ),
-              const SizedBox(height: 5),
-            ],
-          ),
-        );
-      },
-      mainCardBuilder: (controller) {
-        const flagWidth = 13.0;
-        const cardHeight = 120.0;
+    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
 
-        return CardRounded(
-          height: cardHeight,
-          key: const ValueKey(1),
-          padding: const EdgeInsets.only(right: 12),
-          onClose: controller.onClose,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(
-                width: flagWidth,
-                child: FlagWidget(),
-              ),
-              const SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ),
-                  Text(
-                    description,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ),
-                  const SizedBox(height: 15),
-                  DetailsButton(
-                    title: detailsButtonDescription,
-                    color: Colors.blueAccent,
-                    onTap: controller.onDetails,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
+    return HelpWidget(
+      controller: _controller,
+      optionsView: CardRounded(
+        padding: const EdgeInsets.symmetric(vertical: 13),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            LinksCardWidget(
+              options: defaultOptionsList,
+              onClose: _controller.showMainView,
+            ),
+            const SizedBox(height: 5),
+          ],
+        ),
+      ),
+      mainView: CardRounded(
+        height: _cardHeight,
+        padding: const EdgeInsets.only(right: 12),
+        onClose: _controller.showCollapsedView,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              width: _flagWidth,
+              child: FlagWidget(),
+            ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                Text(
+                  description,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                const SizedBox(height: 15),
+                DetailsButton(
+                  title: detailsButtonDescription,
+                  color: Colors.blueAccent,
+                  onTap: _controller.showOptionsView,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      collapsedView: const UkraineFlagWidget(),
     );
   }
 }

@@ -28,54 +28,52 @@ class ThirdHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
     return HelpWidget(
+      controller: _controller,
       constraints: const BoxConstraints(
         maxWidth: _widgetWidth,
       ),
       axis: Axis.horizontal,
-      optionsCardBuilder: (controller) {
-        return CardRounded(
-          customButtonIcon: SFSymbols.chevron_left,
-          onClose: controller.onClose,
-          closeButtonAlignment: Alignment.bottomRight,
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          key: const ValueKey(2),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: defaultOptionsList,
-          ),
-        );
-      },
-      mainCardBuilder: (controller) {
-        return CardRounded(
-          key: const ValueKey(1),
-          onClose: controller.onClose,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                title,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blueAccent,
-                    ),
-              ),
-              Text(
-                description,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.yellow,
-                    ),
-              ),
-              const SizedBox(height: 15),
-              RoundedButton(
-                onTap: controller.onDetails,
-                title: _defaultDetailsButtonDesc,
-              ),
-            ],
-          ),
-        );
-      },
+      optionsView: CardRounded(
+        customButtonIcon: SFSymbols.chevron_left,
+        onClose: _controller.showMainView,
+        closeButtonAlignment: Alignment.bottomRight,
+        padding: const EdgeInsets.symmetric(vertical: 14),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: defaultOptionsList,
+        ),
+      ),
+      mainView: CardRounded(
+        onClose: _controller.showCollapsedView,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.blueAccent,
+                  ),
+            ),
+            Text(
+              description,
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.yellow,
+                  ),
+            ),
+            const SizedBox(height: 15),
+            RoundedButton(
+              onTap: _controller.showOptionsView,
+              title: _defaultDetailsButtonDesc,
+            ),
+          ],
+        ),
+      ),
+      collapsedView: const UkraineFlagWidget(),
     );
   }
 }

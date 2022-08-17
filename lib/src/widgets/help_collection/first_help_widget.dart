@@ -22,44 +22,42 @@ class FirstHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
     return HelpWidget(
-      optionsCardBuilder: (controller) {
-        return CardRounded(
-          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
-          key: const ValueKey(2),
-          child: LinksCardWidget(
-            options: defaultOptionsList,
-            onClose: controller.onClose,
-          ),
-        );
-      },
-      mainCardBuilder: (controller) {
-        return CardRounded(
-          key: const ValueKey(1),
-          onClose: controller.onClose,
-          child: Row(
-            children: [
-              const UkraineFlagWidget(),
-              const SizedBox(width: 10),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: theme.textTheme.headline4,
-                  ),
-                  DetailsButton(
-                    title: detailsButtonDescription,
-                    color: HelpColors.blue,
-                    onTap: controller.onDetails,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
+      controller: _controller,
+      optionsView: CardRounded(
+        padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
+        child: LinksCardWidget(
+          options: defaultOptionsList,
+          onClose: _controller.showMainView,
+        ),
+      ),
+      mainView: CardRounded(
+        onClose: _controller.showCollapsedView,
+        child: Row(
+          children: [
+            const UkraineFlagWidget(),
+            const SizedBox(width: 10),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: theme.textTheme.headline4,
+                ),
+                DetailsButton(
+                  title: detailsButtonDescription,
+                  color: HelpColors.blue,
+                  onTap: _controller.showOptionsView,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      collapsedView: const FlagCard(),
     );
   }
 }
