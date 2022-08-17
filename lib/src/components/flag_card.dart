@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [FlagCard] displays a [CardRounded] with a
-/// [DefaultFlagWidget] inside
+/// [UkraineFlagWidget] inside
 class FlagCard extends StatelessWidget {
   ///Constructor
   const FlagCard({Key key = const ValueKey(0)}) : super(key: key);
