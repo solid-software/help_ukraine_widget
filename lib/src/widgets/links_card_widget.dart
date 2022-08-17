@@ -8,6 +8,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 class LinksCardWidget extends StatefulWidget {
   /// It's a list of buttons that will be displayed in the card.
   final List<HelpOptionButton> options;
+
   /// It's a callback that will be called when the user taps
   /// on the 'Hide' button.
   final VoidCallback onClose;

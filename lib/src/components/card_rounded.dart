@@ -86,7 +86,6 @@ class CardRounded extends StatelessWidget {
             : null,
         child: button,
       );
-
     } else {
       _positionedButton = const SizedBox();
     }
