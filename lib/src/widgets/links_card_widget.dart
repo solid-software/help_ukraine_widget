@@ -52,6 +52,8 @@ class _LinksCardButton extends StatefulWidget {
 class _LinksCardButtonState extends State<_LinksCardButton> {
   bool _isHovered = false;
 
+  static const _iconSize = 13.0;
+
   void _onHoverChanged(bool value) {
     setState(() {
       _isHovered = value;
@@ -60,7 +62,7 @@ class _LinksCardButtonState extends State<_LinksCardButton> {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).textTheme.bodyText1?.color;
+    final color = _isHovered ? HelpColors.blue : Colors.black;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -71,12 +73,14 @@ class _LinksCardButtonState extends State<_LinksCardButton> {
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
-                  color: _isHovered ? Colors.blue : color,
+                  color: color,
                 ),
           ),
+          const SizedBox(width: 4),
           Icon(
             SFSymbols.chevron_up,
-            color: _isHovered ? Colors.blue : color,
+            color: color,
+            size: _iconSize,
           ),
         ],
       ),

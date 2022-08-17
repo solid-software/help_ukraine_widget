@@ -23,3 +23,6 @@ flutter:
     - family: sficonsets
       fonts:
         - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf

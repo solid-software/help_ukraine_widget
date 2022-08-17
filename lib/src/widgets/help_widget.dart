@@ -43,13 +43,16 @@ class HelpWidget extends StatefulWidget {
   /// It's a builder a function type for options card of widget.
   final OptionsBuilder optionsCardBuilder;
 
+  /// It's a parameter that defines the maximum width of the widget.
+  final BoxConstraints? constraints;
+
   ///Constructor
   const HelpWidget({
     Key? key,
     this.axis = Axis.vertical,
     required this.mainCardBuilder,
     required this.options,
-    required this.optionsCardBuilder,
+    required this.optionsCardBuilder, this.constraints,
     // required this.controller,
   }) : super(key: key);
 
@@ -114,13 +117,16 @@ class _HelpWidgetState extends State<HelpWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _switchWidget == _flagCardWidget ? _onFlag : null,
-      behavior: HitTestBehavior.opaque,
-      child: _AnimationBuilder(
-        axis: widget.axis,
-        isPositiveDirection: _isPositiveDirection,
-        child: _switchWidget,
+    return Container(
+      constraints: widget.constraints,
+      child: GestureDetector(
+        onTap: _switchWidget == _flagCardWidget ? _onFlag : null,
+        behavior: HitTestBehavior.opaque,
+        child: _AnimationBuilder(
+          axis: widget.axis,
+          isPositiveDirection: _isPositiveDirection,
+          child: _switchWidget,
+        ),
       ),
     );
   }

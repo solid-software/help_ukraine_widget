@@ -9,6 +9,8 @@ class SecondHelpWidget extends StatelessWidget {
 
   static const _defaultTitle = 'Stop War! You can help!';
 
+  static const _widgetWidth = 290.0;
+
   ///Constructor
   const SecondHelpWidget({
     Key? key,
@@ -18,13 +20,23 @@ class SecondHelpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
+      constraints: const BoxConstraints(
+        maxWidth: _widgetWidth,
+      ),
       options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
+          padding: const EdgeInsets.symmetric(vertical: 13),
           key: const ValueKey(2),
-          child: LinksCardWidget(
-            options: controller.options,
-            onClose: controller.onClose,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              LinksCardWidget(
+                options: controller.options,
+                onClose: controller.onClose,
+              ),
+              const SizedBox(height: 5),
+            ],
           ),
         );
       },
@@ -46,20 +58,21 @@ class SecondHelpWidget extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                   ),
-                  const SizedBox(
-                    width: 220,
-                    child: Divider(height: 20),
+                  const Divider(
+                    height: 20,
+                    thickness: 0.1,
+                    color: Colors.black,
                   ),
                   DetailsButton(
                     title: 'See what you can do',
-                    hoverColor: Colors.blueAccent,
+                    color: HelpColors.blue,
                     onTap: controller.onDetails,
                   ),
                 ],
               ),
             ),
             const Positioned(
-              top: -26,
+              top: -25,
               left: 105,
               // right: 0,
               child: DefaultUkraineFlagWidget(),

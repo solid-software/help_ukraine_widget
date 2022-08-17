@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:help_ukraine_widget/src/components/hover_wrapper.dart';
 
 /// This is a card widget with a rounded border, that has optional close button
 /// at the top right.
@@ -118,8 +117,8 @@ class _CloseButton extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: const BoxDecoration(shape: BoxShape.circle),
       child: HoverWrapper(
-        backgroundColor: Colors.black87,
-        highlightColor: Colors.blue,
+        backgroundColor: const Color.fromRGBO(80, 80, 80, 1),
+        highlightColor: HelpColors.blue,
         onTap: onTap,
         child: Icon(
           iconData,

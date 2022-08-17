@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
+final _backgroundColor = Colors.grey.withOpacity(0.5);
+
 /// Definition of using 4 different widget inherited from [HelpWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
       name: 'HelpWidget',
@@ -9,32 +11,40 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
         WidgetbookUseCase(
           name: 'First',
           builder: (context) {
-            return const Center(
-              child: FirstHelpWidget(),
+            return Container(
+              alignment: Alignment.center,
+              color: _backgroundColor,
+              child: const FirstHelpWidget(),
             );
           },
         ),
         WidgetbookUseCase(
           name: 'Second',
           builder: (context) {
-            return const Center(
-              child: SecondHelpWidget(),
+            return Container(
+              alignment: Alignment.center,
+              color: _backgroundColor,
+              child: const SecondHelpWidget(),
             );
           },
         ),
         WidgetbookUseCase(
           name: 'Third',
           builder: (context) {
-            return const Center(
-              child: ThirdHelpWidget(),
+            return Container(
+              alignment: Alignment.center,
+              color: _backgroundColor,
+              child: const ThirdHelpWidget(),
             );
           },
         ),
         WidgetbookUseCase(
           name: 'Fourth',
           builder: (context) {
-            return const Center(
-              child: FourthHelpWidget(),
+            return Container(
+              alignment: Alignment.center,
+              color: _backgroundColor,
+              child: const FourthHelpWidget(),
             );
           },
         ),

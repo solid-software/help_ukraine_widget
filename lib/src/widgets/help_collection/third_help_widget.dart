@@ -13,6 +13,8 @@ class ThirdHelpWidget extends StatelessWidget {
   static const _defaultTitle = 'Stop War!';
   static const _defaultDescription = 'Help Ukraine!';
 
+  static const _widgetWidth = 320.0;
+
   ///Constructor
   const ThirdHelpWidget({
     Key? key,
@@ -23,6 +25,9 @@ class ThirdHelpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
+      constraints: const BoxConstraints(
+        maxWidth: _widgetWidth,
+      ),
       axis: Axis.horizontal,
       options: defaultOptionsList,
       optionsCardBuilder: (controller) {
@@ -30,6 +35,7 @@ class ThirdHelpWidget extends StatelessWidget {
           customButtonIcon: SFSymbols.chevron_left,
           onClose: controller.onClose,
           closeButtonAlignment: Alignment.bottomRight,
+          padding: const EdgeInsets.symmetric(vertical: 14),
           key: const ValueKey(2),
           child: Column(
             mainAxisSize: MainAxisSize.min,

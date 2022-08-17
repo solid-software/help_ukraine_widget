@@ -27,10 +27,17 @@ class FourthHelpWidget extends StatelessWidget {
       options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
+          padding: const EdgeInsets.symmetric(vertical: 13),
           key: const ValueKey(2),
-          child: LinksCardWidget(
-            options: controller.options,
-            onClose: controller.onClose,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              LinksCardWidget(
+                options: controller.options,
+                onClose: controller.onClose,
+              ),
+              const SizedBox(height: 5),
+            ],
           ),
         );
       },
@@ -41,9 +48,10 @@ class FourthHelpWidget extends StatelessWidget {
         return CardRounded(
           height: cardHeight,
           key: const ValueKey(1),
-          padding: EdgeInsets.zero,
+          padding: const EdgeInsets.only(right: 12),
           onClose: controller.onClose,
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
@@ -69,8 +77,8 @@ class FourthHelpWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   DetailsButton(
-                    title: 'See what you can do',
-                    hoverColor: Colors.blueAccent,
+                    title: 'See how to help',
+                    color: Colors.blueAccent,
                     onTap: controller.onDetails,
                   ),
                 ],

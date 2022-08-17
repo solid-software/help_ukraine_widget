@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
   /// It's a function that calls on button tap.
   final VoidCallback onTap;
 
-  /// It's a color that changes when you hover over the button.
-  final Color hoverColor;
+  /// It's a color that changes appearance of text and icon
+  final Color color;
 
   /// It's a variable that stores the title of the button.
   final String title;
@@ -16,13 +17,13 @@ class DetailsButton extends StatelessWidget {
   const DetailsButton({
     Key? key,
     required this.onTap,
-    required this.hoverColor,
+    required this.color,
     required this.title,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const iconSize = 17.0;
+    const iconSize = 15.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -34,12 +35,12 @@ class DetailsButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: hoverColor,
-                  ),
+              style: theme.textTheme.headline5?.copyWith(
+                color: color,
+              ),
             ),
-            Icon(SFSymbols.chevron_down, color: hoverColor, size: iconSize),
+            const SizedBox(width: 2),
+            Icon(SFSymbols.chevron_down, color: color, size: iconSize),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/src/components/hover_wrapper.dart';
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
@@ -46,9 +46,11 @@ class HelpOptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const hoverOpacity = 0.1;
+
     return HoverWrapper(
       backgroundColor: backgroundColor,
-      highlightColor: hoverColor ?? Theme.of(context).highlightColor,
+      highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
       onTap: onTap,
       child: Container(
         height: height,
@@ -58,9 +60,9 @@ class HelpOptionButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
+              style: theme.textTheme.headline4?.copyWith(
+                color: HelpColors.blue,
+                fontWeight: FontWeight.w600,
               ),
             ),
             Icon(

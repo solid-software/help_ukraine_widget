@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// A widget with Ukraine flag colors
 class FlagWidget extends StatelessWidget {
@@ -9,8 +10,8 @@ class FlagWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        _FlagPart(color: Colors.blue),
-        _FlagPart(color: Colors.yellow),
+        _FlagPart(color: HelpColors.blue),
+        _FlagPart(color: HelpColors.yellow),
       ],
     );
   }

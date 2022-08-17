@@ -7,7 +7,7 @@ class FirstHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;
 
-  static const _defaultTitle = 'Stop War! You can help!';
+  static const _defaultTitle = 'Stop Russian Aggression!';
 
   ///Constructor
   const FirstHelpWidget({
@@ -21,6 +21,7 @@ class FirstHelpWidget extends StatelessWidget {
       options: defaultOptionsList,
       optionsCardBuilder: (controller) {
         return CardRounded(
+          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
           key: const ValueKey(2),
           child: LinksCardWidget(
             options: controller.options,
@@ -42,13 +43,11 @@ class FirstHelpWidget extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                    style: theme.textTheme.headline4,
                   ),
                   DetailsButton(
                     title: 'See what you can do',
-                    hoverColor: Colors.blueAccent,
+                    color: HelpColors.blue,
                     onTap: controller.onDetails,
                   ),
                 ],
