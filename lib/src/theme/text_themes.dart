@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 ///Text themes of app
 class TextThemes {
   /// A main font of default text theme.
