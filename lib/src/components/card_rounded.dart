@@ -39,7 +39,7 @@ class CardRounded extends StatelessWidget {
   static const _elevation = 4.0;
   static const _borderRadius = 13.0;
 
-  static const _defaultOffset = -5.0;
+  static const _defaultOffset = 5.0;
 
   ///Constructor
   const CardRounded({
@@ -61,16 +61,19 @@ class CardRounded extends StatelessWidget {
   Widget build(BuildContext context) {
     final Widget _positionedButton;
 
-    final card = Material(
-      elevation: _elevation,
-      borderRadius: BorderRadius.circular(_borderRadius),
-      color: backgroundColor,
-      clipBehavior: Clip.antiAlias,
-      child: Container(
-        height: height,
-        width: width,
-        padding: padding,
-        child: child,
+    final card = Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: Material(
+        elevation: _elevation,
+        borderRadius: BorderRadius.circular(_borderRadius),
+        color: backgroundColor,
+        clipBehavior: Clip.antiAlias,
+        child: Container(
+          height: height,
+          width: width,
+          padding: padding,
+          child: child,
+        ),
       ),
     );
 
