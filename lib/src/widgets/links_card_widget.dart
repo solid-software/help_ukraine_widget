@@ -60,6 +60,7 @@ class _LinksCardButtonState extends State<_LinksCardButton> {
 
   @override
   Widget build(BuildContext context) {
+    const iconSize = 16.0;
     final color = Theme.of(context).textTheme.bodyText1?.color;
 
     return HoverWrapper(
@@ -74,9 +75,11 @@ class _LinksCardButtonState extends State<_LinksCardButton> {
                   color: _isHovered ? Colors.blue : color,
                 ),
           ),
+          const SizedBox(width: 5),
           Icon(
             SFSymbols.chevron_up,
             color: _isHovered ? Colors.blue : color,
+            size: iconSize,
           ),
         ],
       ),

@@ -30,6 +30,7 @@ class HelpOptionButton extends StatelessWidget {
 
   static const _defaultHeight = 51.0;
   static const _defaultIconSize = 14.0;
+  static const _defaultFontSize = 19.0;
 
   ///Constructor
   const HelpOptionButton({
@@ -58,10 +59,11 @@ class HelpOptionButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                    color: Colors.blueAccent,
+                    fontSize: _defaultFontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             Icon(
               icon,
