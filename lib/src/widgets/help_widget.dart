@@ -154,36 +154,46 @@ class _AnimationBuilder extends StatelessWidget {
     required this.isPositiveDirection,
   }) : super(key: key);
 
+  Animation<Offset> _slideAnimation(
+    Animation<double> animation,
+    int offsetIndex,
+  ) {
+    final _offset = axis == Axis.horizontal
+        ? const [Offset(-0.5, 0.0), Offset(0.5, 0.0)]
+        : const [Offset(0.0, -1.5), Offset(0.0, 1.5)];
+
+    return Tween<Offset>(
+      begin: _offset[offsetIndex],
+      end: Offset.zero,
+    ).animate(animation);
+  }
+
+  Animation<double> _fadeAnimation(Animation<double> animation) {
+    const begin = 0.2;
+    const end = 1.0;
+
+    return Tween<double>(begin: begin, end: end).animate(animation);
+  }
+
   Widget _layoutBuilder(Widget? currentChild, List<Widget> _) {
     return currentChild ?? const SizedBox();
   }
 
   Widget _transitionBuilder(Widget child, Animation<double> animation) {
-    const padding = EdgeInsets.all(12.0);
+    final inAnimation = _slideAnimation(animation, 0);
 
-    final _offsets = axis == Axis.horizontal
-        ? const [Offset(-0.5, 0.0), Offset(0.5, 0.0)]
-        : const [Offset(0.0, -1.5), Offset(0.0, 1.5)];
+    final outAnimation = _slideAnimation(animation, 1);
 
-    final inAnimation = Tween<Offset>(
-      begin: _offsets.first,
-      end: Offset.zero,
-    ).animate(animation);
+    final fadeAnimation = _fadeAnimation(animation);
 
-    final outAnimation = Tween<Offset>(
-      begin: _offsets[1],
-      end: Offset.zero,
-    ).animate(animation);
+    final transition = FadeTransition(
+      opacity: fadeAnimation,
+      child: child.key == const ValueKey(0) || !isPositiveDirection
+          ? _SlideTransition(inAnimation, child)
+          : _SlideTransition(outAnimation, child),
+    );
 
-    return child.key == const ValueKey(0) || !isPositiveDirection
-        ? SlideTransition(
-            position: inAnimation,
-            child: Padding(padding: padding, child: child),
-          )
-        : SlideTransition(
-            position: outAnimation,
-            child: Padding(padding: padding, child: child),
-          );
+    return transition;
   }
 
   @override
@@ -195,6 +205,24 @@ class _AnimationBuilder extends StatelessWidget {
       switchInCurve: Curves.fastOutSlowIn,
       switchOutCurve: Curves.fastOutSlowIn,
       child: child,
+    );
+  }
+}
+
+class _SlideTransition extends StatelessWidget {
+  final Animation<Offset> animation;
+  final Widget child;
+
+  const _SlideTransition(this.animation, this.child, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    const padding = EdgeInsets.all(12.0);
+
+    return SlideTransition(
+      position: animation,
+      child: Padding(padding: padding, child: child),
     );
   }
 }
