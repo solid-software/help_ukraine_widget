@@ -59,7 +59,7 @@ class CardRounded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget _positionedButton;
+    final Widget _positionedCloseButton;
 
     final card = Container(
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -80,7 +80,7 @@ class CardRounded extends StatelessWidget {
     if (onClose != null) {
       final button = _CloseButton(onTap: onClose, iconData: customButtonIcon);
 
-      _positionedButton = Positioned(
+      _positionedCloseButton = Positioned(
         right: _defaultOffset,
         top: closeButtonAlignment == Alignment.topRight ? _defaultOffset : null,
         bottom: closeButtonAlignment == Alignment.bottomRight
@@ -89,12 +89,12 @@ class CardRounded extends StatelessWidget {
         child: button,
       );
     } else {
-      _positionedButton = const SizedBox();
+      _positionedCloseButton = const SizedBox();
     }
 
     return Stack(
       clipBehavior: Clip.none,
-      children: [card, _positionedButton],
+      children: [card, _positionedCloseButton],
     );
   }
 }
