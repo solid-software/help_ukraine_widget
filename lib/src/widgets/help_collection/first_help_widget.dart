@@ -55,7 +55,7 @@ class FirstHelpWidget extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    letterSpacing: -1.14,
+                    fontFamily: 'Roboto',
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
                   ),
