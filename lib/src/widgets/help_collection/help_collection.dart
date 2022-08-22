@@ -1,4 +1,4 @@
-export 'first_help_widget.dart';
-export 'fourth_help_widget.dart';
-export 'second_help_widget.dart';
-export 'third_help_widget.dart';
+export 'embedded_flag_help_widget.dart';
+export 'horizontal_help_widget.dart';
+export 'overlay_flag_help_widget.dart';
+export 'square_help_widget.dart';

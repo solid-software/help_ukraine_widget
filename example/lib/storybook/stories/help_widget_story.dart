@@ -14,7 +14,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: const FirstHelpWidget(),
+              child: const HorizontalHelpWidget(),
             );
           },
         ),
@@ -24,7 +24,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: const SecondHelpWidget(),
+              child: const OverlayFlagHelpWidget(),
             );
           },
         ),
@@ -34,7 +34,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: const ThirdHelpWidget(),
+              child: const SquareHelpWidget(),
             );
           },
         ),
@@ -44,7 +44,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: const FourthHelpWidget(),
+              child: const EmbeddedFlagHelpWidget(),
             );
           },
         ),
