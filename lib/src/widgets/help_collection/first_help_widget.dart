@@ -14,16 +14,15 @@ class FirstHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
   ///Constructor
-  const FirstHelpWidget({
+  FirstHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
 
+  final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
   @override
   Widget build(BuildContext context) {
-    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
-
     return HelpWidget(
       controller: _controller,
       optionsView: CardRounded(
@@ -34,18 +33,32 @@ class FirstHelpWidget extends StatelessWidget {
         ),
       ),
       mainView: CardRounded(
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 12,
+          left: 12,
+          right: 12,
+        ),
         onClose: _controller.showCollapsedView,
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const UkraineFlagWidget(),
-            const SizedBox(width: 10),
+            const SizedBox(width: 14),
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // const Padding(
+                //   padding: EdgeInsets.only(top: 2.0),
+                // ),
                 Text(
                   title,
-                  style: theme.textTheme.headline4,
+                  style: const TextStyle(
+                    letterSpacing: -1.14,
+                    fontSize: 20.8,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 DetailsButton(
                   title: detailsButtonDescription,

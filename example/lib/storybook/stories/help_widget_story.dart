@@ -14,7 +14,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: const FirstHelpWidget(),
+              child: FirstHelpWidget(),
             );
           },
         ),
