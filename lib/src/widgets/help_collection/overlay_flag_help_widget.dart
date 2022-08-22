@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// [SecondHelpWidget] is modification of a [HelpWidget] described as second
-/// type.
-class SecondHelpWidget extends StatelessWidget {
+/// Variation of a [HelpWidget] with flag overlaping the card.
+class OverlayFlagHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;
 
@@ -14,8 +13,8 @@ class SecondHelpWidget extends StatelessWidget {
   static const _widgetWidth = 290.0;
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
-  ///Constructor
-  const SecondHelpWidget({
+  /// Constructor
+  const OverlayFlagHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,

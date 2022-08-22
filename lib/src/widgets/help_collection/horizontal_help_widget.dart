@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// [FirstHelpWidget] is modification of a [HelpWidget] described as first
-/// type.
-class FirstHelpWidget extends StatelessWidget {
+/// Shortest and widest of variations of [HelpWidget].
+class HorizontalHelpWidget extends StatelessWidget {
   /// A title of a widget.
   final String title;
 
@@ -13,8 +12,8 @@ class FirstHelpWidget extends StatelessWidget {
   static const _defaultTitle = 'Stop Russian Aggression!';
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
-  ///Constructor
-  const FirstHelpWidget({
+  /// Constructor
+  const HorizontalHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,

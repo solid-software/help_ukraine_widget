@@ -1,17 +1,15 @@
-/// It's defining a new type called [HelpWidgetView] with three possible values:
-/// `collapsed`, `main`, and `options`.
+/// A listing of available views of a single HelpUkraineWidget.
 ///
 /// Helps to show different views
 enum HelpWidgetView {
-  /// It's a constant value of type [HelpWidgetView] that
-  /// has the value `collapsed`.
+  /// A small, non-intrusive thumbnail view of the Widget.
   collapsed,
 
-  /// It's a constant value of type [HelpWidgetView] that
-  /// has the value `main`.
+  /// View between [collapsed] and [options],
+	/// shows thumbnail, title, link to [options]
+	/// and a closing button that sets widget into [collapsed] mode.
   main,
 
-  /// It's a constant value of type [HelpWidgetView] that
-  /// has the value `options`.
+  /// View with links.
   options,
 }

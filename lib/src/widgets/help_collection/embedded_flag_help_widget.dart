@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// [FourthHelpWidget] is modification of a [HelpWidget] described as fourth
-/// type.
-class FourthHelpWidget extends StatelessWidget {
+/// Variation of a [HelpWidget] with flag embedded into the card.
+class EmbeddedFlagHelpWidget extends StatelessWidget {
   /// A title of widget.
   final String title;
 
-  ///A description for widget.
+  /// A description for widget.
   final String description;
 
   /// A description for the button that will be shown on the main card.
@@ -21,8 +20,8 @@ class FourthHelpWidget extends StatelessWidget {
   static const _flagWidth = 13.0;
   static const _cardHeight = 120.0;
 
-  ///Constructor
-  const FourthHelpWidget({
+  /// Constructor
+  const EmbeddedFlagHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,

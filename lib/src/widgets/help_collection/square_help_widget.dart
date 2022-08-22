@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// [ThirdHelpWidget] is modification of a [HelpWidget] described as third type.
-class ThirdHelpWidget extends StatelessWidget {
+/// Variation of a [HelpWidget] with almost equal height and width.
+class SquareHelpWidget extends StatelessWidget {
   /// A title of widget.
   final String title;
 
-  ///A description for widget.
+  /// A description for widget.
   final String description;
 
   /// A description for the button that will be shown on the main card.
@@ -18,8 +18,8 @@ class ThirdHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See how';
   static const _widgetWidth = 320.0;
 
-  ///Constructor
-  const ThirdHelpWidget({
+  /// Constructor
+  const SquareHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,
