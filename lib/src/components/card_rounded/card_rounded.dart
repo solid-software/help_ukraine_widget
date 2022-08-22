@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/card_rounded/close_button_card_rounded.dart';
 
 /// This is a card widget with a rounded border, that has optional close button
 /// at the top right.
@@ -81,7 +81,9 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
-      final button = _CloseButton(onTap: onClose, iconData: customButtonIcon);
+      final button = CloseButtonCardRounded(
+				onTap: onClose, iconData: customButtonIcon,
+			);
       _positionedCloseButton = Positioned.fill(
         child: Align(alignment: closeButtonAlignment, child: button),
       );
@@ -92,40 +94,6 @@ class CardRounded extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [card, _positionedCloseButton],
-    );
-  }
-}
-
-class _CloseButton extends StatelessWidget {
-  final VoidCallback? onTap;
-  final IconData? iconData;
-
-  const _CloseButton({
-    Key? key,
-    this.onTap,
-    this.iconData,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    const _size = 20.0;
-    const _iconSize = 10.0;
-
-    return Container(
-      height: _size,
-      width: _size,
-      clipBehavior: Clip.antiAlias,
-      decoration: const BoxDecoration(shape: BoxShape.circle),
-      child: HoverWrapper(
-        backgroundColor: const Color.fromRGBO(80, 80, 80, 1),
-        highlightColor: HelpColors.blue,
-        onTap: onTap,
-        child: Icon(
-          iconData,
-          size: _iconSize,
-          color: Colors.white,
-        ),
-      ),
     );
   }
 }
