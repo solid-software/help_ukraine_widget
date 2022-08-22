@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/widgets/help_widget/help_widget_animation_builder.dart';
 
 /// It's a widget that displays a widget that can be collapsed, a widget that
 /// can be expanded, and a widget that can be displayed when
@@ -56,7 +57,7 @@ class _HelpWidgetState extends State<HelpWidget> {
                 widget._controller.showMainView();
               }
             },
-            child: _AnimationBuilder(
+            child: HelpWidgetAnimationBuilder(
               axis: widget.axis,
               isPositiveDirection: widget._controller.isPositiveDirection,
               child: (() {
@@ -85,93 +86,6 @@ class _HelpWidgetState extends State<HelpWidget> {
           );
         },
       ),
-    );
-  }
-}
-
-class _AnimationBuilder extends StatelessWidget {
-  final Widget? child;
-
-  final Axis axis;
-
-  final bool isPositiveDirection;
-
-  const _AnimationBuilder({
-    Key? key,
-    required this.child,
-    required this.axis,
-    required this.isPositiveDirection,
-  }) : super(key: key);
-
-  Animation<Offset> _slideAnimation(
-    Animation<double> animation,
-    int offsetIndex,
-  ) {
-    final _offset = axis == Axis.horizontal
-        ? const [Offset(-0.5, 0.0), Offset(0.5, 0.0)]
-        : const [Offset(0.0, -1.5), Offset(0.0, 1.5)];
-
-    return Tween<Offset>(
-      begin: _offset[offsetIndex],
-      end: Offset.zero,
-    ).animate(animation);
-  }
-
-  Animation<double> _fadeAnimation(Animation<double> animation) {
-    const begin = 0.2;
-    const end = 1.0;
-
-    return Tween<double>(begin: begin, end: end).animate(animation);
-  }
-
-  Widget _layoutBuilder(Widget? currentChild, List<Widget> _) {
-    return currentChild ?? const SizedBox();
-  }
-
-  Widget _transitionBuilder(Widget child, Animation<double> animation) {
-    final inAnimation = _slideAnimation(animation, 0);
-
-    final outAnimation = _slideAnimation(animation, 1);
-
-    final fadeAnimation = _fadeAnimation(animation);
-
-    final transition = FadeTransition(
-      opacity: fadeAnimation,
-      child: child.key == const ValueKey(0) || !isPositiveDirection
-          ? _SlideTransition(inAnimation, child)
-          : _SlideTransition(outAnimation, child),
-    );
-
-    return transition;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 400),
-      layoutBuilder: _layoutBuilder,
-      transitionBuilder: _transitionBuilder,
-      switchInCurve: Curves.fastOutSlowIn,
-      switchOutCurve: Curves.fastOutSlowIn,
-      child: child,
-    );
-  }
-}
-
-class _SlideTransition extends StatelessWidget {
-  final Animation<Offset> animation;
-  final Widget child;
-
-  const _SlideTransition(this.animation, this.child, {Key? key})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    const padding = EdgeInsets.all(12.0);
-
-    return SlideTransition(
-      position: animation,
-      child: Padding(padding: padding, child: child),
     );
   }
 }
