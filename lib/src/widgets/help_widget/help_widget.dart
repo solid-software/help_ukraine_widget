@@ -62,8 +62,8 @@ class HelpWidget extends StatelessWidget {
             },
             child: HelpWidgetAnimationBuilder(
               axis: axis,
-							transitionForward:
-								isCurrentViewCollapsed || !_controller.transitionForward,
+              transitionForward:
+                  isCurrentViewCollapsed || !_controller.transitionForward,
               child: SizedBox(
                 key: ValueKey(view),
                 child: viewMap[view],

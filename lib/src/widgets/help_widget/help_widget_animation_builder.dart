@@ -8,7 +8,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
   /// animation axis
   final Axis axis;
 
-	final bool transitionForward;
+  final bool transitionForward;
 
   /// constructor
   const HelpWidgetAnimationBuilder({
@@ -55,9 +55,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
     final transition = FadeTransition(
       opacity: fadeAnimation,
       child: SlideTransition(
-        position: transitionForward
-            ? inAnimation
-            : outAnimation,
+        position: transitionForward ? inAnimation : outAnimation,
         child: Padding(
           padding: padding,
           child: child,
