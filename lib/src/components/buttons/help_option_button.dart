@@ -15,6 +15,8 @@ class HelpOptionButton extends StatelessWidget {
   /// A variable that is used to set the icon of the button.
   final IconData icon;
 
+	final Widget child;
+
   /// A variable to set a background color for button;
   final Color? backgroundColor;
 
@@ -35,6 +37,7 @@ class HelpOptionButton extends StatelessWidget {
   const HelpOptionButton({
     required this.icon,
     required this.title,
+		required this.child,
     Key? key,
     this.height = _defaultHeight,
     this.iconSize = _defaultIconSize,
@@ -65,11 +68,12 @@ class HelpOptionButton extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Icon(
-              icon,
-              size: iconSize,
-              color: iconColor,
-            ),
+						child,
+            // Icon(
+              // icon,
+              // size: iconSize,
+              // color: iconColor,
+            // ),
           ],
         ),
       ),
