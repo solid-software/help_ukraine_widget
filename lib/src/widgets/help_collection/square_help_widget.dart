@@ -4,6 +4,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
+	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
   /// A title of widget.
   final String title;
 
@@ -19,7 +21,7 @@ class SquareHelpWidget extends StatelessWidget {
   static const _widgetWidth = 320.0;
 
   /// Constructor
-  const SquareHelpWidget({
+  SquareHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,
@@ -28,8 +30,6 @@ class SquareHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
-
     return HelpWidget(
       controller: _controller,
       constraints: const BoxConstraints(

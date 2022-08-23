@@ -3,6 +3,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Variation of a [HelpWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
+	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
   /// A title of a widget.
   final String title;
 
@@ -14,16 +16,14 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
   /// Constructor
-  const OverlayFlagHelpWidget({
+  OverlayFlagHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
-    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
-
     return HelpWidget(
       constraints: const BoxConstraints(
         maxWidth: _widgetWidth,

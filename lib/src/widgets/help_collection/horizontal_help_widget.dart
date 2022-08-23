@@ -3,6 +3,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
 class HorizontalHelpWidget extends StatelessWidget {
+	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
   /// A title of a widget.
   final String title;
 
@@ -13,7 +15,7 @@ class HorizontalHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
   /// Constructor
-  const HorizontalHelpWidget({
+  HorizontalHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
@@ -21,8 +23,6 @@ class HorizontalHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
-
     return HelpWidget(
       controller: _controller,
       optionsView: CardRounded(

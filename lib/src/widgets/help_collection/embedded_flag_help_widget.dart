@@ -4,6 +4,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Variation of a [HelpWidget] with flag embedded into the card.
 class EmbeddedFlagHelpWidget extends StatelessWidget {
+	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+
   /// A title of widget.
   final String title;
 
@@ -21,7 +23,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _cardHeight = 120.0;
 
   /// Constructor
-  const EmbeddedFlagHelpWidget({
+  EmbeddedFlagHelpWidget({
     Key? key,
     this.title = _defaultTitle,
     this.description = _defaultDescription,
@@ -30,8 +32,6 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
-
     return HelpWidget(
       controller: _controller,
       optionsView: CardRounded(
