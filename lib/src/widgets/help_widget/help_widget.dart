@@ -47,6 +47,8 @@ class HelpWidget extends StatelessWidget {
       HelpWidgetView.options: optionsView,
     };
 
+    final isCollapsedView = view == HelpWidgetView.collapsed;
+
     return Container(
       constraints: constraints,
       child: ValueListenableBuilder<HelpWidgetView>(
@@ -54,11 +56,12 @@ class HelpWidget extends StatelessWidget {
         builder: (context, view, _) {
           return GestureDetector(
             onTap: () {
-              if (view == HelpWidgetView.collapsed) {
+              if (isCollapsedView) {
                 _controller.showMainView();
               }
             },
             child: HelpWidgetAnimationBuilder(
+              transitioningToCollapsed: isCollapsedView,
               axis: axis,
               isPositiveDirection: _controller.isPositiveDirection,
               child: SizedBox(

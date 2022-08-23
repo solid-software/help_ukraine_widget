@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/src/helpers/help_widget_view.dart';
 
 /// Slide -in and -out animation
 class HelpWidgetAnimationBuilder extends StatelessWidget {
@@ -12,12 +11,16 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
   /// animation direction
   final bool isPositiveDirection;
 
+  /// should be true if child is set to collapsed view
+  final bool transitioningToCollapsed;
+
   /// constructor
   const HelpWidgetAnimationBuilder({
     Key? key,
     required this.child,
     required this.axis,
     required this.isPositiveDirection,
+    required this.transitioningToCollapsed,
   }) : super(key: key);
 
   Animation<Offset> _slideAnimation(
@@ -53,8 +56,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
     final fadeAnimation = _fadeAnimation(animation);
 
     const padding = EdgeInsets.all(12.0);
-    final transitioningToCollapsed =
-        child.key == const ValueKey(HelpWidgetView.collapsed);
+
     final transition = FadeTransition(
       opacity: fadeAnimation,
       child: SlideTransition(
