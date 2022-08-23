@@ -34,8 +34,7 @@ class StoryBook extends StatelessWidget {
         WidgetbookCategory(
           name: 'Examples',
           widgets: [
-            // actionButtonComponent,
-            // actionsListComponent,
+            helpWidgetStory,
           ],
         )
       ],

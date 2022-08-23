@@ -11,7 +11,7 @@ class HoverWrapper extends StatefulWidget {
   /// A tap callback for the button.
   final VoidCallback? onTap;
 
-  /// A direct button bacground color.
+  /// A direct button background color.
   final Color? backgroundColor;
 
   /// A direct button highlight hover color.
@@ -34,11 +34,22 @@ class HoverWrapper extends StatefulWidget {
 class _HoverWrapperState extends State<HoverWrapper> {
   bool _isHovered = false;
 
+  void _onEnter() {
+    setState(() => _isHovered = true);
+    widget.onHoverChanged?.call(_isHovered);
+  }
+
+  void _onExit() {
+    setState(() => _isHovered = false);
+    widget.onHoverChanged?.call(_isHovered);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => _onEnter(),
+      onExit: (_) => _onExit(),
       child: GestureDetector(
         onTap: widget.onTap,
         behavior: HitTestBehavior.opaque,

@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_sfsymbols: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -16,3 +17,23 @@ dev_dependencies:
   solid_lints: ^0.0.12
 
 flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: sficonsets
+      fonts:
+        - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto-Black.ttf
+          weight: 900
