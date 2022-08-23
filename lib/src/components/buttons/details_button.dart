@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 
 /// It's a button that changes color when you hover over it
@@ -23,8 +22,6 @@ class DetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // const iconSize = 15.0;
-
 		const lineWidth = 1.8;
 		const chevronWidth = 6.4;
 		const chevronHeight = 6.4;
@@ -41,14 +38,12 @@ class DetailsButton extends StatelessWidget {
               title,
               style: TextStyle(
 								fontFamily: 'Roboto',
-                // letterSpacing: -0.9,
                 fontSize: 19.2,
                 fontWeight: FontWeight.w600,
                 color: color,
               ),
             ),
             const SizedBox(width: 2),
-            // Icon(SFSymbols.chevron_down, color: color, size: iconSize),
 						Container(
 							padding: const EdgeInsets.only(top: 4.0),
 							child: SizedBox(
