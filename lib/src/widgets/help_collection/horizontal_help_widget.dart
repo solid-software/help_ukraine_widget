@@ -33,18 +33,29 @@ class HorizontalHelpWidget extends StatelessWidget {
         ),
       ),
       mainView: CardRounded(
+				padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 12,
+          left: 12,
+          right: 12,
+        ),
         onClose: _controller.showCollapsedView,
         child: Row(
+					mainAxisSize: MainAxisSize.min,
           children: [
             const UkraineFlagWidget(),
-            const SizedBox(width: 10),
+            const SizedBox(width: 14),
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: theme.textTheme.headline4,
+                  style: const TextStyle(
+										fontFamily: 'Roboto',
+                    fontSize: 20.8,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 DetailsButton(
                   title: detailsButtonDescription,
