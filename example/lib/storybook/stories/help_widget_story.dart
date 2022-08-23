@@ -18,5 +18,15 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             );
           },
         ),
+        WidgetbookUseCase(
+          name: 'Fourth',
+          builder: (context) {
+            return Container(
+              alignment: Alignment.center,
+              color: _backgroundColor,
+              child: EmbeddedFlagHelpWidget(),
+            );
+          },
+        ),
       ],
     );
