@@ -82,8 +82,9 @@ class CardRounded extends StatelessWidget {
 
     if (onClose != null) {
       final button = CloseButtonCardRounded(
-				onTap: onClose, iconData: customButtonIcon,
-			);
+        onTap: onClose,
+        iconData: customButtonIcon,
+      );
       _positionedCloseButton = Positioned.fill(
         child: Align(alignment: closeButtonAlignment, child: button),
       );

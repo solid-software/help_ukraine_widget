@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 /// Slide -in and -out animation
 class HelpWidgetAnimationBuilder extends StatelessWidget {
-	/// child for [SlideTransition]
+  /// child for [SlideTransition]
   final Widget? child;
 
-	/// animation axis
+  /// animation axis
   final Axis axis;
 
-	/// animation direction
+  /// animation direction
   final bool isPositiveDirection;
 
-	/// constructor
+  /// constructor
   const HelpWidgetAnimationBuilder({
     Key? key,
     required this.child,
@@ -54,15 +54,15 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
     const padding = EdgeInsets.all(12.0);
     final transition = FadeTransition(
       opacity: fadeAnimation,
-			child: SlideTransition(
-      	position: child.key == const ValueKey(0) || !isPositiveDirection
-					? inAnimation
-					: outAnimation,
-      	child: Padding(
-					padding: padding,
-					child: child,
-				),
-    	),
+      child: SlideTransition(
+        position: child.key == const ValueKey(0) || !isPositiveDirection
+            ? inAnimation
+            : outAnimation,
+        child: Padding(
+          padding: padding,
+          child: child,
+        ),
+      ),
     );
 
     return transition;
