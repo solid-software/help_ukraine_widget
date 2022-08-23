@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 ///
 const defaultOptionsList = [
@@ -9,7 +10,7 @@ const defaultOptionsList = [
     child: Text(
       '💸',
       style: TextStyle(
-        fontFamily: 'Roboto',
+        fontFamily: FontConfig.family,
         fontSize: 20.8,
         fontWeight: FontWeight.w500,
       ),
@@ -22,7 +23,7 @@ const defaultOptionsList = [
     child: Text(
       '❤',
       style: TextStyle(
-        fontFamily: 'Roboto',
+        fontFamily: FontConfig.family,
         fontSize: 20.8,
         fontWeight: FontWeight.w500,
         color: Colors.redAccent,
@@ -37,7 +38,7 @@ const defaultOptionsList = [
     child: Text(
       '📌',
       style: TextStyle(
-        fontFamily: 'Roboto',
+        fontFamily: FontConfig.family,
         fontSize: 20.8,
         fontWeight: FontWeight.w500,
       ),
