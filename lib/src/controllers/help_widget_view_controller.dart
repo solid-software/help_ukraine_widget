@@ -7,32 +7,43 @@ class HelpWidgetViewController extends ValueNotifier<HelpWidgetView> {
   /// A variable that helps choose animation direction.
   bool transitionForward = true;
 
-  /// A variable that helps choose animation direction.
-  HelpWidgetView lastView = HelpWidgetView.collapsed;
-
   ///Constructor
-  HelpWidgetViewController([super.value = HelpWidgetView.collapsed]);
+  HelpWidgetViewController([
+    super.value = HelpWidgetView.collapsed,
+  ]);
 
   /// Defines logic to open CollapsedView
   void showCollapsedView() {
-    value = HelpWidgetView.collapsed;
-    lastView = HelpWidgetView.collapsed;
+    _showView(HelpWidgetView.collapsed);
     notifyListeners();
   }
 
   /// Defines logic to open MainView
   void showMainView() {
-    value = HelpWidgetView.main;
-    if (lastView == HelpWidgetView.collapsed) transitionForward = true;
-    if (lastView == HelpWidgetView.options) transitionForward = false;
+    _showView(HelpWidgetView.main);
     notifyListeners();
   }
 
   /// Defines logic to open OptionsView
   void showOptionsView() {
-    value = HelpWidgetView.options;
-    transitionForward = true;
-    lastView = HelpWidgetView.options;
+    _showView(HelpWidgetView.options);
     notifyListeners();
   }
+
+  void _showView(HelpWidgetView view) {
+    transitionForward = _isTransitioningForward(value, view);
+    value = view;
+  }
+
+  bool _isTransitioningForward(HelpWidgetView previous, HelpWidgetView next) {
+    /// Transitioning from collapsed view to any other;
+    final fromCollapsed = previous == HelpWidgetView.collapsed;
+
+    /// Transitioning to options view, which should be the last one.
+    final toOptions = next == HelpWidgetView.options;
+
+    return fromCollapsed || toOptions;
+  }
+
+  void _updateTransitionDirection() {}
 }
