@@ -37,7 +37,11 @@ class SquareHelpWidget extends StatelessWidget {
       ),
       axis: Axis.horizontal,
       optionsView: CardRounded(
-        customButtonIcon: SFSymbols.chevron_left,
+        closeButtonIcon: const Icon(
+					SFSymbols.chevron_left,
+					size: 10.0,
+					color: Colors.white,
+				),
         onClose: _controller.showMainView,
         closeButtonAlignment: Alignment.bottomRight,
         padding: const EdgeInsets.symmetric(vertical: 14),

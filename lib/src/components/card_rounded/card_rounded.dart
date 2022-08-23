@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/src/components/card_rounded/close_button_card_rounded.dart';
 
@@ -33,24 +32,24 @@ class CardRounded extends StatelessWidget {
   /// Alignment.topRight and Alignment.bottomRight
   final Alignment closeButtonAlignment;
 
-  /// A variable that sets the icon of the close button.
-  final IconData? customButtonIcon;
+	/// Icon for a close button
+	final Widget? closeButtonIcon;
 
   static const _elevation = 4.0;
   static const _borderRadius = 13.0;
 
   static const _defaultOffset = 5.0;
 
-  ///Constructor
-  const CardRounded({
+  /// Constructor
+	const CardRounded({
     Key? key,
     this.child,
     this.backgroundColor,
     this.height,
     this.width,
     this.onClose,
+		this.closeButtonIcon,
     this.closeButtonAlignment = Alignment.topRight,
-    this.customButtonIcon = SFSymbols.xmark,
     this.padding = const EdgeInsets.symmetric(
       vertical: 12,
       horizontal: 12,
@@ -81,8 +80,21 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
+			const _iconSize = 10.0;
+			const _padding = 6.4;
+			const _lineWidth = 2.0;
+			final _defaultCloseButtonIcon = Container(
+				padding: const EdgeInsets.all(_padding),
+				child: const XMark(
+					size: Size.square(_iconSize),
+					color: Colors.white,
+					lineWidth: _lineWidth,
+				),
+			);
+
       final button = CloseButtonCardRounded(
-				onTap: onClose, iconData: customButtonIcon,
+				onTap: onClose,
+				child: closeButtonIcon ?? _defaultCloseButtonIcon,
 			);
       _positionedCloseButton = Positioned.fill(
         child: Align(alignment: closeButtonAlignment, child: button),
@@ -95,5 +107,63 @@ class CardRounded extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [card, _positionedCloseButton],
     );
+  }
+}
+
+/// XMark Icon
+class XMark extends StatelessWidget {
+	/// size of the canvas to draw a cross on.
+  final Size size;
+
+	/// color of the lines.
+  final Color color;
+  
+	/// width of cross lines.
+  final double lineWidth;
+
+  /// Constructor
+  const XMark({
+    Key? key,
+    required this.size,
+    required this.color,
+    required this.lineWidth,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(	
+			size: size,
+			painter: _CrossPainter(lineWidth: lineWidth),
+    );
+  }
+}
+
+class _CrossPainter extends CustomPainter {
+  final double lineWidth;
+
+	/// constructor
+  _CrossPainter({ required this.lineWidth });
+
+  @override
+  void paint(Canvas canvas, Size size) { 
+    final paint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = lineWidth;
+    canvas.drawLine(
+			Offset.zero,
+			Offset(size.width, size.height),
+			paint,
+		);
+    canvas.drawLine(
+			Offset(size.width, 0),
+			Offset(0, size.height),
+			paint,
+		); 
+	}
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }
