@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
