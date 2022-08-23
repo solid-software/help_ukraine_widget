@@ -26,7 +26,7 @@ class LinksCardWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
-					mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: options,
         ),
         const SizedBox(

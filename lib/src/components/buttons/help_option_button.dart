@@ -55,9 +55,9 @@ class HelpOptionButton extends StatelessWidget {
       child: Container(
         height: height,
         padding: const EdgeInsets.only(
-					left: 25,
-					right: 40,
-				),
+          left: 25,
+          right: 40,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
