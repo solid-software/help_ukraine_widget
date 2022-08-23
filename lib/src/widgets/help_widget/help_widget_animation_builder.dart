@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/src/widgets/help_widget/help_widget_slide_transition.dart';
 
-/// [AnimationBuilder] for [HelpWidget]
+/// Slide -in and -out animation
 class HelpWidgetAnimationBuilder extends StatelessWidget {
 	/// child for [SlideTransition]
   final Widget? child;
@@ -52,11 +51,18 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
 
     final fadeAnimation = _fadeAnimation(animation);
 
+    const padding = EdgeInsets.all(12.0);
     final transition = FadeTransition(
       opacity: fadeAnimation,
-      child: child.key == const ValueKey(0) || !isPositiveDirection
-          ? HelpWidgetSlideTransition(inAnimation, child)
-          : HelpWidgetSlideTransition(outAnimation, child),
+			child: SlideTransition(
+      	position: child.key == const ValueKey(0) || !isPositiveDirection
+					? inAnimation
+					: outAnimation,
+      	child: Padding(
+					padding: padding,
+					child: child,
+				),
+    	),
     );
 
     return transition;
