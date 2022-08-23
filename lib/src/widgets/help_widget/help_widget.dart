@@ -5,7 +5,8 @@ import 'package:help_ukraine_widget/src/widgets/help_widget/help_widget_animatio
 /// It's a widget that displays a widget that can be collapsed, a widget that
 /// can be expanded, and a widget that can be displayed when
 /// the widget is expanded.
-class HelpWidget extends StatefulWidget {
+// class HelpWidget extends StatefullWidget {
+class HelpWidget extends StatelessWidget {
   /// A parameter that defines the direction of the animation.
   final Axis axis;
 
@@ -23,7 +24,7 @@ class HelpWidget extends StatefulWidget {
 
   final HelpWidgetViewController _controller;
 
-  /// It's a parameter that defines the maximum width of the widget.
+  /// It's a parameter that defines the allowed size of the widget.
   final BoxConstraints? constraints;
 
   ///Constructor
@@ -35,50 +36,44 @@ class HelpWidget extends StatefulWidget {
     required HelpWidgetViewController controller,
     this.axis = Axis.vertical,
     this.constraints,
-    // required this.controller,
   })  : _controller = controller,
         super(key: key);
 
-  @override
-  State<HelpWidget> createState() => _HelpWidgetState();
-}
-
-class _HelpWidgetState extends State<HelpWidget> {
-  @override
+	@override
   Widget build(BuildContext context) {
     return Container(
-      constraints: widget.constraints,
+      constraints: constraints,
       child: ValueListenableBuilder<HelpWidgetView>(
-        valueListenable: widget._controller,
+        valueListenable: _controller,
         builder: (context, view, _) {
           return GestureDetector(
             onTap: () {
               if (view == HelpWidgetView.collapsed) {
-                widget._controller.showMainView();
+                _controller.showMainView();
               }
             },
             child: HelpWidgetAnimationBuilder(
-              axis: widget.axis,
-              isPositiveDirection: widget._controller.isPositiveDirection,
+              axis: axis,
+              isPositiveDirection: _controller.isPositiveDirection,
               child: (() {
                 if (view == HelpWidgetView.collapsed) {
                   return SizedBox(
                     key: const ValueKey(0),
-                    child: widget.collapsedView,
+                    child: collapsedView,
                   );
                 }
 
                 if (view == HelpWidgetView.main) {
                   return SizedBox(
                     key: const ValueKey(1),
-                    child: widget.mainView,
+                    child: mainView,
                   );
                 }
 
                 if (view == HelpWidgetView.options) {
                   return SizedBox(
                     key: const ValueKey(2),
-                    child: widget.optionsView,
+                    child: optionsView,
                   );
                 }
               })(),
