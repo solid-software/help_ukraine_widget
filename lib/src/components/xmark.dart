@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 /// XMark Icon
 class XMark extends StatelessWidget {
-	/// size of the canvas to draw a cross on.
+  /// size of the canvas to draw a cross on.
   final Size size;
 
-	/// color of the lines.
+  /// color of the lines.
   final Color color;
-  
-	/// width of cross lines.
+
+  /// width of cross lines.
   final double lineWidth;
 
   /// Constructor
@@ -21,37 +21,37 @@ class XMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(	
-			size: size,
-			painter: _CrossPainter(lineWidth: lineWidth, color: color),
+    return CustomPaint(
+      size: size,
+      painter: _CrossPainter(lineWidth: lineWidth, color: color),
     );
   }
 }
 
 class _CrossPainter extends CustomPainter {
   final double lineWidth;
-	final Color color;
+  final Color color;
 
-	/// constructor
-  _CrossPainter({ required this.lineWidth, required this.color });
+  /// constructor
+  _CrossPainter({required this.lineWidth, required this.color});
 
   @override
-  void paint(Canvas canvas, Size size) { 
+  void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = lineWidth;
     canvas.drawLine(
-			Offset.zero,
-			Offset(size.width, size.height),
-			paint,
-		);
+      Offset.zero,
+      Offset(size.width, size.height),
+      paint,
+    );
     canvas.drawLine(
-			Offset(size.width, 0),
-			Offset(0, size.height),
-			paint,
-		); 
-	}
+      Offset(size.width, 0),
+      Offset(0, size.height),
+      paint,
+    );
+  }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {

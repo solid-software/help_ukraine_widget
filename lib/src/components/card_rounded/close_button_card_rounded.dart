@@ -7,14 +7,14 @@ class CloseButtonCardRounded extends StatelessWidget {
   /// callback called onTap
   final VoidCallback? onTap;
 
-	/// child
-	final Widget child;
+  /// child
+  final Widget child;
 
   /// Constructor
   const CloseButtonCardRounded({
     Key? key,
     required this.child,
-		this.onTap,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class CloseButtonCardRounded extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(80, 80, 80, 1),
         highlightColor: HelpColors.blue,
         onTap: onTap,
-				child: child,
+        child: child,
       ),
     );
   }

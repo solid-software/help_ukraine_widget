@@ -33,8 +33,8 @@ class CardRounded extends StatelessWidget {
   /// Alignment.topRight and Alignment.bottomRight
   final Alignment closeButtonAlignment;
 
-	/// Icon for a close button
-	final Widget? closeButtonIcon;
+  /// Icon for a close button
+  final Widget? closeButtonIcon;
 
   static const _elevation = 4.0;
   static const _borderRadius = 13.0;
@@ -42,14 +42,14 @@ class CardRounded extends StatelessWidget {
   static const _defaultOffset = 5.0;
 
   /// Constructor
-	const CardRounded({
+  const CardRounded({
     Key? key,
     this.child,
     this.backgroundColor,
     this.height,
     this.width,
     this.onClose,
-		this.closeButtonIcon,
+    this.closeButtonIcon,
     this.closeButtonAlignment = Alignment.topRight,
     this.padding = const EdgeInsets.symmetric(
       vertical: 12,
@@ -81,22 +81,22 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
-			const _iconSize = 10.0;
-			const _padding = 6.4;
-			const _lineWidth = 2.0;
-			final _defaultCloseButtonIcon = Container(
-				padding: const EdgeInsets.all(_padding),
-				child: const XMark(
-					size: Size.square(_iconSize),
-					color: Colors.white,
-					lineWidth: _lineWidth,
-				),
-			);
+      const _iconSize = 10.0;
+      const _padding = 6.4;
+      const _lineWidth = 2.0;
+      final _defaultCloseButtonIcon = Container(
+        padding: const EdgeInsets.all(_padding),
+        child: const XMark(
+          size: Size.square(_iconSize),
+          color: Colors.white,
+          lineWidth: _lineWidth,
+        ),
+      );
 
       final button = CloseButtonCardRounded(
-				onTap: onClose,
-				child: closeButtonIcon ?? _defaultCloseButtonIcon,
-			);
+        onTap: onClose,
+        child: closeButtonIcon ?? _defaultCloseButtonIcon,
+      );
       _positionedCloseButton = Positioned.fill(
         child: Align(alignment: closeButtonAlignment, child: button),
       );

@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 /// chevron Icon
 class ChevronDown extends StatelessWidget {
-	/// size of the canvas to draw a chevron on.
+  /// size of the canvas to draw a chevron on.
   final Size size;
 
-	/// color of the lines.
+  /// color of the lines.
   final Color color;
-  
-	/// width of chevron lines.
-  final double lineWidth;
 
+  /// width of chevron lines.
+  final double lineWidth;
 
   /// Constructor
   const ChevronDown({
@@ -22,51 +21,51 @@ class ChevronDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(	
-			size: size,
-			painter: _CrossPainter(
-				color: color,
-				lineWidth: lineWidth,
-			),
+    return CustomPaint(
+      size: size,
+      painter: _CrossPainter(
+        color: color,
+        lineWidth: lineWidth,
+      ),
     );
   }
 }
 
 class _CrossPainter extends CustomPainter {
   final double lineWidth;
-	final Color color;
+  final Color color;
 
-	/// constructor
+  /// constructor
   _CrossPainter({
-		required this.color,
-		required this.lineWidth,
-	});
+    required this.color,
+    required this.lineWidth,
+  });
 
   @override
-  void paint(Canvas canvas, Size size) { 
+  void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = lineWidth;
 
-		final halfWidth = size.width / 2;
-		final halfHeight = size.height / 2;
+    final halfWidth = size.width / 2;
+    final halfHeight = size.height / 2;
 
-		final halfLine = lineWidth / 2;
+    final halfLine = lineWidth / 2;
 
-		final x = halfLine / 2;
+    final x = halfLine / 2;
 
     canvas.drawLine(
-			Offset.zero,
-			Offset(halfWidth + x, halfHeight + x),
-			paint,
-		);
+      Offset.zero,
+      Offset(halfWidth + x, halfHeight + x),
+      paint,
+    );
     canvas.drawLine(
-			Offset(size.width, 0),
-			Offset(halfWidth - x, halfHeight + x),
-			paint,
-		); 
-	}
+      Offset(size.width, 0),
+      Offset(halfWidth - x, halfHeight + x),
+      paint,
+    );
+  }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {

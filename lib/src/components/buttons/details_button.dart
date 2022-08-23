@@ -22,9 +22,12 @@ class DetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-		const lineWidth = 1.8;
-		const chevronWidth = 6.4;
-		const chevronHeight = 6.4;
+    const lineWidth = 1.8;
+    const chevronWidth = 6.4;
+    const chevronHeight = 6.4;
+
+    const fontSize = 19.2;
+    const letterSpacing = -0.9;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -37,26 +40,26 @@ class DetailsButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-								fontFamily: 'Roboto',
-                fontSize: 19.2,
+                fontFamily: 'Roboto',
+                fontSize: fontSize,
                 fontWeight: FontWeight.w600,
-                letterSpacing: -0.9,
+                letterSpacing: letterSpacing,
                 color: color,
               ),
             ),
             const SizedBox(width: 2),
-						Container(
-							padding: const EdgeInsets.only(top: 4.0),
-							child: SizedBox(
-								width: chevronWidth,
-								height: chevronHeight,
-								child: ChevronDown(
-									color: color,
-									size: const Size(chevronWidth, chevronHeight),
-									lineWidth: lineWidth,
-								),
-							),
-						),
+            Container(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: SizedBox(
+                width: chevronWidth,
+                height: chevronHeight,
+                child: ChevronDown(
+                  color: color,
+                  size: const Size(chevronWidth, chevronHeight),
+                  lineWidth: lineWidth,
+                ),
+              ),
+            ),
           ],
         ),
       ),
