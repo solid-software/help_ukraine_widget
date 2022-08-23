@@ -39,32 +39,25 @@ class HelpWidget extends StatelessWidget {
   })  : _controller = controller,
         super(key: key);
 
-	@override
+  @override
   Widget build(BuildContext context) {
-		final viewMap = {
-			HelpWidgetView.collapsed: collapsedView,
-			HelpWidgetView.main     : mainView,
-			HelpWidgetView.options  : optionsView,
-		};
-		
+    final viewMap = {
+      HelpWidgetView.collapsed: collapsedView,
+      HelpWidgetView.main: mainView,
+      HelpWidgetView.options: optionsView,
+    };
+
     return Container(
       constraints: constraints,
       child: ValueListenableBuilder<HelpWidgetView>(
         valueListenable: _controller,
         builder: (context, view, _) {
-          return GestureDetector(
-            onTap: () {
-              if (view == HelpWidgetView.collapsed) {
-                _controller.showMainView();
-              }
-            },
-            child: HelpWidgetAnimationBuilder(
-              axis: axis,
-              isPositiveDirection: _controller.isPositiveDirection,
-              child: SizedBox(
-								key: ValueKey(view),
-								child: viewMap[view],
-							),
+          return HelpWidgetAnimationBuilder(
+            axis: axis,
+            transitionForward: _controller.transitionForward,
+            child: SizedBox(
+              key: ValueKey(view),
+              child: viewMap[view],
             ),
           );
         },

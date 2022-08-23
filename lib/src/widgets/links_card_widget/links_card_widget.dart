@@ -20,7 +20,7 @@ class LinksCardWidget extends StatelessWidget {
     required this.onClose,
   }) : super(key: key);
 
-	@override
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,

@@ -40,6 +40,7 @@ class DetailsButton extends StatelessWidget {
 								fontFamily: 'Roboto',
                 fontSize: 19.2,
                 fontWeight: FontWeight.w600,
+                letterSpacing: -0.9,
                 color: color,
               ),
             ),

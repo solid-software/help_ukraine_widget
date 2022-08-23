@@ -3,7 +3,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
 class HorizontalHelpWidget extends StatelessWidget {
-	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+  final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
 
   /// A title of a widget.
   final String title;
@@ -33,7 +33,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         ),
       ),
       mainView: CardRounded(
-				padding: const EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 10,
           bottom: 12,
           left: 12,
@@ -41,7 +41,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         ),
         onClose: _controller.showCollapsedView,
         child: Row(
-					mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           children: [
             const UkraineFlagWidget(),
             const SizedBox(width: 14),
@@ -52,7 +52,7 @@ class HorizontalHelpWidget extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-										fontFamily: 'Roboto',
+                    fontFamily: 'Roboto',
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
                   ),
@@ -67,7 +67,10 @@ class HorizontalHelpWidget extends StatelessWidget {
           ],
         ),
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.showMainView,
+        child: const FlagCard(),
+      ),
     );
   }
 }

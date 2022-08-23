@@ -4,13 +4,13 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// button for [CardRounded]
 class CloseButtonCardRounded extends StatelessWidget {
-	/// callback called onTap
+  /// callback called onTap
   final VoidCallback? onTap;
 
 	/// child
 	final Widget child;
 
-	/// Constructor
+  /// Constructor
   const CloseButtonCardRounded({
     Key? key,
     required this.child,

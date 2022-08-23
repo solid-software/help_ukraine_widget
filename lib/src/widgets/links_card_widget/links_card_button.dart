@@ -5,10 +5,10 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Button that redirects to links view of [HelpWidget]
 class LinksCardButton extends StatefulWidget {
-	/// onTap for [HoverWrapper]
+  /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
-	/// Constructor
+  /// Constructor
   const LinksCardButton({Key? key, required this.onTap}) : super(key: key);
 
   @override
