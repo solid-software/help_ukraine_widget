@@ -31,7 +31,6 @@ class LinksCardWidget extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        // const Divider(height: 20),
         LinksCardButton(onTap: onClose),
       ],
     );
