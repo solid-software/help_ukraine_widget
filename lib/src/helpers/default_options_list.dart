@@ -6,7 +6,6 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 const defaultOptionsList = [
   HelpOptionButton(
     title: 'Donate',
-    icon: SFSymbols.money_dollar,
     iconSize: 20,
 		child: Text(
 			'💸',
@@ -19,7 +18,6 @@ const defaultOptionsList = [
   ),
   HelpOptionButton(
     title: 'Support Ukraine',
-    icon: SFSymbols.heart_fill,
     iconSize: 19,
     iconColor: Colors.redAccent,
 		child: Text(
@@ -35,7 +33,6 @@ const defaultOptionsList = [
   ),
   HelpOptionButton(
     title: 'Share this widget',
-    icon: SFSymbols.pin_fill,
     iconSize: 19,
     iconColor: Colors.blueAccent,
 		child: Text(
