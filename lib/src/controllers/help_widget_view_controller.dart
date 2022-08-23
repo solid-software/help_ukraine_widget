@@ -44,6 +44,4 @@ class HelpWidgetViewController extends ValueNotifier<HelpWidgetView> {
 
     return fromCollapsed || toOptions;
   }
-
-  void _updateTransitionDirection() {}
 }
