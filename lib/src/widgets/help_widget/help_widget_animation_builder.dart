@@ -8,19 +8,14 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
   /// animation axis
   final Axis axis;
 
-  /// animation direction
-  final bool isPositiveDirection;
-
-  /// should be true if child is set to collapsed view
-  final bool transitioningToCollapsed;
+	final bool transitionForward;
 
   /// constructor
   const HelpWidgetAnimationBuilder({
     Key? key,
     required this.child,
     required this.axis,
-    required this.isPositiveDirection,
-    required this.transitioningToCollapsed,
+    required this.transitionForward,
   }) : super(key: key);
 
   Animation<Offset> _slideAnimation(
@@ -60,7 +55,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
     final transition = FadeTransition(
       opacity: fadeAnimation,
       child: SlideTransition(
-        position: transitioningToCollapsed || !isPositiveDirection
+        position: transitionForward
             ? inAnimation
             : outAnimation,
         child: Padding(

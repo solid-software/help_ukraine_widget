@@ -5,7 +5,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 /// direction and the current view
 class HelpWidgetViewController extends ValueNotifier<HelpWidgetView> {
   /// A variable that helps choose animation direction.
-  bool isPositiveDirection = true;
+  bool transitionForward = true;
 
   /// A variable that helps choose animation direction.
   HelpWidgetView lastView = HelpWidgetView.collapsed;
@@ -23,15 +23,15 @@ class HelpWidgetViewController extends ValueNotifier<HelpWidgetView> {
   /// Defines logic to open MainView
   void showMainView() {
     value = HelpWidgetView.main;
-    if (lastView == HelpWidgetView.collapsed) isPositiveDirection = true;
-    if (lastView == HelpWidgetView.options) isPositiveDirection = false;
+    if (lastView == HelpWidgetView.collapsed) transitionForward = true;
+    if (lastView == HelpWidgetView.options) transitionForward = false;
     notifyListeners();
   }
 
   /// Defines logic to open OptionsView
   void showOptionsView() {
     value = HelpWidgetView.options;
-    isPositiveDirection = true;
+    transitionForward = true;
     lastView = HelpWidgetView.options;
     notifyListeners();
   }
