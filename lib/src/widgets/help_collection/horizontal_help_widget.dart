@@ -49,9 +49,6 @@ class HorizontalHelpWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // const Padding(
-                //   padding: EdgeInsets.only(top: 2.0),
-                // ),
                 Text(
                   title,
                   style: const TextStyle(
