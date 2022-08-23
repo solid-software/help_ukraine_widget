@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
@@ -40,7 +41,7 @@ class DetailsButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: FontConfig.family,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
                 letterSpacing: letterSpacing,
@@ -48,7 +49,7 @@ class DetailsButton extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 2),
-            Container(
+            Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: SizedBox(
                 width: chevronWidth,
