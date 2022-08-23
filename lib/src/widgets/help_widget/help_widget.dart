@@ -41,6 +41,12 @@ class HelpWidget extends StatelessWidget {
 
 	@override
   Widget build(BuildContext context) {
+		final viewMap = {
+			HelpWidgetView.collapsed: collapsedView,
+			HelpWidgetView.main     : mainView,
+			HelpWidgetView.options  : optionsView,
+		};
+		
     return Container(
       constraints: constraints,
       child: ValueListenableBuilder<HelpWidgetView>(
@@ -55,28 +61,10 @@ class HelpWidget extends StatelessWidget {
             child: HelpWidgetAnimationBuilder(
               axis: axis,
               isPositiveDirection: _controller.isPositiveDirection,
-              child: (() {
-                if (view == HelpWidgetView.collapsed) {
-                  return SizedBox(
-                    key: const ValueKey(0),
-                    child: collapsedView,
-                  );
-                }
-
-                if (view == HelpWidgetView.main) {
-                  return SizedBox(
-                    key: const ValueKey(1),
-                    child: mainView,
-                  );
-                }
-
-                if (view == HelpWidgetView.options) {
-                  return SizedBox(
-                    key: const ValueKey(2),
-                    child: optionsView,
-                  );
-                }
-              })(),
+              child: SizedBox(
+								key: ValueKey(view),
+								child: viewMap[view],
+							),
             ),
           );
         },
