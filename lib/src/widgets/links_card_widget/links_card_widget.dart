@@ -5,7 +5,7 @@ import 'package:help_ukraine_widget/src/widgets/links_card_widget/links_card_but
 
 /// It's a widget that represents options from
 /// that can be tapped to open a link.
-class LinksCardWidget extends StatefulWidget {
+class LinksCardWidget extends StatelessWidget {
   /// It's a list of buttons that will be displayed in the card.
   final List<HelpOptionButton> options;
 
@@ -13,28 +13,23 @@ class LinksCardWidget extends StatefulWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
-  ///Constructor
+  /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
   }) : super(key: key);
 
-  @override
-  State<LinksCardWidget> createState() => _LinksCardWidgetState();
-}
-
-class _LinksCardWidgetState extends State<LinksCardWidget> {
-  @override
+	@override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
-          children: widget.options,
+          children: options,
         ),
         const Divider(height: 20),
-        LinksCardButton(onTap: widget.onClose),
+        LinksCardButton(onTap: onClose),
       ],
     );
   }
