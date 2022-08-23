@@ -67,7 +67,10 @@ class HorizontalHelpWidget extends StatelessWidget {
           ],
         ),
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.showMainView,
+        child: const FlagCard(),
+      ),
     );
   }
 }

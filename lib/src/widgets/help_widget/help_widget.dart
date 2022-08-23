@@ -52,21 +52,12 @@ class HelpWidget extends StatelessWidget {
       child: ValueListenableBuilder<HelpWidgetView>(
         valueListenable: _controller,
         builder: (context, view, _) {
-          final isCurrentViewCollapsed = view == HelpWidgetView.collapsed;
-
-          return GestureDetector(
-            onTap: () {
-              if (isCurrentViewCollapsed) {
-                _controller.showMainView();
-              }
-            },
-            child: HelpWidgetAnimationBuilder(
-              axis: axis,
-              transitionForward: _controller.transitionForward,
-              child: SizedBox(
-                key: ValueKey(view),
-                child: viewMap[view],
-              ),
+          return HelpWidgetAnimationBuilder(
+            axis: axis,
+            transitionForward: _controller.transitionForward,
+            child: SizedBox(
+              key: ValueKey(view),
+              child: viewMap[view],
             ),
           );
         },
