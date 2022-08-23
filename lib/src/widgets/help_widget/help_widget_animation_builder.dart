@@ -8,6 +8,8 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
   /// animation axis
   final Axis axis;
 
+  /// slide -in or -out animation is chosen by this field
+  /// true => in
   final bool transitionForward;
 
   /// constructor
