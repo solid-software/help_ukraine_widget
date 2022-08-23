@@ -54,7 +54,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
 
     const padding = EdgeInsets.all(12.0);
     final transitioningToCollapsed =
-			child.key == const ValueKey(HelpWidgetView.collapsed);
+        child.key == const ValueKey(HelpWidgetView.collapsed);
     final transition = FadeTransition(
       opacity: fadeAnimation,
       child: SlideTransition(
