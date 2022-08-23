@@ -23,7 +23,10 @@ class XMark extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       size: size,
-      painter: _CrossPainter(lineWidth: lineWidth, color: color,),
+      painter: _CrossPainter(
+        lineWidth: lineWidth,
+        color: color,
+      ),
     );
   }
 }
@@ -33,7 +36,10 @@ class _CrossPainter extends CustomPainter {
   final Color color;
 
   /// constructor
-  _CrossPainter({required this.lineWidth, required this.color,});
+  _CrossPainter({
+    required this.lineWidth,
+    required this.color,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
