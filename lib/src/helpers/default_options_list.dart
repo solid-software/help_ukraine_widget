@@ -27,7 +27,6 @@ const defaultOptionsList = [
         fontSize: 20.8,
         fontWeight: FontWeight.w500,
         color: Colors.redAccent,
-        // color: Color(0x00ff3f30),
       ),
     ),
   ),
