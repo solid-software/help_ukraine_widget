@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 /// This controller allows to traverse a list one step at a time,
 /// while retaining direction of last step ([didTraverseForward]).
-/// [value] is pointer to current position in [order].
 class TraverseController<T> extends ValueNotifier<T> {
   /// list to traverse
   final List<T> order;

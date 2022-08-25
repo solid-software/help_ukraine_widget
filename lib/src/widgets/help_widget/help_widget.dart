@@ -49,7 +49,7 @@ class HelpWidget extends StatelessWidget {
 
     return Container(
       constraints: constraints,
-      child: ValueListenableBuilder<int>(
+      child: ValueListenableBuilder(
         valueListenable: _controller,
         builder: (context, _, __) {
           final view = _controller.currentItem;
