@@ -34,42 +34,42 @@ class HorizontalHelpWidget extends StatelessWidget {
         ),
       ),
       mainView: CardRounded(
-				padding: const EdgeInsets.only(
-					top: 10,
-					bottom: 12,
-					left: 12,
-					right: 12,
-				),
-				onClose: _controller.showCollapsedView,
-				child: Row(
-					mainAxisSize: MainAxisSize.min,
-					children: [
-						const UkraineFlagWidget(),
-						const SizedBox(width: 14),
-						Column(
-							mainAxisSize: MainAxisSize.min,
-							crossAxisAlignment: CrossAxisAlignment.start,
-							children: [
-								Text(
-									title,
-									style: const TextStyle(
-										height: 1.2, 
-										fontFamily: FontConfig.family,
-										fontSize: 20.8,
-										fontWeight: FontWeight.w700,
-										letterSpacing: 0.25,
-									),
-								),
-								DetailsButton(
-									title: detailsButtonDescription,
-									color: HelpColors.blue,
-									onTap: _controller.showOptionsView,
-								),
-							],
-						),
-					],
-				),
-			),
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 12,
+          left: 12,
+          right: 12,
+        ),
+        onClose: _controller.showCollapsedView,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const UkraineFlagWidget(),
+            const SizedBox(width: 14),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    height: 1.2,
+                    fontFamily: FontConfig.family,
+                    fontSize: 20.8,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.25,
+                  ),
+                ),
+                DetailsButton(
+                  title: detailsButtonDescription,
+                  color: HelpColors.blue,
+                  onTap: _controller.showOptionsView,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
       collapsedView: GestureDetector(
         onTap: _controller.showMainView,
         child: const FlagCard(),
