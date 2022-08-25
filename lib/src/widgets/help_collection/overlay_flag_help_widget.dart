@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/theme/font_config.dart';
+import 'package:help_ukraine_widget/src/widgets/default_links_card_widget.dart';
 
 /// Variation of a [HelpWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
@@ -36,8 +38,12 @@ class OverlayFlagHelpWidget extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            LinksCardWidget(
-              options: defaultOptionsList,
+            DefaultLinksCardWidget(
+              textStyle: const TextStyle(
+                fontFamily: FontConfig.family,
+                fontSize: 20.8,
+                fontWeight: FontWeight.w500,
+              ),
               onClose: _controller.goBack,
             ),
             const SizedBox(height: 5),
