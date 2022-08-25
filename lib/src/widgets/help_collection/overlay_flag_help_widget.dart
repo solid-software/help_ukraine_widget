@@ -14,7 +14,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   final String detailsButtonDescription;
 
   static const _defaultTitle = 'Stop War! You can help!';
-  static const _widgetWidth = 290.0;
+  static const _widgetWidth = 280.0;
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
   /// Constructor
@@ -53,11 +53,13 @@ class OverlayFlagHelpWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 25),
+                const SizedBox(height: 30),
                 Text(
                   title,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: -0.1,
+                        fontSize: 19.6,
                       ),
                 ),
                 const Divider(
@@ -75,7 +77,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           ),
           const Positioned(
             top: -21,
-            left: 105,
+            left: 102,
             child: UkraineFlagWidget(),
           ),
         ],

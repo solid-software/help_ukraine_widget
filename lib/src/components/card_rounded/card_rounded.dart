@@ -49,7 +49,7 @@ class CardRounded extends StatelessWidget {
     this.height,
     this.width,
     this.onClose,
-    this.closeButtonAlignment = Alignment.topRight,
+    this.closeButtonAlignment = const Alignment(1.02, -1.05),
     this.customButtonIcon = SFSymbols.xmark,
     this.padding = const EdgeInsets.symmetric(
       vertical: 10,
