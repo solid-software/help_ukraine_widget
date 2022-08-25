@@ -35,7 +35,7 @@ class HorizontalHelpWidget extends StatelessWidget {
       ),
       mainView: CardRounded(
         padding: const EdgeInsets.only(
-          top: 10,
+          top: 12,
           bottom: 12,
           left: 12,
           right: 12,
@@ -48,18 +48,20 @@ class HorizontalHelpWidget extends StatelessWidget {
             const SizedBox(width: 14),
             Column(
               mainAxisSize: MainAxisSize.min,
+							mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: const TextStyle(
-                    height: 1.2,
+                    // height: 1.33,
                     fontFamily: FontConfig.family,
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.25,
+                    letterSpacing: -0.322,
                   ),
                 ),
+								const SizedBox(height: 0.5),
                 DetailsButton(
                   title: detailsButtonDescription,
                   color: HelpColors.blue,
@@ -74,7 +76,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         onTap: _controller.showMainView,
         child: const FlagCard(),
       ),
-      constraints: const BoxConstraints.tightFor(width: 380),
+      constraints: const BoxConstraints.tightFor(width: 370),
     );
   }
 }
