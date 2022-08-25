@@ -29,6 +29,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   @override
   Widget build(BuildContext context) {
     final color = _isHovered ? HelpColors.blue : Colors.black;
+    const fontSize = 19.0;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -41,7 +42,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: 19,
+                  fontSize: fontSize,
                 ),
           ),
           const SizedBox(width: 4),
