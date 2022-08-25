@@ -39,10 +39,15 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             DefaultLinksCardWidget(
-              textStyle: const TextStyle(
-                fontFamily: FontConfig.family,
-                fontSize: 20.8,
+							textStyle: theme.textTheme.headline4?.copyWith(
+								fontSize: 18,
+                color: HelpColors.blue,
                 fontWeight: FontWeight.w500,
+              ),
+              iconTextStyle: const TextStyle(
+                fontFamily: FontConfig.family,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
               ),
               onClose: _controller.goBack,
             ),
