@@ -48,7 +48,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             color: color,
             size: _iconSize,
           ),
-					const SizedBox(width: 5),
+          const SizedBox(width: 5),
         ],
       ),
     );
