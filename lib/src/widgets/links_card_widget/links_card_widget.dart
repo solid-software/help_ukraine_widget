@@ -26,11 +26,18 @@ class LinksCardWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: options,
         ),
+        const Divider(
+          height: 8,
+          thickness: 0.0,
+          indent: 4,
+          endIndent: 4,
+          // color: Color.fromARGB(0, 0, 0, 0)
+        ),
         const SizedBox(
-          height: 20,
+          height: 8,
         ),
         LinksCardButton(onTap: onClose),
       ],

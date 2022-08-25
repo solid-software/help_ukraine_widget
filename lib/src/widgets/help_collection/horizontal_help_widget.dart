@@ -48,7 +48,7 @@ class HorizontalHelpWidget extends StatelessWidget {
             const SizedBox(width: 14),
             Column(
               mainAxisSize: MainAxisSize.min,
-							mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -61,7 +61,7 @@ class HorizontalHelpWidget extends StatelessWidget {
                     letterSpacing: -0.322,
                   ),
                 ),
-								const SizedBox(height: 0.5),
+                const SizedBox(height: 0.5),
                 DetailsButton(
                   title: detailsButtonDescription,
                   color: HelpColors.blue,

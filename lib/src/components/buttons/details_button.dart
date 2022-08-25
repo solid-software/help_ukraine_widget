@@ -41,7 +41,7 @@ class DetailsButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-								// height: 1.5,
+                // height: 1.5,
                 fontFamily: FontConfig.family,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
