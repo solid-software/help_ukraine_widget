@@ -28,6 +28,16 @@ class OverlayFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+		const linkFontSize = 18.0;
+
+		const mainViewTitleLetterSpacing = 0.2;
+		const mainViewTitleFontSize = 19.6;
+
+		const detailsButtonFontSize = 18.0;
+    const detailsButtonLetterSpacing = -0.2;
+    const detailsButtonSpacingToChevron = 8.0;
+    const detailsButtonSpacingAfterChevron = 6.0;
+
     return HelpWidget(
       constraints: const BoxConstraints(
         maxWidth: _widgetWidth,
@@ -40,7 +50,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           children: [
             DefaultLinksCardWidget(
 							textStyle: theme.textTheme.headline4?.copyWith(
-								fontSize: 18,
+								fontSize: linkFontSize,
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w500,
               ),
@@ -70,8 +80,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   title,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
                         fontWeight: FontWeight.w600,
-                        letterSpacing: 0.2,
-                        fontSize: 19.6,
+                        letterSpacing: mainViewTitleLetterSpacing,
+                        fontSize: mainViewTitleFontSize,
                       ),
                 ),
                 const SizedBox(height: 14),
@@ -96,10 +106,10 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   title: _defaultDetailsButtonDesc,
                   color: HelpColors.blue,
                   onTap: _controller.goForward,
-                  fontSize: 18,
-                  letterSpacing: -0.2,
-                  spacingToChevron: 8,
-                  spacingAfterChevron: 6,
+                  fontSize: detailsButtonFontSize,
+                  letterSpacing: detailsButtonLetterSpacing,
+                  spacingToChevron: detailsButtonSpacingToChevron,
+                  spacingAfterChevron: detailsButtonSpacingAfterChevron,
                 ),
                 const SizedBox(height: 4),
               ],
