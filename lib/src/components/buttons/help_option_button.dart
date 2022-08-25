@@ -12,8 +12,8 @@ class HelpOptionButton extends StatelessWidget {
   /// A callback for the button.
   final VoidCallback? onTap;
 
-  /// A variable that is used to set the icon of the button.
-  final IconData icon;
+  /// Icon on the right side of the button.
+  final Widget child;
 
   /// A variable to set a background color for button;
   final Color? backgroundColor;
@@ -22,31 +22,24 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  /// A variable that is used to set the size of the icon.
-  final double iconSize;
-
-  /// A variable that is used to set the color of the icon.
-  final Color? iconColor;
-
-  static const _defaultHeight = 51.0;
-  static const _defaultIconSize = 14.0;
+  static const _defaultHeight = 53.0;
 
   ///Constructor
   const HelpOptionButton({
-    required this.icon,
     required this.title,
+    required this.child,
     Key? key,
     this.height = _defaultHeight,
-    this.iconSize = _defaultIconSize,
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
-    this.iconColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
+    const lineHeight = 0.6;
+    const letterSpacing = -0.42;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
@@ -54,7 +47,10 @@ class HelpOptionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.only(
+          left: 25,
+          right: 28,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -63,13 +59,11 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
+                height: lineHeight,
+                letterSpacing: letterSpacing,
               ),
             ),
-            Icon(
-              icon,
-              size: iconSize,
-              color: iconColor,
-            ),
+            child,
           ],
         ),
       ),

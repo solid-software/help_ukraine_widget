@@ -18,18 +18,24 @@ WidgetbookComponent get helpOptionsListStory => WidgetbookComponent(
                     children: const [
                       HelpOptionButton(
                         title: 'Donate',
-                        icon: SFSymbols.money_dollar,
-                        iconSize: 19,
+                        child: Icon(
+                          SFSymbols.money_dollar,
+                          size: 19,
+                        ),
                       ),
                       HelpOptionButton(
                         title: 'Support Ukraine',
-                        icon: SFSymbols.heart,
-                        iconSize: 19,
+                        child: Icon(
+                          SFSymbols.heart,
+                          size: 19,
+                        ),
                       ),
                       HelpOptionButton(
                         title: 'Share this widget',
-                        icon: SFSymbols.pin,
-                        iconSize: 19,
+                        child: Icon(
+                          SFSymbols.pin,
+                          size: 19,
+                        ),
                       ),
                     ],
                   ),
