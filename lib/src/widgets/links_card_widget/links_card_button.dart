@@ -41,6 +41,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
+                  fontSize: 19,
                 ),
           ),
           const SizedBox(width: 4),

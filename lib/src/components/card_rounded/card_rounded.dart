@@ -50,7 +50,7 @@ class CardRounded extends StatelessWidget {
     this.width,
     this.onClose,
     this.closeButtonIcon,
-    this.closeButtonAlignment = const Alignment(0.99, -1.05),
+    this.closeButtonAlignment = const Alignment(1.02, -1.05),
     this.padding = const EdgeInsets.symmetric(
       vertical: 10,
       horizontal: 10,

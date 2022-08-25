@@ -26,7 +26,7 @@ class LinksCardWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: options,
         ),
         const Divider(
