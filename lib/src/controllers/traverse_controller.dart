@@ -15,8 +15,7 @@ class TraverseController<T> extends ChangeNotifier {
   T get currentItem => order[_currentItemIndex];
 
   /// Constructor
-  TraverseController(this.order, {T? startFrom})
-      : super() {
+  TraverseController(this.order, {T? startFrom}) : super() {
     _currentItemIndex = order.indexOf(startFrom ?? order.first);
   }
 
