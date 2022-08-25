@@ -13,12 +13,33 @@ class DetailsButton extends StatelessWidget {
   /// It's a variable that stores the title of the button.
   final String title;
 
+  /// fontSize for title
+  final double fontSize;
+
+  /// letterSpacing for title
+  final double letterSpacing;
+
+  /// how much free space should be between title and chevron
+  final double spacingToChevron;
+
+  /// how much free space should be after chevron
+  final double spacingAfterChevron;
+
+  static const _defaultFontSize = 19.2;
+  static const _defaultLetterSpacing = -0.49;
+  static const _defaultSpacingToChevron = 2.0;
+  static const _defaultSpacingAfterChevron = 0.0;
+
   ///Constructor
   const DetailsButton({
     Key? key,
     required this.onTap,
     required this.color,
     required this.title,
+    this.fontSize = _defaultFontSize,
+    this.letterSpacing = _defaultLetterSpacing,
+    this.spacingToChevron = _defaultSpacingToChevron,
+    this.spacingAfterChevron = _defaultSpacingAfterChevron,
   }) : super(key: key);
 
   @override
@@ -26,9 +47,6 @@ class DetailsButton extends StatelessWidget {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-
-    const fontSize = 19.2;
-    const letterSpacing = -0.49;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -48,7 +66,7 @@ class DetailsButton extends StatelessWidget {
                 color: color,
               ),
             ),
-            const SizedBox(width: 2),
+            SizedBox(width: spacingToChevron),
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: SizedBox(
@@ -61,6 +79,7 @@ class DetailsButton extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(width: spacingAfterChevron),
           ],
         ),
       ),

@@ -48,12 +48,13 @@ class OverlayFlagHelpWidget extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CardRounded(
+            closeButtonAlignment: const Alignment(1.02, -1.02),
             onClose: _controller.goBack,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 30),
+                const SizedBox(height: 31),
                 Text(
                   title,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -62,7 +63,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                         fontSize: 19.6,
                       ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 14),
                 Row(
                   children: [
                     const SizedBox(
@@ -84,13 +85,17 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   title: _defaultDetailsButtonDesc,
                   color: HelpColors.blue,
                   onTap: _controller.goForward,
+                  fontSize: 18,
+                  letterSpacing: -0.2,
+                  spacingToChevron: 8,
+                  spacingAfterChevron: 6,
                 ),
-                const SizedBox(height: 2),
+                const SizedBox(height: 4),
               ],
             ),
           ),
           const Positioned(
-            top: -20,
+            top: -21,
             left: 102,
             child: UkraineFlagWidget(),
           ),
