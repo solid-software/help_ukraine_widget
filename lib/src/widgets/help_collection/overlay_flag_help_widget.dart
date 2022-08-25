@@ -3,7 +3,9 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Variation of a [HelpWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
-	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+  final _controller = TraverseController(
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+  );
 
   /// A title of a widget.
   final String title;
@@ -21,7 +23,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
@@ -36,7 +38,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           children: [
             LinksCardWidget(
               options: defaultOptionsList,
-              onClose: _controller.showMainView,
+              onClose: _controller.goBack,
             ),
             const SizedBox(height: 5),
           ],
@@ -46,7 +48,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CardRounded(
-            onClose:_controller.showCollapsedView,
+            onClose: _controller.goBack,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -66,7 +68,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                 DetailsButton(
                   title: _defaultDetailsButtonDesc,
                   color: HelpColors.blue,
-                  onTap: _controller.showOptionsView,
+                  onTap: _controller.goForward,
                 ),
               ],
             ),
@@ -78,7 +80,10 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           ),
         ],
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.goForward,
+        child: const FlagCard(),
+      ),
     );
   }
 }
