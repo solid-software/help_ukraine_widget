@@ -22,14 +22,10 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  /// A variable that is used to set the size of the icon.
-  final double iconSize;
-
   /// A variable that is used to set the color of the icon.
   final Color? iconColor;
 
-  static const _defaultHeight = 51.0;
-  static const _defaultIconSize = 14.0;
+  static const _defaultHeight = 53.0;
 
   ///Constructor
   const HelpOptionButton({
@@ -37,7 +33,6 @@ class HelpOptionButton extends StatelessWidget {
     required this.child,
     Key? key,
     this.height = _defaultHeight,
-    this.iconSize = _defaultIconSize,
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
@@ -56,7 +51,7 @@ class HelpOptionButton extends StatelessWidget {
         height: height,
         padding: const EdgeInsets.only(
           left: 25,
-          right: 40,
+          right: 38,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

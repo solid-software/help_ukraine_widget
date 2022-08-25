@@ -7,7 +7,6 @@ import 'package:help_ukraine_widget/src/theme/font_config.dart';
 const defaultOptionsList = [
   HelpOptionButton(
     title: 'Donate',
-    iconSize: 20,
     child: Text(
       Emojis.moneyWithWings,
       style: TextStyle(
@@ -19,7 +18,6 @@ const defaultOptionsList = [
   ),
   HelpOptionButton(
     title: 'Support Ukraine',
-    iconSize: 19,
     iconColor: Colors.redAccent,
     child: Text(
       Emojis.heart,
@@ -33,7 +31,6 @@ const defaultOptionsList = [
   ),
   HelpOptionButton(
     title: 'Share this widget',
-    iconSize: 19,
     iconColor: Colors.blueAccent,
     child: Text(
       Emojis.pushpin,
