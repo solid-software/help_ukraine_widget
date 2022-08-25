@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/src/components/card_rounded/close_button_card_rounded.dart';
+import 'package:help_ukraine_widget/src/components/xmark.dart';
 
 /// This is a card widget with a rounded border, that has optional close button
 /// at the top right.
@@ -33,15 +33,15 @@ class CardRounded extends StatelessWidget {
   /// Alignment.topRight and Alignment.bottomRight
   final Alignment closeButtonAlignment;
 
-  /// A variable that sets the icon of the close button.
-  final IconData? customButtonIcon;
+  /// Icon for a close button
+  final Widget? closeButtonIcon;
 
   static const _elevation = 4.0;
   static const _borderRadius = 13.0;
 
   static const _defaultOffset = 5.0;
 
-  ///Constructor
+  /// Constructor
   const CardRounded({
     Key? key,
     this.child,
@@ -49,8 +49,8 @@ class CardRounded extends StatelessWidget {
     this.height,
     this.width,
     this.onClose,
+    this.closeButtonIcon,
     this.closeButtonAlignment = const Alignment(1.02, -1.05),
-    this.customButtonIcon = SFSymbols.xmark,
     this.padding = const EdgeInsets.symmetric(
       vertical: 10,
       horizontal: 10,
@@ -81,9 +81,21 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
+      const _iconSize = 10.0;
+      const _padding = 6.4;
+      const _lineWidth = 2.0;
+      final _defaultCloseButtonIcon = Container(
+        padding: const EdgeInsets.all(_padding),
+        child: const XMark(
+          size: Size.square(_iconSize),
+          color: Colors.white,
+          lineWidth: _lineWidth,
+        ),
+      );
+
       final button = CloseButtonCardRounded(
         onTap: onClose,
-        iconData: customButtonIcon,
+        child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
       _positionedCloseButton = Positioned.fill(
         child: Align(alignment: closeButtonAlignment, child: button),
