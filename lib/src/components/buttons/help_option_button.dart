@@ -22,9 +22,6 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  /// A variable that is used to set the color of the icon.
-  final Color? iconColor;
-
   static const _defaultHeight = 53.0;
 
   ///Constructor
@@ -36,7 +33,6 @@ class HelpOptionButton extends StatelessWidget {
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
-    this.iconColor,
   }) : super(key: key);
 
   @override
