@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// This controller allows to traverse a list one step at a time,
 /// while retaining direction of last step ([didTraverseForward]).
-class TraverseController<T> extends ValueNotifier<T> {
+class TraverseController<T> extends ChangeNotifier {
   /// list to traverse
   final List<T> order;
   int _currentItemIndex = 0;
@@ -16,8 +16,8 @@ class TraverseController<T> extends ValueNotifier<T> {
 
   /// Constructor
   TraverseController(this.order, {T? startFrom})
-      : super(startFrom ?? order.first) {
-    _currentItemIndex = order.indexOf(value);
+      : super() {
+    _currentItemIndex = order.indexOf(startFrom ?? order.first);
   }
 
   /// go to next item (if possible),

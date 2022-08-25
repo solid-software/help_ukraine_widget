@@ -49,9 +49,9 @@ class HelpWidget extends StatelessWidget {
 
     return Container(
       constraints: constraints,
-      child: ValueListenableBuilder(
-        valueListenable: _controller,
-        builder: (context, _, __) {
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, _) {
           final view = _controller.currentItem;
 
           return HelpWidgetAnimationBuilder(
