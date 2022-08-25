@@ -36,6 +36,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(width: 2),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -48,7 +49,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             color: color,
             size: _iconSize,
           ),
-          const SizedBox(width: 5),
         ],
       ),
     );

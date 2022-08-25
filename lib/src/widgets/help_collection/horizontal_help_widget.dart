@@ -72,6 +72,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         onTap: _controller.showMainView,
         child: const FlagCard(),
       ),
+      constraints: const BoxConstraints.tightFor(width: 380),
     );
   }
 }
