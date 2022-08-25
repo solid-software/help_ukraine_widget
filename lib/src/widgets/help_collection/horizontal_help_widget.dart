@@ -54,7 +54,6 @@ class HorizontalHelpWidget extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                    // height: 1.33,
                     fontFamily: FontConfig.family,
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
