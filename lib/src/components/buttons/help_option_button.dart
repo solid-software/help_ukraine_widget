@@ -3,8 +3,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
-	/// TextStyle for title
-	final TextStyle? textStyle;
+  /// TextStyle for title
+  final TextStyle? textStyle;
 
   /// A variable that is used to set the height of the button.
   final double height;
@@ -36,7 +36,7 @@ class HelpOptionButton extends StatelessWidget {
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
-		this.textStyle,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -60,12 +60,13 @@ class HelpOptionButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: textStyle ?? theme.textTheme.headline4?.copyWith(
-                color: HelpColors.blue,
-                fontWeight: FontWeight.w600,
-                height: lineHeight,
-                letterSpacing: letterSpacing,
-              ),
+              style: textStyle ??
+                  theme.textTheme.headline4?.copyWith(
+                    color: HelpColors.blue,
+                    fontWeight: FontWeight.w600,
+                    height: lineHeight,
+                    letterSpacing: letterSpacing,
+                  ),
             ),
             child,
           ],

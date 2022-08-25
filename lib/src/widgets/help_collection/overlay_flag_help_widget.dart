@@ -28,12 +28,12 @@ class OverlayFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-		const linkFontSize = 18.0;
+    const linkFontSize = 18.0;
 
-		const mainViewTitleLetterSpacing = 0.2;
-		const mainViewTitleFontSize = 19.6;
+    const mainViewTitleLetterSpacing = 0.2;
+    const mainViewTitleFontSize = 19.6;
 
-		const detailsButtonFontSize = 18.0;
+    const detailsButtonFontSize = 18.0;
     const detailsButtonLetterSpacing = -0.2;
     const detailsButtonSpacingToChevron = 8.0;
     const detailsButtonSpacingAfterChevron = 6.0;
@@ -49,8 +49,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             DefaultLinksCardWidget(
-							textStyle: theme.textTheme.headline4?.copyWith(
-								fontSize: linkFontSize,
+              textStyle: theme.textTheme.headline4?.copyWith(
+                fontSize: linkFontSize,
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w500,
               ),

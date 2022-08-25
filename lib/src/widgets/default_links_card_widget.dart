@@ -12,7 +12,7 @@ class DefaultLinksCardWidget extends StatelessWidget {
   );
 
   /// textStyle for link titles
-	final TextStyle? textStyle;
+  final TextStyle? textStyle;
 
   /// textStyle for icons
   final TextStyle iconTextStyle;
@@ -22,17 +22,17 @@ class DefaultLinksCardWidget extends StatelessWidget {
 
   ///
   const DefaultLinksCardWidget({
-		super.key,
-		this.iconTextStyle = _defaultIconTextStyle,
-		this.textStyle,
-		required this.onClose,
-	});
+    super.key,
+    this.iconTextStyle = _defaultIconTextStyle,
+    this.textStyle,
+    required this.onClose,
+  });
 
   @override
   Widget build(BuildContext context) {
     final defaultOptionsList = [
       HelpOptionButton(
-				textStyle: textStyle,
+        textStyle: textStyle,
         title: 'Donate',
         child: Text(
           Emojis.moneyWithWings,
@@ -40,7 +40,7 @@ class DefaultLinksCardWidget extends StatelessWidget {
         ),
       ),
       HelpOptionButton(
-				textStyle: textStyle,
+        textStyle: textStyle,
         title: 'Support Ukraine',
         child: Text(
           Emojis.heart,
@@ -50,7 +50,7 @@ class DefaultLinksCardWidget extends StatelessWidget {
         ),
       ),
       HelpOptionButton(
-				textStyle: textStyle,
+        textStyle: textStyle,
         title: 'Share this widget',
         child: Text(
           Emojis.pushpin,
