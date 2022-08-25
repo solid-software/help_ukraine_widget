@@ -28,7 +28,7 @@ class DetailsButton extends StatelessWidget {
     const chevronHeight = 6.4;
 
     const fontSize = 19.2;
-    const letterSpacing = -0.9;
+    const letterSpacing = 0.1;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
