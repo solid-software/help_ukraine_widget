@@ -22,7 +22,7 @@ class HelpWidget extends StatelessWidget {
   /// the widget is on options list view.
   final Widget optionsView;
 
-  final HelpWidgetViewController _controller;
+  final TraverseController<HelpWidgetView> _controller;
 
   /// It's a parameter that defines the allowed size of the widget.
   final BoxConstraints? constraints;
@@ -33,7 +33,7 @@ class HelpWidget extends StatelessWidget {
     required this.collapsedView,
     required this.optionsView,
     required this.mainView,
-    required HelpWidgetViewController controller,
+    required TraverseController<HelpWidgetView> controller,
     this.axis = Axis.vertical,
     this.constraints,
   })  : _controller = controller,
@@ -49,12 +49,14 @@ class HelpWidget extends StatelessWidget {
 
     return Container(
       constraints: constraints,
-      child: ValueListenableBuilder<HelpWidgetView>(
+      child: ValueListenableBuilder<int>(
         valueListenable: _controller,
-        builder: (context, view, _) {
+        builder: (context, _, __) {
+					final view = _controller.currentItem;
+
           return HelpWidgetAnimationBuilder(
             axis: axis,
-            transitionForward: _controller.transitionForward,
+            transitionForward: _controller.didTraverseForward,
             child: SizedBox(
               key: ValueKey(view),
               child: viewMap[view],
