@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Slide -in and -out animation
-class HelpWidgetAnimationBuilder extends StatelessWidget {
+class AnimatedViewTransition extends StatelessWidget {
   /// child for [SlideTransition]
   final Widget? child;
 
@@ -13,7 +13,7 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
   final bool transitionForward;
 
   /// constructor
-  const HelpWidgetAnimationBuilder({
+  const AnimatedViewTransition({
     Key? key,
     required this.child,
     required this.axis,
