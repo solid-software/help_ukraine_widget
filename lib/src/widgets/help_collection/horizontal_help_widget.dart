@@ -3,11 +3,9 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
 class HorizontalHelpWidget extends StatelessWidget {
-  final _controller = TraverseController([
-		HelpWidgetView.collapsed,
-		HelpWidgetView.main,
-		HelpWidgetView.options
-	]);
+  final _controller = TraverseController(
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+  );
 
   /// A title of a widget.
   final String title;

@@ -52,7 +52,7 @@ class HelpWidget extends StatelessWidget {
       child: ValueListenableBuilder<int>(
         valueListenable: _controller,
         builder: (context, _, __) {
-					final view = _controller.currentItem;
+          final view = _controller.currentItem;
 
           return HelpWidgetAnimationBuilder(
             axis: axis,
