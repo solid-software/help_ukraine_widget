@@ -32,9 +32,9 @@ class LinksCardWidget extends StatelessWidget {
         const Divider(
           height: 8,
           thickness: 0.0,
-          indent: 4,
-          endIndent: 4,
-          // color: Color.fromARGB(0, 0, 0, 0)
+          indent: 1.5,
+          endIndent: 1.5,
+          color: Colors.black38,
         ),
         const SizedBox(
           height: 8,
