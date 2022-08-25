@@ -62,11 +62,24 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                         fontSize: 19.6,
                       ),
                 ),
-                const Divider(
-                  height: 40,
-                  // thickness: 0.1,
-                  // color: Colors.black,
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 3,
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: const Color(0xffe5e5e5),
+                        height: 1,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 3,
+                    ),
+                  ],
                 ),
+                const SizedBox(height: 14),
                 DetailsButton(
                   title: _defaultDetailsButtonDesc,
                   color: HelpColors.blue,
@@ -76,7 +89,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: -21,
+            top: -20,
             left: 102,
             child: UkraineFlagWidget(),
           ),
