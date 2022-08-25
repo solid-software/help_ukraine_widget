@@ -58,7 +58,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   title,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
                         fontWeight: FontWeight.w600,
-                        letterSpacing: -0.1,
+                        letterSpacing: 0.2,
                         fontSize: 19.6,
                       ),
                 ),
