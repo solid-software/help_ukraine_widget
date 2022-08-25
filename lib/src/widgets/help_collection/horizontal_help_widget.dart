@@ -3,7 +3,9 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
 class HorizontalHelpWidget extends StatelessWidget {
-  final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+  final _controller = TraverseController(
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+  );
 
   /// A title of a widget.
   final String title;
@@ -29,7 +31,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
         child: LinksCardWidget(
           options: defaultOptionsList,
-          onClose: _controller.showMainView,
+          onClose: _controller.goBack,
         ),
       ),
       mainView: CardRounded(
@@ -39,7 +41,7 @@ class HorizontalHelpWidget extends StatelessWidget {
           left: 12,
           right: 12,
         ),
-        onClose: _controller.showCollapsedView,
+        onClose: _controller.goBack,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -49,9 +51,6 @@ class HorizontalHelpWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // const Padding(
-                //   padding: EdgeInsets.only(top: 2.0),
-                // ),
                 Text(
                   title,
                   style: const TextStyle(
@@ -63,14 +62,17 @@ class HorizontalHelpWidget extends StatelessWidget {
                 DetailsButton(
                   title: detailsButtonDescription,
                   color: HelpColors.blue,
-                  onTap: _controller.showOptionsView,
+                  onTap: _controller.goForward,
                 ),
               ],
             ),
           ],
         ),
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.goForward,
+        child: const FlagCard(),
+      ),
     );
   }
 }
