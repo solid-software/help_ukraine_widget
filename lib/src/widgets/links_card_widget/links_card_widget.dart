@@ -35,7 +35,7 @@ class LinksCardWidget extends StatelessWidget {
         Row(
           children: [
             const SizedBox(
-              width: 3,
+              width: 12,
             ),
             Expanded(
               child: Container(
@@ -44,7 +44,7 @@ class LinksCardWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 3,
+              width: 12,
             ),
           ],
         ),
