@@ -145,23 +145,6 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                  // DetailsButton(
-                  //   color: HelpColors.blue,
-                  //   onTap: _controller.goForward,
-                  //   spacingToChevron: detailsButtonSpacingToChevron,
-                  //   spacingAfterChevron: detailsButtonSpacingAfterChevron,
-                  //   child: const Text(
-                  //     _defaultDetailsButtonDesc,
-                  //     style: TextStyle(
-                  //       fontFamily: FontConfig.family,
-                  //       fontSize: detailsButtonFontSize,
-                  //       fontWeight: FontWeight.w600,
-                  //       letterSpacing: detailsButtonLetterSpacing,
-                  //       color: HelpColors.blue,
-                  //     ),
-                  //   ),
-                  // ),
                 ),
               ],
             ),

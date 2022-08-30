@@ -33,7 +33,6 @@ class DetailsButton extends StatelessWidget {
     required this.onTap,
     required this.color,
     required this.child,
-
     this.spacingToChevron = _defaultSpacingToChevron,
     this.spacingAfterChevron = _defaultSpacingAfterChevron,
   }) : super(key: key);
@@ -53,16 +52,6 @@ class DetailsButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             child,
-            // Text(
-            //   title,
-            //   style: TextStyle(
-            //     fontFamily: FontConfig.family,
-            //     fontSize: fontSize,
-            //     fontWeight: FontWeight.w600,
-            //     letterSpacing: letterSpacing,
-            //     color: color,
-            //   ),
-            //),
             SizedBox(width: spacingToChevron),
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
