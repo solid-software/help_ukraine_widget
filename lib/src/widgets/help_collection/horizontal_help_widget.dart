@@ -64,11 +64,10 @@ class HorizontalHelpWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 0.5),
                 DetailsButton(
-                  title: detailsButtonDescription,
                   color: HelpColors.blue,
                   onTap: _controller.goForward,
                   child: Text(
-                    title,
+                    detailsButtonDescription,
                     style: const TextStyle(
                       fontFamily: FontConfig.family,
                       fontSize: DetailsButton.defaultFontSize,

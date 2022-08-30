@@ -9,9 +9,6 @@ class DetailsButton extends StatelessWidget {
   /// It's a color that changes appearance of text and icon.
   final Color color;
 
-  /// It's a variable that stores the title of the button.
-  final String title;
-
   /// how much free space should be between title and chevron.
   final double spacingToChevron;
 
@@ -35,8 +32,8 @@ class DetailsButton extends StatelessWidget {
     Key? key,
     required this.onTap,
     required this.color,
-    required this.title,
     required this.child,
+
     this.spacingToChevron = _defaultSpacingToChevron,
     this.spacingAfterChevron = _defaultSpacingAfterChevron,
   }) : super(key: key);
@@ -56,6 +53,16 @@ class DetailsButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             child,
+            // Text(
+            //   title,
+            //   style: TextStyle(
+            //     fontFamily: FontConfig.family,
+            //     fontSize: fontSize,
+            //     fontWeight: FontWeight.w600,
+            //     letterSpacing: letterSpacing,
+            //     color: color,
+            //   ),
+            //),
             SizedBox(width: spacingToChevron),
             Padding(
               padding: const EdgeInsets.only(top: 4.0),

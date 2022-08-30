@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 import 'package:help_ukraine_widget/src/widgets/default_links_card_widget.dart';
 
@@ -35,6 +36,11 @@ class OverlayFlagHelpWidget extends StatelessWidget {
 
     const detailsButtonFontSize = 18.0;
     const detailsButtonLetterSpacing = -0.2;
+
+    const chevronWidth = 6.4;
+    const chevronHeight = 6.4;
+    const lineWidth = 1.8;
+
     const detailsButtonSpacingToChevron = 8.0;
     const detailsButtonSpacingAfterChevron = 6.0;
 
@@ -100,23 +106,62 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 18.0, bottom: 4.0),
-                  child: DetailsButton(
-                    title: _defaultDetailsButtonDesc,
-                    color: HelpColors.blue,
-                    onTap: _controller.goForward,
-                    spacingToChevron: detailsButtonSpacingToChevron,
-                    spacingAfterChevron: detailsButtonSpacingAfterChevron,
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                        fontFamily: FontConfig.family,
-                        fontSize: detailsButtonFontSize,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: detailsButtonLetterSpacing,
-                        color: HelpColors.blue,
-                      ),
+                  child: TextButton(
+                    onPressed: () {
+                      _controller.goForward();
+                    },
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          _defaultDetailsButtonDesc,
+                          style: TextStyle(
+                            fontFamily: FontConfig.family,
+                            fontSize: detailsButtonFontSize,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: detailsButtonLetterSpacing,
+                            color: HelpColors.blue,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 4.0,
+                            right: detailsButtonSpacingToChevron,
+                            left: detailsButtonSpacingAfterChevron,
+                          ),
+                          child: SizedBox(
+                            width: chevronWidth,
+                            height: chevronHeight,
+                            child: ChevronDown(
+                              color: HelpColors.blue,
+                              size: Size(chevronWidth, chevronHeight),
+                              lineWidth: lineWidth,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
+
+                  // DetailsButton(
+                  //   color: HelpColors.blue,
+                  //   onTap: _controller.goForward,
+                  //   spacingToChevron: detailsButtonSpacingToChevron,
+                  //   spacingAfterChevron: detailsButtonSpacingAfterChevron,
+                  //   child: const Text(
+                  //     _defaultDetailsButtonDesc,
+                  //     style: TextStyle(
+                  //       fontFamily: FontConfig.family,
+                  //       fontSize: detailsButtonFontSize,
+                  //       fontWeight: FontWeight.w600,
+                  //       letterSpacing: detailsButtonLetterSpacing,
+                  //       color: HelpColors.blue,
+                  //     ),
+                  //   ),
+                  // ),
                 ),
               ],
             ),
