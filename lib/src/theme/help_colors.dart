@@ -8,5 +8,8 @@ class HelpColors {
   ///
   static const blue = Color.fromRGBO(37, 89, 181, 1);
 
+  ///
+  static const separatorColor = Color(0xffe5e5e5);
+
   const HelpColors._();
 }

@@ -91,7 +91,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Container(
-                          color: const Color(0xffe5e5e5),
+                          color: HelpColors.separatorColor,
                           height: 1,
                         ),
                       ),
