@@ -29,27 +29,21 @@ class LinksCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: options,
         ),
-        const SizedBox(
-          height: 4,
-        ),
-        Row(
-          children: [
-            const SizedBox(
-              width: 12,
-            ),
-            Expanded(
-              child: Container(
-                color: const Color(0xffe5e5e5),
-                height: 1,
+        Padding(
+          padding: const EdgeInsets.only(top: 4.0, bottom: 10.0),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 12.0, left: 12.0),
+                child: Expanded(
+                  child: Container(
+                    color: const Color(0xffe5e5e5),
+                    height: 1,
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 12,
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 10,
+            ],
+          ),
         ),
         LinksCardButton(onTap: onClose),
       ],

@@ -74,43 +74,42 @@ class OverlayFlagHelpWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 31),
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: mainViewTitleLetterSpacing,
-                        fontSize: mainViewTitleFontSize,
+                Padding(
+                  padding: const EdgeInsets.only(top: 31.0, bottom: 14),
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: mainViewTitleLetterSpacing,
+                          fontSize: mainViewTitleFontSize,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 3.0, right: 3.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: const Color(0xffe5e5e5),
+                          height: 1,
+                        ),
                       ),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 14),
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 3,
-                    ),
-                    Expanded(
-                      child: Container(
-                        color: const Color(0xffe5e5e5),
-                        height: 1,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 3,
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 18.0, bottom: 4.0),
+                  child: DetailsButton(
+                    title: _defaultDetailsButtonDesc,
+                    color: HelpColors.blue,
+                    onTap: _controller.goForward,
+                    fontSize: detailsButtonFontSize,
+                    letterSpacing: detailsButtonLetterSpacing,
+                    spacingToChevron: detailsButtonSpacingToChevron,
+                    spacingAfterChevron: detailsButtonSpacingAfterChevron,
+                  ),
                 ),
-                const SizedBox(height: 18),
-                DetailsButton(
-                  title: _defaultDetailsButtonDesc,
-                  color: HelpColors.blue,
-                  onTap: _controller.goForward,
-                  fontSize: detailsButtonFontSize,
-                  letterSpacing: detailsButtonLetterSpacing,
-                  spacingToChevron: detailsButtonSpacingToChevron,
-                  spacingAfterChevron: detailsButtonSpacingAfterChevron,
-                ),
-                const SizedBox(height: 4),
               ],
             ),
           ),
