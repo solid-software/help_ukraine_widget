@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/components/mini_chevron_left.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
-	final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+	final _controller = TraverseController(
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options]
+  );
 
   /// A title of widget.
   final String title;
@@ -26,6 +30,8 @@ class SquareHelpWidget extends StatelessWidget {
   static const _topClosePosition = -1.0;
   static const _bottomClosePosition = -2.0;
   static const _optionsWidth = 246.39;
+  static  const _lineWidth = 2.0;
+  static const _iconSize = 2.0;
 
   /// Constructor
   SquareHelpWidget({
@@ -44,9 +50,12 @@ class SquareHelpWidget extends StatelessWidget {
       ),
       axis: Axis.horizontal,
       optionsView: CardRounded(
-        customButtonIcon: SFSymbols.chevron_left,
-        onClose: _controller.showMainView,
-        // closeButtonAlignment: Alignment.bottomRight,
+        onClose: _controller.goBack,
+        closeButtonIcon: const MiniChevronLeft(
+          size: Size.square(_iconSize),
+          color: Colors.white,
+          lineWidth: _lineWidth,
+        ),
         rightPosition: _rightClosePosition,
         bottomPosition: _bottomClosePosition,
         padding: const EdgeInsets.symmetric(vertical: 12.8),
@@ -65,7 +74,7 @@ class SquareHelpWidget extends StatelessWidget {
           left: 12.8,
           right: 12.8,
         ),
-        onClose: _controller.showCollapsedView,
+        onClose: _controller.goBack,
         rightPosition: _rightClosePosition,
         topPosition: _topClosePosition,
         child: Column(
@@ -91,13 +100,16 @@ class SquareHelpWidget extends StatelessWidget {
             ),
             const SizedBox(height: 12.8),
             RoundedButton(
-              onTap: _controller.showOptionsView,
+              onTap: _controller.goForward,
               title: _defaultDetailsButtonDesc,
             ),
           ],
         ),
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.goForward,
+        child: const FlagCard(),
+      ),
     );
   }
 }

@@ -41,6 +41,8 @@ class HelpOptionButton extends StatelessWidget {
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
+    this.iconSize = _defaultIconSize,
+    this.iconColor,
   }) : super(key: key);
 
   @override
