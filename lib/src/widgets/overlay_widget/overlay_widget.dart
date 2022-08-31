@@ -25,12 +25,13 @@ class OverlayWidget extends StatefulWidget {
 
 class _OverlayWidgetState extends State<OverlayWidget> {
   bool _isVisible = true;
-
+  OverlayEntry? _overlay;
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => showOverlay(widget.overlayWidget));
+    final overlay = OverlayEntry(builder: (context) => widget.overlayWidget);
+    _overlay = overlay;
+    WidgetsBinding.instance.addPostFrameCallback((_) => _showOverlay(overlay));
   }
 
   @override
@@ -42,15 +43,7 @@ class _OverlayWidgetState extends State<OverlayWidget> {
           alignment: widget.alignment,
           child: IconButton(
             color: Colors.purple,
-            onPressed: () {
-              if (!_isVisible) {
-                showOverlay(widget.overlayWidget);
-                _isVisible = true;
-              } else {
-                hideOverlay(entry);
-                _isVisible = false;
-              }
-            },
+            onPressed: _onTap,
             icon: const Icon(Icons.chevron_right),
           ),
         )
@@ -58,17 +51,28 @@ class _OverlayWidgetState extends State<OverlayWidget> {
     );
   }
 
-  void showOverlay(Widget overlayWidget) {
-    OverlayEntry? entry;
-    entry = OverlayEntry(
-      builder: (context) => overlayWidget,
-    );
-    final overlay = Overlay.of(context);
-
-    overlay?.insert(entry);
+  void _onTap() {
+    _isVisible = !_isVisible;
+    _onVisibilityChanged(_isVisible);
   }
 
-  void hideOverlay(OverlayEntry? entry) {
-    entry?.remove();
+  void _onVisibilityChanged(bool visible) {
+    final overlay = _overlay;
+    if (overlay == null) return;
+    if (visible) {
+      _showOverlay(overlay);
+    } else {
+      overlay.remove();
+    }
+  }
+
+  void _showOverlay(OverlayEntry overlay) {
+    Overlay.of(context)?.insert(overlay);
+  }
+
+  @override
+  void dispose() {
+    _overlay?.dispose();
+    super.dispose();
   }
 }
