@@ -4,6 +4,12 @@ import 'package:widgetbook/widgetbook.dart';
 
 final _backgroundColor = Colors.grey.withOpacity(0.5);
 
+/// Test height.
+const testHeight = 1000.0;
+
+/// Test width
+const testWidth = 600.0;
+
 /// Definition of using 4 different widget inherited from [HelpWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
       name: 'HelpWidget',
