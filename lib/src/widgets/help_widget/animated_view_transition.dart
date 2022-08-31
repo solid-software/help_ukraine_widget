@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/src/widgets/help_widget/help_widget_slide_transition.dart';
 
-/// [AnimationBuilder] for [HelpWidget]
-class HelpWidgetAnimationBuilder extends StatelessWidget {
-	/// child for [SlideTransition]
+/// Slide -in and -out animation
+class AnimatedViewTransition extends StatelessWidget {
+  /// child for [SlideTransition]
   final Widget? child;
 
-	/// animation axis
+  /// animation axis
   final Axis axis;
 
-	/// animation direction
-  final bool isPositiveDirection;
+  /// slide -in or -out animation is chosen by this field
+  /// true => in
+  final bool transitionForward;
 
-	/// constructor
-  const HelpWidgetAnimationBuilder({
+  /// constructor
+  const AnimatedViewTransition({
     Key? key,
     required this.child,
     required this.axis,
-    required this.isPositiveDirection,
+    required this.transitionForward,
   }) : super(key: key);
 
   Animation<Offset> _slideAnimation(
@@ -52,11 +52,17 @@ class HelpWidgetAnimationBuilder extends StatelessWidget {
 
     final fadeAnimation = _fadeAnimation(animation);
 
+    const padding = EdgeInsets.all(12.0);
+
     final transition = FadeTransition(
       opacity: fadeAnimation,
-      child: child.key == const ValueKey(0) || !isPositiveDirection
-          ? HelpWidgetSlideTransition(inAnimation, child)
-          : HelpWidgetSlideTransition(outAnimation, child),
+      child: SlideTransition(
+        position: transitionForward ? inAnimation : outAnimation,
+        child: Padding(
+          padding: padding,
+          child: child,
+        ),
+      ),
     );
 
     return transition;

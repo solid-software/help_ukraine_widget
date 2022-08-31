@@ -36,7 +36,10 @@ WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
                 onTap: onTap,
                 title: title,
                 backgroundColor: color,
-                icon: SFSymbols.chevron_down,
+                child: const Icon(
+                  SFSymbols.chevron_down,
+                  size: 14,
+                ),
               ),
             );
           },
