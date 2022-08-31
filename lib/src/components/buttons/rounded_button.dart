@@ -26,11 +26,11 @@ class _RoundedButtonState extends State<RoundedButton> {
   bool _isHovered = false;
 
   static const _width = 135.0;
-  static const _height = 40.0;
+  static const _height = 41.59;
 
-  static const _borderRadius = 13.0;
+  static const _borderRadius = 6.4;
 
-  static const _fontSize = 18.0;
+  static const _fontSize = 19.2;
   static const _iconSize = 15.0;
 
   @override
@@ -55,16 +55,20 @@ class _RoundedButtonState extends State<RoundedButton> {
           children: [
             Text(
               widget.title,
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: Colors.blueAccent,
+              textAlign: TextAlign.center,
+              style: 
+              Theme.of(context).textTheme.headline6?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: HelpColors.blue,
                     fontSize: _fontSize,
+                    height: 1.0,
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
             const Icon(
               SFSymbols.chevron_right,
               size: _iconSize,
-              color: Colors.blueAccent,
+              color: HelpColors.blue,
             ),
           ],
         ),

@@ -19,6 +19,13 @@ class SquareHelpWidget extends StatelessWidget {
   static const _defaultDescription = 'Help Ukraine!';
   static const _defaultDetailsButtonDesc = 'See how';
   static const _widgetWidth = 320.0;
+  static const _lineHeight = 1.28571;
+  static const _fontSize = 22.4;
+  static const _textOpacity = 0.8;
+  static const _rightClosePosition = -3.0;
+  static const _topClosePosition = -1.0;
+  static const _bottomClosePosition = -2.0;
+  static const _optionsWidth = 246.39;
 
   /// Constructor
   SquareHelpWidget({
@@ -39,33 +46,50 @@ class SquareHelpWidget extends StatelessWidget {
       optionsView: CardRounded(
         customButtonIcon: SFSymbols.chevron_left,
         onClose: _controller.showMainView,
-        closeButtonAlignment: Alignment.bottomRight,
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: defaultOptionsList,
+        // closeButtonAlignment: Alignment.bottomRight,
+        rightPosition: _rightClosePosition,
+        bottomPosition: _bottomClosePosition,
+        padding: const EdgeInsets.symmetric(vertical: 12.8),
+        child: SizedBox(
+          width: _optionsWidth,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: defaultOptionsList,
+          ),
         ),
       ),
       mainView: CardRounded(
+        padding: const EdgeInsets.only(
+          top: 25.6,
+          bottom: 12.8,
+          left: 12.8,
+          right: 12.8,
+        ),
         onClose: _controller.showCollapsedView,
+        rightPosition: _rightClosePosition,
+        topPosition: _topClosePosition,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               title,
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w700,
+                    fontSize: _fontSize,
+                    height: _lineHeight,
+                    color: HelpColors.blue.withOpacity(_textOpacity),
                   ),
             ),
             Text(
               description,
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.yellow,
+                    fontWeight: FontWeight.w700,
+                    fontSize: _fontSize,
+                    height: _lineHeight,
+                    color: HelpColors.yellow.withOpacity(_textOpacity),
                   ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 12.8),
             RoundedButton(
               onTap: _controller.showOptionsView,
               title: _defaultDetailsButtonDesc,
