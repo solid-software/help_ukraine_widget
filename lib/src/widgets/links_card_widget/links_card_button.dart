@@ -38,7 +38,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 4, right: 6),
+            padding: const EdgeInsets.only(left: 7, right: 6),
             child: Text(
               'Hide',
               style: Theme.of(context).textTheme.headline6?.copyWith(

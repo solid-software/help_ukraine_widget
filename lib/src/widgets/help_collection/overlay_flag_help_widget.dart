@@ -31,11 +31,11 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     const linkFontSize = 18.0;
 
-    const mainViewTitleLetterSpacing = 0.2;
+    const mainViewTitleLetterSpacing = 0.6;
     const mainViewTitleFontSize = 19.6;
 
     const detailsButtonFontSize = 18.0;
-    const detailsButtonLetterSpacing = -0.2;
+    const detailsButtonLetterSpacing = 0.6;
 
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
@@ -81,7 +81,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 31.0, bottom: 14),
+                  padding: const EdgeInsets.only(top: 31.0, bottom: 15),
                   child: Text(
                     title,
                     style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -105,7 +105,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 18.0, bottom: 4.0),
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
                   child: TextButton(
                     onPressed: () {
                       _controller.goForward();
