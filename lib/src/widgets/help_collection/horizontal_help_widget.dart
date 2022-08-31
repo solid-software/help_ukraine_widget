@@ -28,7 +28,6 @@ class HorizontalHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     const detailsButtonSpacingToChevron = 8.0;
     const detailsButtonSpacingAfterChevron = 6.0;
     const chevronWidth = 6.4;
@@ -89,7 +88,7 @@ class HorizontalHelpWidget extends StatelessWidget {
                           color: HelpColors.blue,
                         ),
                       ),
-                       const Padding(
+                      const Padding(
                         padding: EdgeInsets.only(
                           top: 4.0,
                           right: detailsButtonSpacingToChevron,
