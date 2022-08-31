@@ -56,8 +56,7 @@ class _RoundedButtonState extends State<RoundedButton> {
             Text(
               widget.title,
               textAlign: TextAlign.center,
-              style: 
-              Theme.of(context).textTheme.headline6?.copyWith(
+              style: Theme.of(context).textTheme.headline6?.copyWith(
                     fontWeight: FontWeight.w500,
                     color: HelpColors.blue,
                     fontSize: _fontSize,

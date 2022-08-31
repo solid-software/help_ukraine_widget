@@ -4,7 +4,7 @@ import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
-	final _controller = TraverseController(
+  final _controller = TraverseController(
     [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
   );
 
@@ -28,9 +28,9 @@ class SquareHelpWidget extends StatelessWidget {
   static const _topClosePosition = -1.0;
   static const _bottomClosePosition = -2.0;
   static const _optionsWidth = 246.39;
-  static  const _lineWidth = 2.0;
+  static const _lineWidth = 2.0;
   static const _iconSize = 2.0;
-  static const _angle = 3.1415/2;
+  static const _angle = 3.1415 / 2;
   static const _scaleX = 0.7;
   static const _scaleY = 0.5;
 
