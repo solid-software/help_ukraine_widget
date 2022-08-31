@@ -48,8 +48,6 @@ class HelpOptionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    const lineHeight = 0.6;
-    const letterSpacing = -0.42;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
@@ -66,7 +64,7 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w500,
-                fontSize: _fontSize
+                fontSize: _fontSize,
               ),
             ),
             child,

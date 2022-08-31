@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
-import 'package:help_ukraine_widget/src/components/mini_chevron_left.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
 	final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options]
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
   );
 
   /// A title of widget.
@@ -32,6 +30,9 @@ class SquareHelpWidget extends StatelessWidget {
   static const _optionsWidth = 246.39;
   static  const _lineWidth = 2.0;
   static const _iconSize = 2.0;
+  static const _angle = 3.1415/2;
+  static const _scaleX = 0.7;
+  static const _scaleY = 0.5;
 
   /// Constructor
   SquareHelpWidget({
@@ -51,10 +52,18 @@ class SquareHelpWidget extends StatelessWidget {
       axis: Axis.horizontal,
       optionsView: CardRounded(
         onClose: _controller.goBack,
-        closeButtonIcon: const MiniChevronLeft(
-          size: Size.square(_iconSize),
-          color: Colors.white,
-          lineWidth: _lineWidth,
+        closeButtonIcon: Transform.scale(
+          scaleX: _scaleX,
+          scaleY: _scaleY,
+          alignment: Alignment.centerLeft,
+          child: Transform.rotate(
+            angle: _angle,
+            child: const ChevronDown(
+              size: Size.square(_iconSize),
+              color: Colors.white,
+              lineWidth: _lineWidth,
+            ),
+          ),
         ),
         rightPosition: _rightClosePosition,
         bottomPosition: _bottomClosePosition,
