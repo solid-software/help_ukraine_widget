@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 
 /// [RoundedButton] is a rounded button with text that states underlined
 /// when onHover active.
@@ -33,10 +33,18 @@ class _RoundedButtonState extends State<RoundedButton> {
   static const _fontSize = 19.2;
   static const _iconSize = 15.0;
 
+  static const _letterSpacing = -0.65;
+
+  static const _lineWidth = 4.0;
+  static const _angle = -3.1415 / 2;
+  static const _scaleX = 0.5;
+  static const _scaleY = 0.5;
+  static const _offset = Offset(10, 5);
+
+  static const _additionalSpace = 10.0;
+
   @override
   Widget build(BuildContext context) {
-    final color = Colors.blueAccent.withOpacity(0.2);
-
     return HoverWrapper(
       onHoverChanged: (value) {
         setState(() => _isHovered = value);
@@ -48,11 +56,14 @@ class _RoundedButtonState extends State<RoundedButton> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(_borderRadius),
-          color: color,
+          color: HelpColors.lightBlue,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              width: _additionalSpace,
+            ),
             Text(
               widget.title,
               textAlign: TextAlign.center,
@@ -61,13 +72,25 @@ class _RoundedButtonState extends State<RoundedButton> {
                     color: HelpColors.blue,
                     fontSize: _fontSize,
                     height: 1.0,
+                    letterSpacing: _letterSpacing,
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
-            const Icon(
-              SFSymbols.chevron_right,
-              size: _iconSize,
-              color: HelpColors.blue,
+            Transform.scale(
+              scaleX: _scaleX,
+              scaleY: _scaleY,
+              alignment: Alignment.centerLeft,
+              child: Transform.translate(
+                offset: _offset,
+                child: Transform.rotate(
+                  angle: _angle,
+                  child: const ChevronDown(
+                    size: Size.square(_iconSize),
+                    color: HelpColors.blue,
+                    lineWidth: _lineWidth,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

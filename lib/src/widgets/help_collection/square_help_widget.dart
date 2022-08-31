@@ -19,7 +19,8 @@ class SquareHelpWidget extends StatelessWidget {
 
   static const _defaultTitle = 'Stop War!';
   static const _defaultDescription = 'Help Ukraine!';
-  static const _defaultDetailsButtonDesc = 'See how';
+  static const _defaultDetailsButtonDesc = 'See';
+  static const _dafaultSecondPartButtonDesc = 'how';
   static const _widgetWidth = 320.0;
   static const _lineHeight = 1.28571;
   static const _fontSize = 22.4;
@@ -28,12 +29,13 @@ class SquareHelpWidget extends StatelessWidget {
   static const _topClosePosition = -1.0;
   static const _bottomClosePosition = -2.0;
   static const _optionsWidth = 246.39;
-  static const _lineWidth = 2.0;
-  static const _iconSize = 2.0;
+  static const _lineWidth = 6.0;
+  static const _iconSize = 7.0;
   static const _angle = 3.1415 / 2;
-  static const _scaleX = 0.7;
-  static const _scaleY = 0.5;
-  static const _letterSpacing = -0.5;
+  static const _scaleX = 0.3;
+  static const _scaleY = 0.3;
+  static const _letterSpacing = -0.7;
+  static const _offset = Offset(16, 0);
 
   /// Constructor
   SquareHelpWidget({
@@ -57,12 +59,15 @@ class SquareHelpWidget extends StatelessWidget {
           scaleX: _scaleX,
           scaleY: _scaleY,
           alignment: Alignment.centerLeft,
-          child: Transform.rotate(
-            angle: _angle,
-            child: const ChevronDown(
-              size: Size.square(_iconSize),
-              color: Colors.white,
-              lineWidth: _lineWidth,
+          child: Transform.translate(
+            offset: _offset,
+            child: Transform.rotate(
+              angle: _angle,
+              child: const ChevronDown(
+                size: Size.square(_iconSize),
+                color: Colors.white,
+                lineWidth: _lineWidth,
+              ),
             ),
           ),
         ),
