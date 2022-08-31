@@ -31,8 +31,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     const linkFontSize = 18.0;
 
-    const mainViewTitleLetterSpacing = 0.6;
-    const mainViewTitleFontSize = 19.6;
+    const mainViewTitleLetterSpacing = 0.5;
+    const mainViewTitleFontSize = 20.0;
 
     const detailsButtonFontSize = 18.0;
     const detailsButtonLetterSpacing = 0.6;
@@ -105,7 +105,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                  padding:
+                      const EdgeInsets.only(top: 8, bottom: 4.0, left: 1.0),
                   child: TextButton(
                     onPressed: () {
                       _controller.goForward();
