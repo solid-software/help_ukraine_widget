@@ -108,9 +108,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.only(top: 8, bottom: 4.0, left: 1.0),
                   child: TextButton(
-                    onPressed: () {
-                      _controller.goForward();
-                    },
+                    onPressed: _controller.goForward,
                     style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
