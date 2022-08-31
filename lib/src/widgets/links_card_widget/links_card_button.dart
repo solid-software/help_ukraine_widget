@@ -5,10 +5,10 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Button that redirects to links view of [HelpWidget]
 class LinksCardButton extends StatefulWidget {
-	/// onTap for [HoverWrapper]
+  /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
-	/// Constructor
+  /// Constructor
   const LinksCardButton({Key? key, required this.onTap}) : super(key: key);
 
   @override
@@ -29,6 +29,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   @override
   Widget build(BuildContext context) {
     final color = _isHovered ? HelpColors.blue : Colors.black;
+    const fontSize = 19.0;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -36,10 +37,12 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(width: 2),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
+                  fontSize: fontSize,
                 ),
           ),
           const SizedBox(width: 4),
