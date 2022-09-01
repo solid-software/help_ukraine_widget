@@ -26,6 +26,7 @@ class LinksCardWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: options,
         ),
         const SizedBox(height: 0.0),
@@ -39,6 +40,7 @@ class LinksCardWidget extends StatelessWidget {
           child: Divider(
             height: 0,
           ),
+
         ),
         LinksCardButton(onTap: onClose),
         const SizedBox(

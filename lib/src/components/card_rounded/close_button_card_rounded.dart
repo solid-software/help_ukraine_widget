@@ -7,20 +7,19 @@ class CloseButtonCardRounded extends StatelessWidget {
   /// callback called onTap
   final VoidCallback? onTap;
 
-  /// icon
-  final IconData? iconData;
+  /// child
+  final Widget child;
 
   /// Constructor
   const CloseButtonCardRounded({
     Key? key,
+    required this.child,
     this.onTap,
-    this.iconData,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const _size = 19.19;
-    const _iconSize = 10.0;
 
     return Container(
       height: _size,
@@ -31,11 +30,7 @@ class CloseButtonCardRounded extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(80, 80, 80, 1),
         highlightColor: HelpColors.blue,
         onTap: onTap,
-        child: Icon(
-          iconData,
-          size: _iconSize,
-          color: Colors.white,
-        ),
+        child: child,
       ),
     );
   }

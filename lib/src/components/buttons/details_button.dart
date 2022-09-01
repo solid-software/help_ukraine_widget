@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
@@ -23,7 +23,13 @@ class DetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const iconSize = 12.0;
+    const lineWidth = 1.8;
+    const chevronWidth = 6.4;
+    const chevronHeight = 6.4;
+
+    const fontSize = 19.2;
+    const letterSpacing = -0.49;
+
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -44,11 +50,27 @@ class DetailsButton extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 height: 1.16,
               ).copyWith(
+              //style: TextStyle(
+                //fontFamily: FontConfig.family,
+                //fontSize: fontSize,
+                //fontWeight: FontWeight.w600,
+                //letterSpacing: letterSpacing,
                 color: color,
               ),
             ),
             const SizedBox(width: 2),
-            Icon(SFSymbols.chevron_down, color: color, size: iconSize),
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: SizedBox(
+                width: chevronWidth,
+                height: chevronHeight,
+                child: ChevronDown(
+                  color: color,
+                  size: const Size(chevronWidth, chevronHeight),
+                  lineWidth: lineWidth,
+                ),
+              ),
+            ),
           ],
         ),
       ),

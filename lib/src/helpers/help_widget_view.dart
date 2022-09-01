@@ -6,8 +6,8 @@ enum HelpWidgetView {
   collapsed,
 
   /// View between [collapsed] and [options],
-	/// shows thumbnail, title, link to [options]
-	/// and a closing button that sets widget into [collapsed] mode.
+  /// shows thumbnail, title, link to [options]
+  /// and a closing button that sets widget into [collapsed] mode.
   main,
 
   /// View with links.
