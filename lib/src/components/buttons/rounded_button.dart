@@ -33,13 +33,12 @@ class _RoundedButtonState extends State<RoundedButton> {
   static const _fontSize = 19.2;
   static const _iconSize = 15.0;
 
-  static const _letterSpacing = -0.65;
+  static const _letterSpacing = -0.6;
 
   static const _lineWidth = 4.0;
   static const _angle = -3.1415 / 2;
-  static const _scaleX = 0.5;
-  static const _scaleY = 0.5;
-  static const _offset = Offset(10, 5);
+  static const _scale = 0.4;
+  static const _offset = Offset(12, 5);
 
   static const _additionalSpace = 10.0;
 
@@ -77,8 +76,7 @@ class _RoundedButtonState extends State<RoundedButton> {
                   ),
             ),
             Transform.scale(
-              scaleX: _scaleX,
-              scaleY: _scaleY,
+              scale: _scale,
               alignment: Alignment.centerLeft,
               child: Transform.translate(
                 offset: _offset,
