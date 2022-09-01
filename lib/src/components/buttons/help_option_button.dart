@@ -48,7 +48,7 @@ class HelpOptionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    
+
     return HoverWrapper(
       backgroundColor: backgroundColor,
       highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
