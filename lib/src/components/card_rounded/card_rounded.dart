@@ -100,12 +100,16 @@ class CardRounded extends StatelessWidget {
       const _iconSize = 10.0;
       const _padding = 6.4;
       const _lineWidth = 2.0;
+      const _scale = 1.2;
       final _defaultCloseButtonIcon = Container(
         padding: const EdgeInsets.all(_padding),
-        child: const XMark(
-          size: Size.square(_iconSize),
-          color: Colors.white,
-          lineWidth: _lineWidth,
+        child: Transform.scale(
+          scale: _scale,
+          child: const XMark(
+            size: Size.square(_iconSize),
+            color: Colors.white,
+            lineWidth: _lineWidth,
+          ),
         ),
       );
 
