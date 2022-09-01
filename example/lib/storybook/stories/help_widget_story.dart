@@ -31,13 +31,17 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
                 width: testWidth,
                 child: OverlayWidget(
                   alignment: _alignment,
-                  overlayWidget: HorizontalHelpWidget(alignment: _alignment,),
+                  overlayWidget: HorizontalHelpWidget(
+                    alignment: _alignment,
+                  ),
                   child: ListView(
                     children: [
                       for (var i = 0; i < _listLength; i++)
                         Text(
                           i.toString(),
-                          style: const TextStyle(color: Colors.white,),
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                     ],
                   ),
