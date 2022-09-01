@@ -5,7 +5,7 @@ import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 const _textStyle = TextStyle(
   fontFamily: FontConfig.family,
-  fontSize: 20.8,
+  fontSize: 17.92,
   fontWeight: FontWeight.w500,
 );
 

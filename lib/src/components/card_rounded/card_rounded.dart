@@ -47,6 +47,8 @@ class CardRounded extends StatelessWidget {
 
   static const _defaultOffset = 5.0;
 
+  static const _scale = 1.15;
+
   /// Constructor
   const CardRounded({
     Key? key,
@@ -94,10 +96,13 @@ class CardRounded extends StatelessWidget {
       const _lineWidth = 2.0;
       final _defaultCloseButtonIcon = Container(
         padding: const EdgeInsets.all(_padding),
-        child: const XMark(
-          size: Size.square(_iconSize),
-          color: Colors.white,
-          lineWidth: _lineWidth,
+        child: Transform.scale(
+          scale: _scale,
+          child: const XMark(
+            size: Size.square(_iconSize),
+            color: Colors.white,
+            lineWidth: _lineWidth,
+          ),
         ),
       );
 
@@ -109,7 +114,6 @@ class CardRounded extends StatelessWidget {
         top: topPosition,
         right: rightPosition,
         child: button,
-
       );
     } else {
       _positionedCloseButton = const SizedBox();

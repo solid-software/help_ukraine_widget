@@ -22,15 +22,7 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-
-  /// A variable that is used to set the size of the icon.
-  final double iconSize;
-
-  /// A variable that is used to set the color of the icon.
-  final Color? iconColor;
-
   static const _defaultHeight = 40.94;
-  static const _defaultIconSize = 14.0;
   static const _fontSize = 17.92;
   static const _letterSpacing = -0.2;
 
@@ -48,8 +40,6 @@ class HelpOptionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    const lineHeight = 0.6;
-    const letterSpacing = -0.42;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
@@ -64,11 +54,11 @@ class HelpOptionButton extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.headline4?.copyWith(
-                  color: HelpColors.blue,
-                  fontWeight: FontWeight.w600,
-                  fontSize: _fontSize,
-                  letterSpacing: _letterSpacing),
-
+                color: HelpColors.blue,
+                fontWeight: FontWeight.w600,
+                fontSize: _fontSize,
+                letterSpacing: _letterSpacing,
+              ),
             ),
             child,
           ],

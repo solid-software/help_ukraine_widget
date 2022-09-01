@@ -26,10 +26,7 @@ class DetailsButton extends StatelessWidget {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-
-    const fontSize = 19.2;
-    const letterSpacing = -0.49;
-
+    const _offset = Offset(3, 2);
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -50,27 +47,21 @@ class DetailsButton extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 height: 1.16,
               ).copyWith(
-              //style: TextStyle(
-                //fontFamily: FontConfig.family,
-                //fontSize: fontSize,
-                //fontWeight: FontWeight.w600,
-                //letterSpacing: letterSpacing,
                 color: color,
               ),
             ),
             const SizedBox(width: 2),
-            Padding(
-              padding: const EdgeInsets.only(top: 4.0),
-              child: SizedBox(
-                width: chevronWidth,
-                height: chevronHeight,
+            Transform.translate(
+              offset: _offset,
+              child: Transform.scale(
+                scale: 1,
                 child: ChevronDown(
                   color: color,
                   size: const Size(chevronWidth, chevronHeight),
                   lineWidth: lineWidth,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

@@ -4,7 +4,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// Variation of a [HelpWidget] with flag embedded into the card.
 class EmbeddedFlagHelpWidget extends StatelessWidget {
-  final _controller = HelpWidgetViewController(HelpWidgetView.collapsed);
+  final _controller = TraverseController(
+      [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options]);
 
   /// A title of widget.
   final String title;
@@ -55,7 +56,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
             children: [
               LinksCardWidget(
                 options: defaultOptionsList,
-                onClose: _controller.showMainView,
+                onClose: _controller.goBack,
               ),
             ],
           ),
@@ -66,7 +67,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
         padding: const EdgeInsets.only(right: 12.8),
         rightPosition: _rightPosition,
         topPosition: _topPosition,
-        onClose: _controller.showCollapsedView,
+        onClose: _controller.goBack,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -108,14 +109,17 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                 DetailsButton(
                   title: detailsButtonDescription,
                   color: HelpColors.blue,
-                  onTap: _controller.showOptionsView,
+                  onTap: _controller.goForward,
                 ),
               ],
             ),
           ],
         ),
       ),
-      collapsedView: const FlagCard(),
+      collapsedView: GestureDetector(
+        onTap: _controller.goForward,
+        child: const FlagCard(),
+      ),
     );
   }
 }
