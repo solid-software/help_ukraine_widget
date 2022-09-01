@@ -33,7 +33,8 @@ class SquareHelpWidget extends StatelessWidget {
   static const _angle = 3.1415 / 2;
   static const _scaleX = 0.3;
   static const _scaleY = 0.3;
-  static const _letterSpacing = -0.7;
+  static const _letterSpacing = 0.5;
+  static const _wordSpacing = -3.0;
   static const _offset = Offset(16, 0);
 
   /// Constructor
@@ -102,6 +103,7 @@ class SquareHelpWidget extends StatelessWidget {
                     height: _lineHeight,
                     color: HelpColors.blue.withOpacity(_textOpacity),
                     letterSpacing: _letterSpacing,
+                    wordSpacing: _wordSpacing,
                   ),
             ),
             Text(
@@ -112,6 +114,7 @@ class SquareHelpWidget extends StatelessWidget {
                     height: _lineHeight,
                     color: HelpColors.yellow.withOpacity(_textOpacity),
                     letterSpacing: _letterSpacing,
+                    wordSpacing: _wordSpacing,
                   ),
             ),
             const SizedBox(height: 12.8),
