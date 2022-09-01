@@ -45,9 +45,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
                 width: testWidth,
                 child: OverlayWidget(
                   alignment: _alignment,
-                  overlayWidget: HorizontalHelpWidget(
-                    alignment: _alignment,
-                  ),
+                  overlayWidget: HorizontalHelpWidget(),
                   child: ListView(
                     children: [
                       for (var i = 0; i < _listLength; i++)

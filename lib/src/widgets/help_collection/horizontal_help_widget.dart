@@ -14,10 +14,6 @@ class HorizontalHelpWidget extends StatelessWidget {
   /// A description for the button that will be shown on the main card.
   final String detailsButtonDescription;
 
-  /// where to align this widget inside its container
-  /// (matters for collapsed view mostly)
-  final Alignment alignment;
-
   static const _defaultTitle = 'Stop Russian Aggression!';
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
@@ -26,19 +22,21 @@ class HorizontalHelpWidget extends StatelessWidget {
     Key? key,
     this.title = _defaultTitle,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
-    this.alignment = Alignment.topLeft,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return HelpWidget(
-      alignment: alignment,
       controller: _controller,
-      optionsView: CardRounded(
-        padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
-        child: LinksCardWidget(
-          options: defaultOptionsList,
-          onClose: _controller.goBack,
+      optionsView: Container(
+        constraints: const BoxConstraints.tightFor(width: 340),
+        child: CardRounded(
+          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
+          // width: 366,
+          child: LinksCardWidget(
+            options: defaultOptionsList,
+            onClose: _controller.goBack,
+          ),
         ),
       ),
       mainView: CardRounded(
@@ -83,7 +81,6 @@ class HorizontalHelpWidget extends StatelessWidget {
         onTap: _controller.goForward,
         child: const FlagCard(),
       ),
-      constraints: const BoxConstraints.tightFor(width: 366),
     );
   }
 }

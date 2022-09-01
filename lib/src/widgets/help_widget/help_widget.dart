@@ -24,13 +24,6 @@ class HelpWidget extends StatelessWidget {
 
   final TraverseController<HelpWidgetView> _controller;
 
-  /// It's a parameter that defines the allowed size of the widget.
-  final BoxConstraints? constraints;
-
-  /// where to align this widget inside its container
-  /// (matters for collapsed view mostly)
-  final Alignment alignment;
-
   ///Constructor
   const HelpWidget({
     Key? key,
@@ -39,8 +32,6 @@ class HelpWidget extends StatelessWidget {
     required this.mainView,
     required TraverseController<HelpWidgetView> controller,
     this.axis = Axis.vertical,
-    this.alignment = Alignment.topLeft,
-    this.constraints,
   })  : _controller = controller,
         super(key: key);
 
@@ -52,24 +43,20 @@ class HelpWidget extends StatelessWidget {
       HelpWidgetView.options: optionsView,
     };
 
-    return Container(
-      alignment: alignment,
-      constraints: constraints,
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, _) {
-          final view = _controller.currentItem;
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, _) {
+        final view = _controller.currentItem;
 
-          return AnimatedViewTransition(
-            axis: axis,
-            transitionForward: _controller.didTraverseForward,
-            child: SizedBox(
-              key: ValueKey(view),
-              child: viewMap[view],
-            ),
-          );
-        },
-      ),
+        return AnimatedViewTransition(
+          axis: axis,
+          transitionForward: _controller.didTraverseForward,
+          child: SizedBox(
+            key: ValueKey(view),
+            child: viewMap[view],
+          ),
+        );
+      },
     );
   }
 }
