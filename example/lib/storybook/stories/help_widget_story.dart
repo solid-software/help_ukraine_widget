@@ -5,10 +5,13 @@ import 'package:widgetbook/widgetbook.dart';
 final _backgroundColor = Colors.grey.withOpacity(0.5);
 
 /// Test height.
-const testHeight = 1000.0;
+const testHeight = 420.0;
 
 /// Test width
-const testWidth = 600.0;
+const testWidth = 420.0;
+
+/// helpWidget alignment
+const _alignment = Alignment.bottomRight;
 
 /// Definition of using 4 different widget inherited from [HelpWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
@@ -20,7 +23,24 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
-              child: HorizontalHelpWidget(),
+              child: CardRounded(
+                backgroundColor: Colors.black,
+                height: testHeight,
+                width: testWidth,
+                child: OverlayWidget(
+                  alignment: _alignment,
+                  overlayWidget: HorizontalHelpWidget(alignment: _alignment,),
+                  child: ListView(
+                    children: [
+                      for (var i = 0; i < 100; i++)
+                        Text(
+                          i.toString(),
+                          style: const TextStyle(color: Colors.white,),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
             );
           },
         ),
