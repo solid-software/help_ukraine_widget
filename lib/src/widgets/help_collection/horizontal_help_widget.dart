@@ -59,7 +59,7 @@ class HorizontalHelpWidget extends StatelessWidget {
                     fontFamily: FontConfig.family,
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: -0.343,
+                    letterSpacing: -0.174,
                   ),
                 ),
                 const SizedBox(height: 0.5),
