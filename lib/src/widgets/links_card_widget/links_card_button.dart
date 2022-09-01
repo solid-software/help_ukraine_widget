@@ -45,7 +45,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
                   fontSize: fontSize,
                 ),
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: 5),
           Icon(
             SFSymbols.chevron_up,
             color: color,
