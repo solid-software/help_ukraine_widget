@@ -23,6 +23,7 @@ class SquareHelpWidget extends StatelessWidget {
   static const _widgetWidth = 320.0;
   static const _lineHeight = 1.28571;
   static const _fontSize = 22.4;
+  static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
   static const _rightClosePosition = -3.0;
   static const _topClosePosition = -1.0;
@@ -98,7 +99,7 @@ class SquareHelpWidget extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: _fontWeight,
                     fontSize: _fontSize,
                     height: _lineHeight,
                     color: HelpColors.blue.withOpacity(_textOpacity),
@@ -109,7 +110,7 @@ class SquareHelpWidget extends StatelessWidget {
             Text(
               description,
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: _fontWeight,
                     fontSize: _fontSize,
                     height: _lineHeight,
                     color: HelpColors.yellow.withOpacity(_textOpacity),

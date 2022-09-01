@@ -63,7 +63,7 @@ class HelpOptionButton extends StatelessWidget {
               title,
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 fontSize: _fontSize,
               ),
             ),
