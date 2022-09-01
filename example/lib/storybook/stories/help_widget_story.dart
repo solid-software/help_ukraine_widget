@@ -39,6 +39,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
               alignment: Alignment.center,
               color: _backgroundColor,
               child: CardRounded(
+                padding: EdgeInsets.zero,
                 backgroundColor: Colors.black,
                 height: testHeight,
                 width: testWidth,
