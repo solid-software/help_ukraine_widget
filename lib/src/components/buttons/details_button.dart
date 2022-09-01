@@ -28,7 +28,7 @@ class DetailsButton extends StatelessWidget {
     const chevronHeight = 6.4;
 
     const fontSize = 19.2;
-    const letterSpacing = -0.49;
+    const letterSpacing = -0.2;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -48,7 +48,7 @@ class DetailsButton extends StatelessWidget {
                 color: color,
               ),
             ),
-            const SizedBox(width: 2),
+            const SizedBox(width: 6),
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: SizedBox(

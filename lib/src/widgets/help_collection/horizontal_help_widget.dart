@@ -50,7 +50,7 @@ class HorizontalHelpWidget extends StatelessWidget {
             const SizedBox(width: 14),
             Column(
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -59,7 +59,7 @@ class HorizontalHelpWidget extends StatelessWidget {
                     fontFamily: FontConfig.family,
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: -0.322,
+                    letterSpacing: -0.174,
                   ),
                 ),
                 const SizedBox(height: 0.5),
