@@ -5,7 +5,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 /// Variation of a [HelpWidget] with flag embedded into the card.
 class EmbeddedFlagHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
-      [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options]);
+    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+  );
 
   /// A title of widget.
   final String title;
