@@ -33,7 +33,7 @@ class LinksCardWidget extends StatelessWidget {
           padding: EdgeInsets.only(
             left: 12.8,
             right: 12.8,
-            bottom: 6.4,
+            bottom: 9.4,
             top: 7.4,
           ),
           child: Divider(

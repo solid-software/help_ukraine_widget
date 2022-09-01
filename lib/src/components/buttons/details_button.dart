@@ -35,15 +35,13 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(
-              width: 2,
-            ),
             Text(
               title,
               style: const TextStyle(
-                letterSpacing: -0.3,
+                letterSpacing: 0.6,
                 fontSize: 19.2,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
+                wordSpacing: -2.0,
                 height: 1.16,
               ).copyWith(
                 color: color,

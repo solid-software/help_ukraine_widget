@@ -27,7 +27,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _titleFontSize = 20.8;
   static const _titleLineHeight = 1.23;
   static const _titleOpacity = 0.8;
-  static const _letterSpacing = -0.6;
+  static const _letterSpacing = 0.3;
   static const _subTitleFontSize = 19.2;
   static const _subTitleOpacity = 0.6;
 
@@ -96,8 +96,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                       ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(top: 3.2, bottom: 15.8, left: 2.0),
+                  padding: const EdgeInsets.only(top: 5.2, bottom: 15.8),
                   child: Text(
                     description,
                     style: Theme.of(context).textTheme.headline6?.copyWith(

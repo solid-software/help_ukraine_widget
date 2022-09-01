@@ -35,7 +35,8 @@ class _LinksCardButtonState extends State<LinksCardButton> {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-    const _offset = Offset(2.5, 0);
+    const _offset = Offset(3, -2.0);
+    const _scale = 0.9;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -51,7 +52,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
                   fontSize: _fontSize,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   letterSpacing: _letterSpacing,
                 ),
           ),
@@ -61,7 +62,9 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             child: Transform.rotate(
               angle: _angle,
               child: Transform.scale(
-                scale: 1,
+                scale: _scale,
+                // scaleX: _scale,
+                // scaleY: _scale,
                 child: ChevronDown(
                   color: color,
                   size: const Size(chevronWidth, chevronHeight),
