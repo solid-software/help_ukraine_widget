@@ -39,13 +39,13 @@ class CardRounded extends StatelessWidget {
   /// A variable that sets horizontal position by right side
   final double? rightPosition;
 
-  /// A variable that sets horizontal position by top side
+  /// A variable that sets vertical position by top side
   final double? topPosition;
 
   /// A variable that sets horizontal position by left side
   final double? leftPosition;
 
-  /// A variable that sets horizontal position by bottom side
+  /// A variable that sets vertical position by bottom side
   final double? bottomPosition;
 
   static const _elevation = 4.0;
