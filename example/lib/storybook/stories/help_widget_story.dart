@@ -10,9 +10,6 @@ const testHeight = 420.0;
 /// Test width
 const testWidth = 420.0;
 
-/// helpWidget alignment
-const _alignment = Alignment.bottomRight;
-
 const _listLength = 100;
 
 /// Definition of using 4 different widget inherited from [HelpWidget].
@@ -22,6 +19,22 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
         WidgetbookUseCase(
           name: 'First',
           builder: (context) {
+            final alignmentX = context.knobs.slider(
+              label: 'Alignment on x Axis',
+              initialValue: -1,
+              min: -1,
+              max: 1,
+            );
+
+            final alignmentY = context.knobs.slider(
+              label: 'Alignment on y Axis',
+              initialValue: -1,
+              min: -1,
+              max: 1,
+            );
+
+            final _alignment = Alignment(alignmentX, alignmentY);
+
             return Container(
               alignment: Alignment.center,
               color: _backgroundColor,
