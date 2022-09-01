@@ -13,6 +13,8 @@ const testWidth = 420.0;
 /// helpWidget alignment
 const _alignment = Alignment.bottomRight;
 
+const _listLength = 100;
+
 /// Definition of using 4 different widget inherited from [HelpWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
       name: 'HelpWidget',
@@ -32,7 +34,7 @@ WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
                   overlayWidget: HorizontalHelpWidget(alignment: _alignment,),
                   child: ListView(
                     children: [
-                      for (var i = 0; i < 100; i++)
+                      for (var i = 0; i < _listLength; i++)
                         Text(
                           i.toString(),
                           style: const TextStyle(color: Colors.white,),
