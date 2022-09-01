@@ -23,7 +23,7 @@ class DetailsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const iconSize = 15.0;
+    const iconSize = 12.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -33,12 +33,16 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            const SizedBox(
+              width: 2,
+            ),
             Text(
               title,
               style: const TextStyle(
-                letterSpacing: -0.9,
+                letterSpacing: -0.3,
                 fontSize: 19.2,
                 fontWeight: FontWeight.w500,
+                height: 1.16,
               ).copyWith(
                 color: color,
               ),

@@ -8,5 +8,8 @@ class HelpColors {
   ///
   static const blue = Color.fromRGBO(37, 89, 181, 1);
 
+  ///
+  static const black = Color(0xFF000000);
+
   const HelpColors._();
 }

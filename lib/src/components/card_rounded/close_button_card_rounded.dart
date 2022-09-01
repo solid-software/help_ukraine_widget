@@ -4,13 +4,13 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// button for [CardRounded]
 class CloseButtonCardRounded extends StatelessWidget {
-	/// callback called onTap
+  /// callback called onTap
   final VoidCallback? onTap;
 
-	/// icon
+  /// icon
   final IconData? iconData;
 
-	/// Constructor
+  /// Constructor
   const CloseButtonCardRounded({
     Key? key,
     this.onTap,
@@ -19,7 +19,7 @@ class CloseButtonCardRounded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const _size = 20.0;
+    const _size = 19.19;
     const _iconSize = 10.0;
 
     return Container(

@@ -20,7 +20,7 @@ class LinksCardWidget extends StatelessWidget {
     required this.onClose,
   }) : super(key: key);
 
-	@override
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -28,8 +28,22 @@ class LinksCardWidget extends StatelessWidget {
         Column(
           children: options,
         ),
-        const Divider(height: 20),
+        const SizedBox(height: 0.0),
+        const Padding(
+          padding: EdgeInsets.only(
+            left: 12.8,
+            right: 12.8,
+            bottom: 8.4,
+            top: 7.4,
+          ),
+          child: Divider(
+            height: 0,
+          ),
+        ),
         LinksCardButton(onTap: onClose),
+        const SizedBox(
+          height: 3,
+        )
       ],
     );
   }

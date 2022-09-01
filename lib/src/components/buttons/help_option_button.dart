@@ -28,8 +28,10 @@ class HelpOptionButton extends StatelessWidget {
   /// A variable that is used to set the color of the icon.
   final Color? iconColor;
 
-  static const _defaultHeight = 51.0;
+  static const _defaultHeight = 40.94;
   static const _defaultIconSize = 14.0;
+  static const _fontSize = 17.92;
+  static const _letterSpacing = -0.2;
 
   ///Constructor
   const HelpOptionButton({
@@ -54,16 +56,17 @@ class HelpOptionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 20.48),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
               style: theme.textTheme.headline4?.copyWith(
-                color: HelpColors.blue,
-                fontWeight: FontWeight.w600,
-              ),
+                  color: HelpColors.blue,
+                  fontWeight: FontWeight.w600,
+                  fontSize: _fontSize,
+                  letterSpacing: _letterSpacing),
             ),
             Icon(
               icon,
