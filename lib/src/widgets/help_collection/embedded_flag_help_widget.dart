@@ -96,7 +96,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5.2, bottom: 16.8),
+                  padding: const EdgeInsets.only(top: 6.2, bottom: 15.8),
                   child: Text(
                     description,
                     style: TextThemes.mainFont.copyWith(
