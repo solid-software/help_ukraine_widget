@@ -16,6 +16,7 @@ from anywhere in the world.
 <details><summary>Second widget variation</summary>
     
 ![Second widget example](gifs/widget2.gif)
+</details>
 
 <details><summary>Third widget variation</summary>
 
