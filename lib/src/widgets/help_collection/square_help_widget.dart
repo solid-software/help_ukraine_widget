@@ -48,9 +48,6 @@ class SquareHelpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return HelpWidget(
       controller: _controller,
-      constraints: const BoxConstraints(
-        maxWidth: _widgetWidth,
-      ),
       axis: Axis.horizontal,
       optionsView: CardRounded(
         onClose: _controller.goBack,
