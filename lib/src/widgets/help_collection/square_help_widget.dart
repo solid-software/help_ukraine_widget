@@ -20,7 +20,6 @@ class SquareHelpWidget extends StatelessWidget {
   static const _defaultTitle = 'Stop War!';
   static const _defaultDescription = 'Help Ukraine!';
   static const _defaultDetailsButtonDesc = 'See how';
-  static const _widgetWidth = 320.0;
   static const _lineHeight = 1.28571;
   static const _fontSize = 22.4;
   static const _fontWeight = FontWeight.w900;
