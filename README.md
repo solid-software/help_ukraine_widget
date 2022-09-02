@@ -36,10 +36,19 @@ TODO: install guide
 ## Usage
 
 ### Basic usage
-TODO
+`HorizontalHelpWidget()`
 
 ### Customization
-TODO: (UI layout, theming)
+You can add widget floating above your app like that:
+```
+OverlayWidget(
+    alignment: alignment,
+    overlayWidget: HorizontalHelpWidget(),
+    child: MyApp(),
+)
+```
+
+TODO: theming (not implemented yet)
 
 ### Localization
 TODO: unimplemented
