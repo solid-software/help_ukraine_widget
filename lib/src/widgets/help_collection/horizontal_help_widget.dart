@@ -32,7 +32,6 @@ class HorizontalHelpWidget extends StatelessWidget {
         constraints: const BoxConstraints.tightFor(width: 340),
         child: CardRounded(
           padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
-          // width: 366,
           child: LinksCardWidget(
             options: defaultOptionsList,
             onClose: _controller.goBack,
