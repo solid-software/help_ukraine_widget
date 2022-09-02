@@ -47,8 +47,3 @@ OverlayWidget(
     child: MyApp(),
 )
 ```
-
-TODO: theming (not implemented yet)
-
-### Localization
-TODO: unimplemented
