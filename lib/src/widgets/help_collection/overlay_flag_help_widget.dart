@@ -61,9 +61,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                 Text(
                   title,
                   style: TextThemes.mainFont.copyWith(
-                    fontWeight: FontWeight.w900,
-                    // letterSpacing: mainViewTitleLetterSpacing,
-                    // wordSpacing: wordSpacing,
+                    fontWeight: FontWeight.w700,
                     fontSize: mainViewTitleFontSize,
                     color: HelpColors.black.withOpacity(opacity),
                   ),
