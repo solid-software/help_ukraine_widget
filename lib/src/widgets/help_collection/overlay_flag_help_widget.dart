@@ -53,7 +53,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CardRounded(
-            padding: const EdgeInsets.fromLTRB(12.8, 40.4, 12.8, 13.8),
+            padding: const EdgeInsets.fromLTRB(10, 40.4, 10, 13.8),
             closeButtonAlignment: const Alignment(1.02, -1),
             onClose: _controller.goBack,
             child: Column(
@@ -62,13 +62,13 @@ class OverlayFlagHelpWidget extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: mainViewTitleLetterSpacing,
-                        wordSpacing: wordSpacing,
-                        fontSize: mainViewTitleFontSize,
-                        color: HelpColors.black.withOpacity(opacity),
-                      ),
+                  style: TextThemes.mainFont.copyWith(
+                    fontWeight: FontWeight.w900,
+                    // letterSpacing: mainViewTitleLetterSpacing,
+                    // wordSpacing: wordSpacing,
+                    fontSize: mainViewTitleFontSize,
+                    color: HelpColors.black.withOpacity(opacity),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.8),
