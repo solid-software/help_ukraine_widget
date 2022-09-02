@@ -1,5 +1,7 @@
 # Help Ukraine Widget for Flutter
-This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/).
+This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/) -
+this widget helps to let users of your app know how they can help Ukraine
+from anywhere in the world.
 
 ### Some examples
 
@@ -24,14 +26,26 @@ This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/).
 </details>
 
 ## Features
-By installing this widget in your app you will help to end the war in Ukraine, it will provide links for:
+By installing this widget in your app, you will help to end the war in Ukraine.
+It will provide links for:
 
 * [donations](https://uahelp.monobank.ua/),
 * sharing this widget
 * and [other ways to support Ukraine](https://war.ukraine.ua/).
 
 ## Getting started
-TODO: install guide
+<h5 a><strong><code>pubspec.yaml</code></strong></h5>
+
+``` yaml
+dependencies:
+    help_ukraine_widget: ^1.0.0
+```
+
+in your code:
+
+``` dart
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+```
 
 ## Usage
 
