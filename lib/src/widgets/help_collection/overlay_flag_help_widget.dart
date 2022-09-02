@@ -95,7 +95,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           const Positioned(
             top: -19.6,
             left: 0,
-            right: 2,
+            right: 0,
             child: Align(
               alignment: Alignment.center,
               child: UkraineFlagWidget(),

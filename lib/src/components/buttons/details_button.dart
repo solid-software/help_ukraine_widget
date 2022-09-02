@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
@@ -47,7 +48,7 @@ class DetailsButton extends StatelessWidget {
               ),
               child: Text(
                 title,
-                style: TextStyle(
+                style: TextThemes.mainFont.copyWith(
                   fontFamily: FontConfig.family,
                   fontSize: fontSize,
                   fontWeight: FontWeight.w500,
