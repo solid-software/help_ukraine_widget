@@ -34,8 +34,6 @@ class SquareHelpWidget extends StatelessWidget {
   static const _angle = 3.1415 / 2;
   static const _scaleX = 0.3;
   static const _scaleY = 0.3;
-  static const _letterSpacing = 0.5;
-  static const _wordSpacing = -3.0;
   static const _offset = Offset(16, 0);
 
   /// Constructor
@@ -98,25 +96,21 @@ class SquareHelpWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: _fontWeight,
-                    fontSize: _fontSize,
-                    height: _lineHeight,
-                    color: HelpColors.blue.withOpacity(_textOpacity),
-                    letterSpacing: _letterSpacing,
-                    wordSpacing: _wordSpacing,
-                  ),
+              style: TextThemes.mainFont.copyWith(
+                fontWeight: _fontWeight,
+                fontSize: _fontSize,
+                height: _lineHeight,
+                color: HelpColors.blue.withOpacity(_textOpacity),
+              ),
             ),
             Text(
               description,
-              style: Theme.of(context).textTheme.headline6?.copyWith(
-                    fontWeight: _fontWeight,
-                    fontSize: _fontSize,
-                    height: _lineHeight,
-                    color: HelpColors.yellow.withOpacity(_textOpacity),
-                    letterSpacing: _letterSpacing,
-                    wordSpacing: _wordSpacing,
-                  ),
+              style: TextThemes.mainFont.copyWith(
+                fontWeight: _fontWeight,
+                fontSize: _fontSize,
+                height: _lineHeight,
+                color: HelpColors.yellow.withOpacity(_textOpacity),
+              ),
             ),
             const SizedBox(height: 12.8),
             RoundedButton(
