@@ -92,4 +92,4 @@ HelpWidget(
 
 ## Credits
 
-[jiffsy.co](https://jiffsy.co/) for designing and creating the [original widget](https://helpukrainewinwidget.org/).
+[jiffsy.co](https://jiffsy.co/) and [Gearheart](https://gearheart.io/) for designing and creating the [original widget](https://helpukrainewinwidget.org/).
