@@ -40,19 +40,22 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontFamily: FontConfig.family,
-                fontSize: fontSize,
-                fontWeight: FontWeight.w500,
-                letterSpacing: letterSpacing,
-                wordSpacing: wordSpacing,
-                color: color,
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 1,
+                right: 12,
               ),
-            ),
-            const SizedBox(
-              width: 12,
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontFamily: FontConfig.family,
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: letterSpacing,
+                  wordSpacing: wordSpacing,
+                  color: color,
+                ),
+              ),
             ),
             Transform.translate(
               offset: offset,
