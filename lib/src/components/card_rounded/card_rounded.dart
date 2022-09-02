@@ -12,10 +12,10 @@ class CardRounded extends StatelessWidget {
   /// The background color of the card.
   final Color? backgroundColor;
 
-  /// A variable that sets the height of the card.
+  /// Height of the card.
   final double? height;
 
-  /// A variable that sets the width of the card.
+  /// Width of the card.
   final double? width;
 
   /// A padding for the cards content.
@@ -27,7 +27,7 @@ class CardRounded extends StatelessWidget {
   /// to a non-null value.
   final VoidCallback? onClose;
 
-  /// A variable that sets the position of the close button.
+  /// Position of the close button.
   ///
   /// Note that currently card accepts only 2 types of Alignment:
   /// Alignment.topRight and Alignment.bottomRight
@@ -36,17 +36,14 @@ class CardRounded extends StatelessWidget {
   /// Icon for a close button
   final Widget? closeButtonIcon;
 
-  /// A variable that sets horizontal position by right side
-  final double? rightPosition;
+  /// Horizontal offset from right edge
+  final double? right;
 
-  /// A variable that sets vertical position by top side
-  final double? topPosition;
+  /// Vertical offset from top edge
+  final double? top;
 
-  /// A variable that sets horizontal position by left side
-  final double? leftPosition;
-
-  /// A variable that sets vertical position by bottom side
-  final double? bottomPosition;
+  /// Vertical offset from bottom edge
+  final double? bottom;
 
   static const _elevation = 4.0;
   static const _borderRadius = 12.8;
@@ -67,10 +64,9 @@ class CardRounded extends StatelessWidget {
       vertical: 10,
       horizontal: 10,
     ),
-    this.rightPosition,
-    this.topPosition,
-    this.leftPosition,
-    this.bottomPosition,
+    this.right,
+    this.top,
+    this.bottom,
   }) : super(key: key);
 
   @override
@@ -118,10 +114,9 @@ class CardRounded extends StatelessWidget {
         child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
       _positionedCloseButton = Positioned(
-        right: rightPosition,
-        top: topPosition,
-        left: leftPosition,
-        bottom: bottomPosition,
+        right: right,
+        top: top,
+        bottom: bottom,
         child: button,
       );
     } else {

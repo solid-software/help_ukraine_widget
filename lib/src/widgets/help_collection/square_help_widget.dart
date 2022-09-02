@@ -24,9 +24,9 @@ class SquareHelpWidget extends StatelessWidget {
   static const _fontSize = 22.4;
   static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
-  static const _rightClosePosition = -2.0;
-  static const _topClosePosition = 0.0;
-  static const _bottomClosePosition = -2.0;
+  static const _rightClose = -2.0;
+  static const _topClose = 0.0;
+  static const _bottomClose = -2.0;
   static const _optionsWidth = 246.39;
   static const _lineWidth = 6.0;
   static const _iconSize = 7.0;
@@ -66,8 +66,8 @@ class SquareHelpWidget extends StatelessWidget {
             ),
           ),
         ),
-        rightPosition: _rightClosePosition,
-        bottomPosition: _bottomClosePosition,
+        right: _rightClose,
+        bottom: _bottomClose,
         padding: const EdgeInsets.symmetric(vertical: 12.8),
         child: SizedBox(
           width: _optionsWidth,
@@ -85,8 +85,8 @@ class SquareHelpWidget extends StatelessWidget {
           right: 12.8,
         ),
         onClose: _controller.goBack,
-        rightPosition: _rightClosePosition,
-        topPosition: _topClosePosition,
+        right: _rightClose,
+        top: _topClose,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
