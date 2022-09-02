@@ -25,8 +25,8 @@ class SquareHelpWidget extends StatelessWidget {
   static const _fontSize = 22.4;
   static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
-  static const _rightClosePosition = -3.0;
-  static const _topClosePosition = -1.0;
+  static const _rightClosePosition = -2.0;
+  static const _topClosePosition = 0.0;
   static const _bottomClosePosition = -2.0;
   static const _optionsWidth = 246.39;
   static const _lineWidth = 6.0;

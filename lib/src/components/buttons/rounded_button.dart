@@ -39,7 +39,7 @@ class _RoundedButtonState extends State<RoundedButton> {
   static const _lineWidth = 4.0;
   static const _angle = -3.1415 / 2;
   static const _scale = 0.5;
-  static const _offset = Offset(9, 5);
+  static const _offset = Offset(6, 5);
 
   static const _additionalSpace = 10.0;
   static const _wordSpacing = 1.0;
