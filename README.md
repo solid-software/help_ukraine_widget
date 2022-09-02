@@ -142,3 +142,7 @@ To make it easier we provide some classes:
 `LinksCardWidget` - base class for options view.
 
 `UkraineFlagWidget` is the rounded square flag you see in collapsed view.
+
+## Credits
+
+[jiffsy.co]<https://jiffsy.co/> for designing and creating the [original widget]<https://helpukrainewinwidget.org/>.
