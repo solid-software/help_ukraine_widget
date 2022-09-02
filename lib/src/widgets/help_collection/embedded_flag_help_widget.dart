@@ -83,7 +83,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const SizedBox(
-                  height: 3,
+                  height: 4,
                 ),
                 Text(
                   title,
