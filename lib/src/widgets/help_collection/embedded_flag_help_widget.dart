@@ -88,7 +88,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                 Text(
                   title,
                   style: TextThemes.mainFont.copyWith(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w900,
                     fontSize: _titleFontSize,
                     height: _titleLineHeight,
                     letterSpacing: _letterSpacing,
@@ -100,7 +100,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                   child: Text(
                     description,
                     style: TextThemes.mainFont.copyWith(
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                       fontSize: _subTitleFontSize,
                       color: HelpColors.black.withOpacity(_subTitleOpacity),
                     ),
