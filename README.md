@@ -50,14 +50,86 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 ## Usage
 
 ### Basic usage
-`HorizontalHelpWidget()`
-
-### Customization
-You can add widget floating above your app like that:
+Use `OverlayWidget` to float and align the widget above your app:
 ```
 OverlayWidget(
+    // e.g. Alignment.bottomRight
     alignment: alignment,
     overlayWidget: HorizontalHelpWidget(),
     child: MyApp(),
 )
 ```
+
+### Customization
+You can also create custom variations of this widget:
+```
+// we used that in our widget, but you do you 
+final order = [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options];
+
+final _controller = TraverseController(order);
+
+HelpWidget(
+    controller: _controller;
+    // view with links to resources that help Ukraine
+    optionsView: ...
+    // transitional view between options and collapsed
+    mainView: ...
+    // smallest view that doesn't obstruct user from
+    // using the app, but still exists on the screen
+    collapsedView: ...
+    // axis of transition animation between views
+    axis: ...
+)
+```
+
+To make it easier we provide some classes:
+
+#### Components ####
+
+##### Buttons #####
+
+`DetailsButton` - used in main view to go to options view.
+
+`HelpOptionButton` - used in options view as a link to external resources.
+
+`RoundedButton` - close button for `CardRounded`.
+
+##### Other #####
+
+`CardRounded` - base widget for every view.
+
+`ChevronDown` - flexible chevron icon.
+
+`FlagCard` - default collapsed view.
+
+`FlagWidget` - flexible widget with Ukraine flag colors.
+
+`HoverWrapper` - add responses for pointer events to your widget.
+
+`XMark` - flexible cross icon.
+
+### Controllers
+`TraverseController` is used to track current view and direction of last transition.
+
+### Helpers
+
+`defaultOptionsList` - list of default link buttons for external resources.
+
+`Emojis` - emoji constants just to be a little more descriptive.
+
+`HelpWidgetView` - enum to track current view using `TraverseController`.
+
+### Theme
+`FontConfig` - common font settings in project.
+
+`HelpColors` - common colors used in project.
+
+`TextThemes` - common text theming constants.
+
+### Widgets
+
+`HelpWidget` - base class for help widgets.
+
+`LinksCardWidget` - base class for options view.
+
+`UkraineFlagWidget` is the rounded square flag you see in collapsed view.
