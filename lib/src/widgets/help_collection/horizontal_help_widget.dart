@@ -42,7 +42,7 @@ class HorizontalHelpWidget extends StatelessWidget {
         padding: const EdgeInsets.only(
           top: 12,
           bottom: 12,
-          left: 12,
+          left: 16,
           right: 12,
         ),
         onClose: _controller.goBack,
@@ -50,7 +50,7 @@ class HorizontalHelpWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const UkraineFlagWidget(),
-            const SizedBox(width: 14),
+            const SizedBox(width: 13),
             Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,7 +62,6 @@ class HorizontalHelpWidget extends StatelessWidget {
                     fontFamily: FontConfig.family,
                     fontSize: 20.8,
                     fontWeight: FontWeight.w700,
-                    letterSpacing: -0.174,
                   ),
                 ),
                 const SizedBox(height: 0.5),

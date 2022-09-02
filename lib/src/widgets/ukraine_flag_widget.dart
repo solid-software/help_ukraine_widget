@@ -8,7 +8,7 @@ class UkraineFlagWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const size = 51.0;
+    const size = 51.5;
     const borderRadius = 13.0;
 
     return Container(
