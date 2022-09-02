@@ -87,23 +87,23 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: _titleFontSize,
-                        height: _titleLineHeight,
-                        letterSpacing: _letterSpacing,
-                        color: HelpColors.black.withOpacity(_titleOpacity),
-                      ),
+                  style: TextThemes.mainFont.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: _titleFontSize,
+                    height: _titleLineHeight,
+                    letterSpacing: _letterSpacing,
+                    color: HelpColors.black.withOpacity(_titleOpacity),
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5.2, bottom: 15.8),
+                  padding: const EdgeInsets.only(top: 5.2, bottom: 16.8),
                   child: Text(
                     description,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w400,
-                          fontSize: _subTitleFontSize,
-                          color: HelpColors.black.withOpacity(_subTitleOpacity),
-                        ),
+                    style: TextThemes.mainFont.copyWith(
+                      fontWeight: FontWeight.w400,
+                      fontSize: _subTitleFontSize,
+                      color: HelpColors.black.withOpacity(_subTitleOpacity),
+                    ),
                   ),
                 ),
                 DetailsButton(
