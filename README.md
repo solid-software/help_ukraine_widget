@@ -1,11 +1,12 @@
 # Help Ukraine Widget for Flutter
+
 [![style: solid](https://img.shields.io/badge/style-solid-orange)](https://pub.dev/packages/solid_lints)
 
 This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/) -
 this widget helps to let users of your app know how they can help Ukraine
 from anywhere in the world.
 
-### Showcase
+## Showcase
 
 <details open><summary>First widget variation</summary>
 
@@ -13,7 +14,7 @@ from anywhere in the world.
 </details>
 
 <details><summary>Second widget variation</summary>
-    
+
 ![](gifs/widget2.gif)
 </details>
 
@@ -28,6 +29,7 @@ from anywhere in the world.
 </details>
 
 ## Features
+
 By installing this widget in your app, you will help to end the war in Ukraine.
 It will provide links for:
 
@@ -36,6 +38,7 @@ It will provide links for:
 * and [other ways to support Ukraine](https://war.ukraine.ua/).
 
 ## Getting started
+
 Add the package as a dependency to your __pubspec.yaml__:
 
 ``` yaml
@@ -52,7 +55,9 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 ## Usage
 
 ### Basic usage
+
 Use `OverlayWidget` to float and align the widget above your app:
+
 ``` dart
 OverlayWidget(
     alignment: Alignment.bottomRight,
@@ -62,7 +67,9 @@ OverlayWidget(
 ```
 
 ### Customization
+
 You can also create custom variations of this widget:
+
 ``` dart
 // we used that in our widget, but you do you 
 final order = [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options];
@@ -85,9 +92,9 @@ HelpWidget(
 
 To make it easier we provide some classes:
 
-#### Components ####
+#### Components
 
-##### Buttons #####
+##### Buttons
 
 `DetailsButton` - used in main view to go to options view.
 
@@ -95,7 +102,7 @@ To make it easier we provide some classes:
 
 `RoundedButton` - close button for `CardRounded`.
 
-##### Other #####
+##### Other
 
 `CardRounded` - base widget for every view.
 
@@ -110,6 +117,7 @@ To make it easier we provide some classes:
 `XMark` - flexible cross icon.
 
 ### Controllers
+
 `TraverseController` is used to track current view and direction of last transition.
 
 ### Helpers
@@ -121,6 +129,7 @@ To make it easier we provide some classes:
 `HelpWidgetView` - enum to track current view using `TraverseController`.
 
 ### Theme
+
 `FontConfig` - common font settings in project.
 
 `HelpColors` - common colors used in project.
