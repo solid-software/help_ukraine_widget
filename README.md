@@ -34,7 +34,7 @@ It will provide links for:
 * and [other ways to support Ukraine](https://war.ukraine.ua/).
 
 ## Getting started
-<h5 a><strong><code>pubspec.yaml</code></strong></h5>
+Add the package as a dependency to your __pubspec.yaml__:
 
 ``` yaml
 dependencies:
