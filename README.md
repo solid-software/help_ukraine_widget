@@ -1,4 +1,6 @@
 # Help Ukraine Widget for Flutter
+[![style: solid](https://img.shields.io/badge/style-solid-orange)](https://pub.dev/packages/solid_lints)
+
 This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/) -
 this widget helps to let users of your app know how they can help Ukraine
 from anywhere in the world.
