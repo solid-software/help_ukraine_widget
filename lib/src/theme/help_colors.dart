@@ -11,5 +11,8 @@ class HelpColors {
   ///
   static const separatorColor = Color(0xffe5e5e5);
 
+  ///
+  static const black = Color(0x00000000);
+
   const HelpColors._();
 }

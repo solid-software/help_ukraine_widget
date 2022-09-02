@@ -29,6 +29,8 @@ class DetailsButton extends StatelessWidget {
 
     const fontSize = 19.2;
     const letterSpacing = -0.2;
+    const offset = Offset(-5.5, 2);
+    const wordSpacing = 1.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -43,22 +45,21 @@ class DetailsButton extends StatelessWidget {
               style: TextStyle(
                 fontFamily: FontConfig.family,
                 fontSize: fontSize,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 letterSpacing: letterSpacing,
+                wordSpacing: wordSpacing,
                 color: color,
               ),
             ),
-            const SizedBox(width: 6),
-            Padding(
-              padding: const EdgeInsets.only(top: 4.0),
-              child: SizedBox(
-                width: chevronWidth,
-                height: chevronHeight,
-                child: ChevronDown(
-                  color: color,
-                  size: const Size(chevronWidth, chevronHeight),
-                  lineWidth: lineWidth,
-                ),
+            const SizedBox(
+              width: 12,
+            ),
+            Transform.translate(
+              offset: offset,
+              child: ChevronDown(
+                color: color,
+                size: const Size(chevronWidth, chevronHeight),
+                lineWidth: lineWidth,
               ),
             ),
           ],

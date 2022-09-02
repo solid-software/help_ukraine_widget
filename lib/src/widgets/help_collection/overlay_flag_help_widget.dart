@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 import 'package:help_ukraine_widget/src/widgets/default_links_card_widget.dart';
@@ -29,20 +30,10 @@ class OverlayFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const linkFontSize = 18.0;
-
-    const mainViewTitleLetterSpacing = 0.5;
-    const mainViewTitleFontSize = 20.0;
-
-    const detailsButtonFontSize = 18.0;
-    const detailsButtonLetterSpacing = 0.6;
-
-    const chevronWidth = 6.4;
-    const chevronHeight = 6.4;
-    const lineWidth = 1.8;
-
-    const detailsButtonSpacingToChevron = 8.0;
-    const detailsButtonSpacingAfterChevron = 6.0;
+    const mainViewTitleLetterSpacing = 0.4;
+    const mainViewTitleFontSize = 20.8;
+    const opacity = 0.8;
+    const wordSpacing = -1.8;
 
     return HelpWidget(
       constraints: const BoxConstraints(
@@ -50,21 +41,11 @@ class OverlayFlagHelpWidget extends StatelessWidget {
       ),
       controller: _controller,
       optionsView: CardRounded(
-        padding: const EdgeInsets.symmetric(vertical: 14),
+        padding: const EdgeInsets.symmetric(vertical: 12.8),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             DefaultLinksCardWidget(
-              textStyle: theme.textTheme.headline4?.copyWith(
-                fontSize: linkFontSize,
-                color: HelpColors.blue,
-                fontWeight: FontWeight.w600,
-              ),
-              iconTextStyle: const TextStyle(
-                fontFamily: FontConfig.family,
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
-              ),
               onClose: _controller.goBack,
             ),
           ],
@@ -74,25 +55,25 @@ class OverlayFlagHelpWidget extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CardRounded(
-            closeButtonAlignment: const Alignment(1.02, -1.02),
+            padding: const EdgeInsets.fromLTRB(12.8, 40.4, 12.8, 13.8),
+            closeButtonAlignment: const Alignment(1.02, -1),
             onClose: _controller.goBack,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 31.0, bottom: 15),
-                  child: Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: mainViewTitleLetterSpacing,
-                          fontSize: mainViewTitleFontSize,
-                        ),
-                  ),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: mainViewTitleLetterSpacing,
+                        wordSpacing: wordSpacing,
+                        fontSize: mainViewTitleFontSize,
+                        color: HelpColors.black.withOpacity(opacity),
+                      ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 3.0, right: 3.0),
+                  padding: const EdgeInsets.symmetric(vertical: 12.8),
                   child: Row(
                     children: [
                       Expanded(
@@ -104,54 +85,22 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 8, bottom: 4.0, left: 1.0),
-                  child: TextButton(
-                    onPressed: _controller.goForward,
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.blue),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Text(
-                          _defaultDetailsButtonDesc,
-                          style: TextStyle(
-                            fontFamily: FontConfig.family,
-                            fontSize: detailsButtonFontSize,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: detailsButtonLetterSpacing,
-                            color: HelpColors.blue,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: 4.0,
-                            right: detailsButtonSpacingToChevron,
-                            left: detailsButtonSpacingAfterChevron,
-                          ),
-                          child: SizedBox(
-                            width: chevronWidth,
-                            height: chevronHeight,
-                            child: ChevronDown(
-                              color: HelpColors.blue,
-                              size: Size(chevronWidth, chevronHeight),
-                              lineWidth: lineWidth,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                DetailsButton(
+                  onTap: _controller.goForward,
+                  color: HelpColors.blue,
+                  title: _defaultDetailsButtonDesc,
+                )
               ],
             ),
           ),
           const Positioned(
-            top: -21,
-            left: 102,
-            child: UkraineFlagWidget(),
+            top: -19.6,
+            left: 0,
+            right: 2,
+            child: Align(
+              alignment: Alignment.center,
+              child: UkraineFlagWidget(),
+            ),
           ),
         ],
       ),

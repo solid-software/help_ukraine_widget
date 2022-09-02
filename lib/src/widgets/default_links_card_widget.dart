@@ -5,34 +5,25 @@ import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// [LinksCardWidget] with predetermined links
 class DefaultLinksCardWidget extends StatelessWidget {
-  static const _defaultIconTextStyle = TextStyle(
-    fontFamily: FontConfig.family,
-    fontSize: 20.8,
-    fontWeight: FontWeight.w500,
-  );
-
-  /// textStyle for link titles
-  final TextStyle? textStyle;
-
-  /// textStyle for icons
-  final TextStyle iconTextStyle;
-
   /// onClose for [LinksCardWidget]
   final void Function() onClose;
 
   ///
   const DefaultLinksCardWidget({
     super.key,
-    this.iconTextStyle = _defaultIconTextStyle,
-    this.textStyle,
     required this.onClose,
   });
 
   @override
   Widget build(BuildContext context) {
+    const iconTextStyle = TextStyle(
+      fontFamily: FontConfig.family,
+      fontSize: 17.92,
+      fontWeight: FontWeight.w500,
+    );
+
     final defaultOptionsList = [
-      HelpOptionButton(
-        textStyle: textStyle,
+      const HelpOptionButton(
         title: 'Donate',
         child: Text(
           Emojis.moneyWithWings,
@@ -40,7 +31,6 @@ class DefaultLinksCardWidget extends StatelessWidget {
         ),
       ),
       HelpOptionButton(
-        textStyle: textStyle,
         title: 'Support Ukraine',
         child: Text(
           Emojis.heart,
@@ -49,8 +39,7 @@ class DefaultLinksCardWidget extends StatelessWidget {
           ),
         ),
       ),
-      HelpOptionButton(
-        textStyle: textStyle,
+      const HelpOptionButton(
         title: 'Share this widget',
         child: Text(
           Emojis.pushpin,
