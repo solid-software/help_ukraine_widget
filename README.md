@@ -38,7 +38,7 @@ It will provide links for:
 
 ``` yaml
 dependencies:
-    help_ukraine_widget: ^1.0.0
+    help_ukraine_widget: <latest version>
 ```
 
 in your code:
