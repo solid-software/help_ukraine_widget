@@ -9,22 +9,22 @@ from anywhere in the world.
 
 <details open><summary>First widget variation</summary>
 
-![](gifs/widget1.gif)
+![First widget example](gifs/widget1.gif)
 </details>
 
 <details><summary>Second widget variation</summary>
     
-![](gifs/widget2.gif)
+![Second widget example](gifs/widget2.gif)
 </details>
 
 <details><summary>Third widget variation</summary>
 
-![](gifs/widget3.gif)
+![Third widget example](gifs/widget3.gif)
 </details>
 
 <details><summary>Fourth widget variation</summary>
 
-![](gifs/widget4.gif)
+![Fourth widget example](gifs/widget4.gif)
 </details>
 
 ## Features
