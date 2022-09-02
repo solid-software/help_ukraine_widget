@@ -3,7 +3,7 @@ This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/) -
 this widget helps to let users of your app know how they can help Ukraine
 from anywhere in the world.
 
-### Some examples
+### Showcase
 
 <details open><summary>First widget variation</summary>
 
