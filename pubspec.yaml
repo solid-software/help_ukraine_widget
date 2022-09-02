@@ -26,15 +26,15 @@ flutter:
         - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
     - family: Roboto
       fonts:
-        - asset: assets/fonts/Roboto-Thin.ttf
+        - asset: lib/fonts/Roboto-Thin.ttf
           weight: 100
-        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: lib/fonts/Roboto-Light.ttf
           weight: 300
-        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: lib/fonts/Roboto-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: lib/fonts/Roboto-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: lib/fonts/Roboto-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Roboto-Black.ttf
+        - asset: lib/fonts/Roboto-Black.ttf
           weight: 900

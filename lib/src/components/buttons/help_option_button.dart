@@ -43,7 +43,7 @@ class HelpOptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
     const lineHeight = 0.6;
-    const letterSpacing = -0.42;
+    const letterSpacing = 0.3;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
