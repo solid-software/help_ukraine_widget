@@ -51,7 +51,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 ### Basic usage
 Use `OverlayWidget` to float and align the widget above your app:
-```
+``` dart
 OverlayWidget(
     // e.g. Alignment.bottomRight
     alignment: alignment,
@@ -62,7 +62,7 @@ OverlayWidget(
 
 ### Customization
 You can also create custom variations of this widget:
-```
+``` dart
 // we used that in our widget, but you do you 
 final order = [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options];
 
