@@ -146,4 +146,4 @@ To make it easier we provide some classes:
 
 ## Credits
 
-[jiffsy.co]<https://jiffsy.co/> for designing and creating the [original widget]<https://helpukrainewinwidget.org/>.
+[jiffsy.co](https://jiffsy.co/) for designing and creating the [original widget](https://helpukrainewinwidget.org/).
