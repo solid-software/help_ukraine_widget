@@ -53,8 +53,7 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 Use `OverlayWidget` to float and align the widget above your app:
 ``` dart
 OverlayWidget(
-    // e.g. Alignment.bottomRight
-    alignment: alignment,
+    alignment: Alignment.bottomRight,
     overlayWidget: HorizontalHelpWidget(),
     child: MyApp(),
 )
