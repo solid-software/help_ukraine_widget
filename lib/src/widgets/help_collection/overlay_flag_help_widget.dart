@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
-import 'package:help_ukraine_widget/src/components/chevron_down.dart';
-import 'package:help_ukraine_widget/src/theme/font_config.dart';
 import 'package:help_ukraine_widget/src/widgets/default_links_card_widget.dart';
 
 /// Variation of a [HelpWidget] with flag overlaping the card.
