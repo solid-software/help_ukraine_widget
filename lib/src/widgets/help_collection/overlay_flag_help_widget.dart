@@ -28,10 +28,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const mainViewTitleLetterSpacing = 0.4;
     const mainViewTitleFontSize = 20.8;
     const opacity = 0.8;
-    const wordSpacing = -1.8;
 
     return HelpWidget(
       constraints: const BoxConstraints(
