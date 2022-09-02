@@ -72,7 +72,7 @@ HelpWidget(
     controller: _controller;
     // view with links to resources that help Ukraine
     optionsView: ...
-    // transitional view between options and collapsed
+    // The default first view that the users see.
     mainView: ...
     // smallest view that doesn't obstruct user from
     // using the app, but still exists on the screen
