@@ -1,7 +1,27 @@
 # Help Ukraine Widget for Flutter
 This is a port of [Help Ukraine Widget](https://helpukrainewinwidget.org/).
 
-TODO: Some examples of how it should look
+### Some examples
+
+<details open><summary>First widget variation</summary>
+
+![](gifs/widget1.gif)
+</details>
+
+<details><summary>Second widget variation</summary>
+    
+![](gifs/widget2.gif)
+</details>
+
+<details><summary>Third widget variation</summary>
+
+![](gifs/widget3.gif)
+</details>
+
+<details><summary>Fourth widget variation</summary>
+
+![](gifs/widget4.gif)
+</details>
 
 ## Features
 By installing this widget in your app you will help to end the war in Ukraine, it will provide links for:
