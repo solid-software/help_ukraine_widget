@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
@@ -26,6 +28,12 @@ class HorizontalHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const detailsButtonSpacingToChevron = 8.0;
+    const detailsButtonSpacingAfterChevron = 6.0;
+    const chevronWidth = 6.4;
+    const chevronHeight = 6.4;
+    const lineWidth = 1.8;
+
     return HelpWidget(
       controller: _controller,
       optionsView: Container(
@@ -66,10 +74,42 @@ class HorizontalHelpWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 0.5),
-                DetailsButton(
-                  title: detailsButtonDescription,
-                  color: HelpColors.blue,
-                  onTap: _controller.goForward,
+                TextButton(
+                  onPressed: _controller.goForward,
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.blue),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        detailsButtonDescription,
+                        style: const TextStyle(
+                          fontFamily: FontConfig.family,
+                          fontSize: 19.2,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 1,
+                          color: HelpColors.blue,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          top: 4.0,
+                          right: detailsButtonSpacingToChevron,
+                          left: detailsButtonSpacingAfterChevron,
+                        ),
+                        child: SizedBox(
+                          width: chevronWidth,
+                          height: chevronHeight,
+                          child: ChevronDown(
+                            color: HelpColors.blue,
+                            size: Size(chevronWidth, chevronHeight),
+                            lineWidth: lineWidth,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

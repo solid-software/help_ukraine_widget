@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
@@ -29,6 +30,8 @@ class DetailsButton extends StatelessWidget {
 
     const fontSize = 19.2;
     const letterSpacing = -0.2;
+    const offset = Offset(-5.5, 2);
+    const wordSpacing = 1.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -38,27 +41,29 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontFamily: FontConfig.family,
-                fontSize: fontSize,
-                fontWeight: FontWeight.w600,
-                letterSpacing: letterSpacing,
-                color: color,
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 1,
+                right: 12,
+              ),
+              child: Text(
+                title,
+                style: TextThemes.mainFont.copyWith(
+                  fontFamily: FontConfig.family,
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: letterSpacing,
+                  wordSpacing: wordSpacing,
+                  color: color,
+                ),
               ),
             ),
-            const SizedBox(width: 6),
-            Padding(
-              padding: const EdgeInsets.only(top: 4.0),
-              child: SizedBox(
-                width: chevronWidth,
-                height: chevronHeight,
-                child: ChevronDown(
-                  color: color,
-                  size: const Size(chevronWidth, chevronHeight),
-                  lineWidth: lineWidth,
-                ),
+            Transform.translate(
+              offset: offset,
+              child: ChevronDown(
+                color: color,
+                size: const Size(chevronWidth, chevronHeight),
+                lineWidth: lineWidth,
               ),
             ),
           ],
