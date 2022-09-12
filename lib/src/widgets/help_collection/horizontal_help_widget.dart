@@ -42,14 +42,17 @@ class HorizontalHelpWidget extends StatelessWidget {
         padding: const EdgeInsets.only(
           top: 12,
           bottom: 12,
-          left: 16,
-          right: 12,
+          left: 12.8,
+          right: 12.2,
         ),
         onClose: _controller.goBack,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const UkraineFlagWidget(),
+            const Padding(
+              padding: EdgeInsets.only(top: 0.8),
+              child: UkraineFlagWidget(),
+            ),
             const SizedBox(width: 13),
             Column(
               mainAxisSize: MainAxisSize.min,
