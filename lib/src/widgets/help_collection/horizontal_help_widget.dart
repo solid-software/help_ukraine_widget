@@ -40,9 +40,9 @@ class HorizontalHelpWidget extends StatelessWidget {
       ),
       mainView: CardRounded(
         padding: const EdgeInsets.only(
-          top: 12,
+          top: 12.5,
           bottom: 12,
-          left: 12.8,
+          left: 12.75,
           right: 12.2,
         ),
         onClose: _controller.goBack,
@@ -50,10 +50,10 @@ class HorizontalHelpWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Padding(
-              padding: EdgeInsets.only(top: 0.8),
+              padding: EdgeInsets.only(top: 0.28),
               child: UkraineFlagWidget(),
             ),
-            const SizedBox(width: 13),
+            const SizedBox(width: 12.45),
             Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
