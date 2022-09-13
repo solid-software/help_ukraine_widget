@@ -3,6 +3,8 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
+  /// TextStyle for title
+
   /// A variable that is used to set the height of the button.
   final double height;
 
@@ -22,7 +24,7 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  static const _defaultHeight = 53.0;
+  static const _defaultHeight = 41.0;
 
   ///Constructor
   const HelpOptionButton({
@@ -38,8 +40,9 @@ class HelpOptionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    const lineHeight = 0.6;
-    const letterSpacing = 0.3;
+    const letterSpacing = -0.2;
+    const fontSize = 17.92;
+    const wordSpacing = 1.0;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
@@ -47,10 +50,7 @@ class HelpOptionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        padding: const EdgeInsets.only(
-          left: 25,
-          right: 28,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20.48),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -59,8 +59,9 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                height: lineHeight,
+                fontSize: fontSize,
                 letterSpacing: letterSpacing,
+                wordSpacing: wordSpacing,
               ),
             ),
             child,
