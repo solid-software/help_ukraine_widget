@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
@@ -49,28 +48,15 @@ class DetailsButton extends StatelessWidget {
             ),
             const SizedBox(width: 6),
             Padding(
-              padding: const EdgeInsets.only(
-                left: 1,
-                right: 12,
-              ),
-              child: Text(
-                title,
-                style: TextThemes.mainFont.copyWith(
-                  fontFamily: FontConfig.family,
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: letterSpacing,
-                  wordSpacing: wordSpacing,
+              padding: const EdgeInsets.only(top: 4.0),
+              child: SizedBox(
+                width: chevronWidth,
+                height: chevronHeight,
+                child: ChevronDown(
                   color: color,
+                  size: const Size(chevronWidth, chevronHeight),
+                  lineWidth: lineWidth,
                 ),
-              ),
-            ),
-            Transform.translate(
-              offset: offset,
-              child: ChevronDown(
-                color: color,
-                size: const Size(chevronWidth, chevronHeight),
-                lineWidth: lineWidth,
               ),
             ),
           ],
