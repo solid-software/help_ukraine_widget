@@ -42,42 +42,48 @@ class HorizontalHelpWidget extends StatelessWidget {
       ),
       mainView: CardRounded(
         padding: const EdgeInsets.only(
-          top: 12.5,
+          top: 11,
           bottom: 12,
-          left: 13.4,
-          right: 12.2,
+          left: 12.4,
+          right: 12.1,
         ),
         onClose: _controller.goBack,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 0.28),
-              child: UkraineFlagWidget(),
-            ),
-            const SizedBox(width: 12.45),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontFamily: FontConfig.family,
-                    fontSize: 20.8,
-                    fontWeight: FontWeight.w700,
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 0.5),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 0.95),
+                child: UkraineFlagWidget(),
+              ),
+              const SizedBox(width: 13),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 1),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontFamily: FontConfig.family,
+                        fontSize: 20.8,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 0.5),
+                    DetailsButton(
+                      title: detailsButtonDescription,
+                      color: HelpColors.blue,
+                      onTap: _controller.goForward,
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 0.5),
-                DetailsButton(
-                  title: detailsButtonDescription,
-                  color: HelpColors.blue,
-                  onTap: _controller.goForward,
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
       collapsedView: GestureDetector(
