@@ -3,10 +3,10 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
 import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 
-/// Variation of a [HelpWidget] with flag overlaping the card.
+/// Variation of a [HelpUkraineWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+    [HelpUkraineWidgetView.collapsed, HelpUkraineWidgetView.main, HelpUkraineWidgetView.options],
   );
 
   /// A title of a widget.
@@ -32,7 +32,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
     const mainViewTitleFontSize = 20.8;
     const opacity = 0.8;
 
-    return HelpWidget(
+    return HelpUkraineWidget(
       controller: _controller,
       optionsView: SizedBox(
         width: _optionsWidth,

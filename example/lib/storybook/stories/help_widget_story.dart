@@ -12,7 +12,7 @@ const testWidth = 420.0;
 
 const _listLength = 100;
 
-/// Definition of using 4 different widget inherited from [HelpWidget].
+/// Definition of using 4 different widget inherited from [HelpUkraineWidget].
 WidgetbookComponent get helpWidgetStory => WidgetbookComponent(
       name: 'HelpWidget',
       useCases: [

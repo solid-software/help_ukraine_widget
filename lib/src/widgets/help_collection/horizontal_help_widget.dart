@@ -4,10 +4,10 @@ import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
-/// Shortest and widest of variations of [HelpWidget].
+/// Shortest and widest of variations of [HelpUkraineWidget].
 class HorizontalHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+    [HelpUkraineWidgetView.collapsed, HelpUkraineWidgetView.main, HelpUkraineWidgetView.options],
   );
 
   /// A title of a widget.
@@ -34,7 +34,7 @@ class HorizontalHelpWidget extends StatelessWidget {
     const chevronHeight = 6.4;
     const lineWidth = 1.8;
 
-    return HelpWidget(
+    return HelpUkraineWidget(
       controller: _controller,
       optionsView: Container(
         constraints: const BoxConstraints.tightFor(width: 340),
