@@ -19,6 +19,12 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See what you can do';
   static const _mainWidth = 258.0;
   static const _optionsWidth = 255.56;
+  
+    /// It's a letter spacing for details button's title
+  static const _letterSpacing = -0.2;
+
+  /// It's a word spacing for details button's title
+  static const _wordSpacing = 1.0;
 
   /// Constructor
   OverlayFlagHelpWidget({
@@ -55,8 +61,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           SizedBox(
             width: _mainWidth,
             child: CardRounded(
-              padding: const EdgeInsets.fromLTRB(10, 40.4, 10, 13.8),
-              closeButtonAlignment: const Alignment(1.02, -1),
+              padding: const EdgeInsets.fromLTRB(10, 40, 10, 13.8),
+              closeButtonAlignment: const Alignment(1.022, -1),
               onClose: _controller.goBack,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,10 +89,18 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  DetailsButton(
-                    onTap: _controller.goForward,
-                    color: HelpColors.blue,
-                    title: _defaultDetailsButtonDesc,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      DetailsButton(
+                        onTap: _controller.goForward,
+                        color: HelpColors.blue,
+                        title: _defaultDetailsButtonDesc,
+                        letterSpacing: _letterSpacing,
+                        wordSpacing: _wordSpacing,
+                      ),
+                      const SizedBox(width: 6),
+                    ],
                   )
                 ],
               ),

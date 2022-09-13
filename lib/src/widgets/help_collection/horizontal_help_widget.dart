@@ -19,6 +19,12 @@ class HorizontalHelpWidget extends StatelessWidget {
   static const _defaultTitle = 'Stop Russian Aggression!';
   static const _defaultDetailsButtonDesc = 'See what you can do';
 
+  /// It's a letter spacing for details button's title
+  static const _letterSpacing = -0.12;
+
+  /// It's a word spacing for details button's title
+  static const _wordSpacing = 0.3;
+
   /// Constructor
   HorizontalHelpWidget({
     Key? key,
@@ -78,6 +84,8 @@ class HorizontalHelpWidget extends StatelessWidget {
                       title: detailsButtonDescription,
                       color: HelpColors.blue,
                       onTap: _controller.goForward,
+                      letterSpacing: _letterSpacing,
+                      wordSpacing: _wordSpacing,
                     ),
                   ],
                 ),

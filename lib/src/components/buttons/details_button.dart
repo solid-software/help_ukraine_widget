@@ -13,12 +13,20 @@ class DetailsButton extends StatelessWidget {
   /// It's a variable that stores the title of the button.
   final String title;
 
+  ///It's a letter spacing of the title
+  final double? letterSpacing;
+
+  ///It's a word spacing of the title
+  final double? wordSpacing;
+
   ///Constructor
   const DetailsButton({
     Key? key,
     required this.onTap,
     required this.color,
     required this.title,
+    this.letterSpacing,
+    this.wordSpacing,
   }) : super(key: key);
 
   @override
@@ -28,8 +36,6 @@ class DetailsButton extends StatelessWidget {
     const chevronHeight = 6.4;
 
     const fontSize = 19.2;
-    const letterSpacing = -0.12;
-    const wordSpacing = 0.3;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -45,12 +51,12 @@ class DetailsButton extends StatelessWidget {
                 fontFamily: FontConfig.family,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
-                letterSpacing: letterSpacing,
-                wordSpacing: wordSpacing,
+                letterSpacing: letterSpacing ?? 0,
+                wordSpacing: wordSpacing ?? 0,
                 color: color,
               ),
             ),
-            const SizedBox(width: 7.5),
+            const SizedBox(width: 6),
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: SizedBox(
