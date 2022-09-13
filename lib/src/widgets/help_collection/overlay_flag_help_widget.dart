@@ -19,8 +19,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   static const _defaultDetailsButtonDesc = 'See what you can do';
   static const _mainWidth = 258.0;
   static const _optionsWidth = 255.56;
-  
-    /// It's a letter spacing for details button's title
+
+  /// It's a letter spacing for details button's title
   static const _letterSpacing = -0.2;
 
   /// It's a word spacing for details button's title
