@@ -5,7 +5,7 @@ import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 
 /// Variation of a [HelpUkraineWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
-  final _controller = TraverseController(
+  final _controller = TraverseController<HelpUkraineWidgetView>(
     [HelpUkraineWidgetView.collapsed, HelpUkraineWidgetView.main, HelpUkraineWidgetView.options],
   );
 

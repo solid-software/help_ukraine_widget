@@ -6,7 +6,7 @@ import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// Shortest and widest of variations of [HelpUkraineWidget].
 class HorizontalHelpWidget extends StatelessWidget {
-  final _controller = TraverseController(
+  final _controller = TraverseController<HelpUkraineWidgetView>(
     [HelpUkraineWidgetView.collapsed, HelpUkraineWidgetView.main, HelpUkraineWidgetView.options],
   );
 

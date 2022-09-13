@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:help_ukraine_widget/src/widgets/help_widget/animated_view_transition.dart';
+import 'package:help_ukraine_widget/src/widgets/help_ukraine_widget/animated_view_transition.dart';
 
 /// It's a widget that displays a widget that can be collapsed, a widget that
 /// can be expanded, and a widget that can be displayed when
