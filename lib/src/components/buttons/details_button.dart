@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
@@ -14,12 +13,20 @@ class DetailsButton extends StatelessWidget {
   /// It's a variable that stores the title of the button.
   final String title;
 
+  ///It's a letter spacing of the title
+  final double? letterSpacing;
+
+  ///It's a word spacing of the title
+  final double? wordSpacing;
+
   ///Constructor
   const DetailsButton({
     Key? key,
     required this.onTap,
     required this.color,
     required this.title,
+    this.letterSpacing,
+    this.wordSpacing,
   }) : super(key: key);
 
   @override
@@ -29,9 +36,6 @@ class DetailsButton extends StatelessWidget {
     const chevronHeight = 6.4;
 
     const fontSize = 19.2;
-    const letterSpacing = -0.2;
-    const offset = Offset(-5.5, 2);
-    const wordSpacing = 1.0;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -41,29 +45,28 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 1,
-                right: 12,
-              ),
-              child: Text(
-                title,
-                style: TextThemes.mainFont.copyWith(
-                  fontFamily: FontConfig.family,
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: letterSpacing,
-                  wordSpacing: wordSpacing,
-                  color: color,
-                ),
+            Text(
+              title,
+              style: TextStyle(
+                fontFamily: FontConfig.family,
+                fontSize: fontSize,
+                fontWeight: FontWeight.w600,
+                letterSpacing: letterSpacing ?? 0,
+                wordSpacing: wordSpacing ?? 0,
+                color: color,
               ),
             ),
-            Transform.translate(
-              offset: offset,
-              child: ChevronDown(
-                color: color,
-                size: const Size(chevronWidth, chevronHeight),
-                lineWidth: lineWidth,
+            const SizedBox(width: 6),
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: SizedBox(
+                width: chevronWidth,
+                height: chevronHeight,
+                child: ChevronDown(
+                  color: color,
+                  size: const Size(chevronWidth, chevronHeight),
+                  lineWidth: lineWidth,
+                ),
               ),
             ),
           ],
