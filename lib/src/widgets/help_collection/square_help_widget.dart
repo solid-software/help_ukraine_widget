@@ -62,7 +62,7 @@ class SquareHelpWidget extends StatelessWidget {
           ),
         ),
         closeButtonAlignment: const Alignment(1.022, 1.022),
-        padding: const EdgeInsets.symmetric(vertical: 12.8),
+        padding: const EdgeInsets.only(top: 12.3, bottom: 13.3),
         child: SizedBox(
           width: _optionsWidth,
           child: Column(
