@@ -25,7 +25,7 @@ class DetailsButton extends StatelessWidget {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-    const _offset = Offset(4, 2);
+    const _offset = Offset(6, 2);
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -35,13 +35,14 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            const SizedBox(
+              width: 1.0,
+            ),
             Text(
               title,
               style: const TextStyle(
-                letterSpacing: 0.6,
                 fontSize: 19.2,
                 fontWeight: FontWeight.w600,
-                wordSpacing: -2.0,
                 height: 1.16,
               ).copyWith(
                 color: color,

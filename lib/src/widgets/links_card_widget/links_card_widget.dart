@@ -33,7 +33,7 @@ class LinksCardWidget extends StatelessWidget {
           padding: EdgeInsets.only(
             left: 12.8,
             right: 12.8,
-            bottom: 9.4,
+            bottom: 10.4,
             top: 7.4,
           ),
           child: Divider(
@@ -42,7 +42,7 @@ class LinksCardWidget extends StatelessWidget {
         ),
         LinksCardButton(onTap: onClose),
         const SizedBox(
-          height: 3,
+          height: 2,
         )
       ],
     );

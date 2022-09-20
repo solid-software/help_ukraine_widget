@@ -32,8 +32,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _titleFontSize = 20.8;
   static const _titleLineHeight = 1.23;
   static const _titleOpacity = 0.8;
-  static const _titleFlagSize = 18.5;
-  static const _letterSpacing = 0.3;
+  static const _titleFlagSize = 19.5;
   static const _subTitleFontSize = 19.2;
   static const _subTitleOpacity = 0.6;
 
@@ -96,7 +95,6 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         fontSize: _titleFontSize,
                         height: _titleLineHeight,
-                        letterSpacing: _letterSpacing,
                         color: HelpColors.black.withOpacity(_titleOpacity),
                       ),
                     ),
@@ -111,7 +109,6 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         fontSize: _titleFontSize,
                         height: _titleLineHeight,
-                        letterSpacing: _letterSpacing,
                         color: HelpColors.black.withOpacity(_titleOpacity),
                       ),
                     ),

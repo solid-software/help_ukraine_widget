@@ -19,7 +19,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
   static const _fontSize = 16.64;
-  static const _letterSpacing = -0.2;
+  static const _letterSpacing = 0.0;
   static const _angle = 3.1515;
 
   void _onHoverChanged(bool value) {
@@ -35,7 +35,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-    const _offset = Offset(3, -2.0);
+    const _offset = Offset(3.5, -2.0);
     const _scale = 0.9;
 
     return HoverWrapper(
@@ -44,9 +44,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(
-            width: 2,
-          ),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -56,15 +53,13 @@ class _LinksCardButtonState extends State<LinksCardButton> {
                   letterSpacing: _letterSpacing,
                 ),
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: 3),
           Transform.translate(
             offset: _offset,
             child: Transform.rotate(
               angle: _angle,
               child: Transform.scale(
                 scale: _scale,
-                // scaleX: _scale,
-                // scaleY: _scale,
                 child: ChevronDown(
                   color: color,
                   size: const Size(chevronWidth, chevronHeight),
