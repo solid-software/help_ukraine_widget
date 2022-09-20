@@ -24,15 +24,11 @@ class SquareHelpWidget extends StatelessWidget {
   static const _fontSize = 22.4;
   static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
-  static const _rightClose = -2.0;
-  static const _topClose = 0.0;
-  static const _bottomClose = -2.0;
   static const _optionsWidth = 246.39;
   static const _lineWidth = 6.0;
   static const _iconSize = 7.0;
   static const _angle = 3.1415 / 2;
-  static const _scaleX = 0.3;
-  static const _scaleY = 0.3;
+  static const _scale = 0.3;
   static const _offset = Offset(16, 0);
 
   /// Constructor
@@ -51,8 +47,7 @@ class SquareHelpWidget extends StatelessWidget {
       optionsView: CardRounded(
         onClose: _controller.goBack,
         closeButtonIcon: Transform.scale(
-          scaleX: _scaleX,
-          scaleY: _scaleY,
+          scale: _scale,
           alignment: Alignment.centerLeft,
           child: Transform.translate(
             offset: _offset,
@@ -66,8 +61,7 @@ class SquareHelpWidget extends StatelessWidget {
             ),
           ),
         ),
-        right: _rightClose,
-        bottom: _bottomClose,
+        closeButtonAlignment: const Alignment(1.022, 1.022),
         padding: const EdgeInsets.symmetric(vertical: 12.8),
         child: SizedBox(
           width: _optionsWidth,
@@ -85,8 +79,7 @@ class SquareHelpWidget extends StatelessWidget {
           right: 12.8,
         ),
         onClose: _controller.goBack,
-        right: _rightClose,
-        top: _topClose,
+        closeButtonAlignment: const Alignment(1.022, -1),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
