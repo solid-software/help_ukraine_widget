@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
@@ -8,8 +9,11 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
     [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
   );
 
-  /// A title of widget.
-  final String title;
+  /// part before flag
+  final String firstPartOfTitle;
+
+  /// part after flag
+  final String secondPartOfTitle;
 
   /// A description for widget.
   final String description;
@@ -17,7 +21,8 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   /// A description for the button that will be shown on the main card.
   final String detailsButtonDescription;
 
-  static const _defaultTitle = 'Help 🇺🇦 Ukraine win!';
+  static const _defaultFirstTitle = 'Help ';
+  static const _defaultSecondTitle = ' Ukraine win!';
   static const _defaultDescription = '#StandWithUkraine';
   static const _defaultDetailsButtonDesc = 'See how to help';
 
@@ -27,6 +32,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _titleFontSize = 20.8;
   static const _titleLineHeight = 1.23;
   static const _titleOpacity = 0.8;
+  static const _titleFlagSize = 19.0;
   static const _letterSpacing = 0.3;
   static const _subTitleFontSize = 19.2;
   static const _subTitleOpacity = 0.6;
@@ -39,7 +45,8 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   /// Constructor
   EmbeddedFlagHelpWidget({
     Key? key,
-    this.title = _defaultTitle,
+    this.firstPartOfTitle = _defaultFirstTitle,
+    this.secondPartOfTitle = _defaultSecondTitle,
     this.description = _defaultDescription,
     this.detailsButtonDescription = _defaultDetailsButtonDesc,
   }) : super(key: key);
@@ -85,18 +92,37 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                 const SizedBox(
                   height: 4,
                 ),
-                Text(
-                  title,
-                  style: TextThemes.mainFont.copyWith(
-                    fontWeight: FontWeight.w900,
-                    fontSize: _titleFontSize,
-                    height: _titleLineHeight,
-                    letterSpacing: _letterSpacing,
-                    color: HelpColors.black.withOpacity(_titleOpacity),
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      firstPartOfTitle,
+                      style: TextThemes.mainFont.copyWith(
+                        fontWeight: FontWeight.w900,
+                        fontSize: _titleFontSize,
+                        height: _titleLineHeight,
+                        letterSpacing: _letterSpacing,
+                        color: HelpColors.black.withOpacity(_titleOpacity),
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      "lib/assets/svg/flag.svg",
+                      package: "help_ukraine_widget",
+                      width: _titleFlagSize,
+                    ),
+                    Text(
+                      secondPartOfTitle,
+                      style: TextThemes.mainFont.copyWith(
+                        fontWeight: FontWeight.w900,
+                        fontSize: _titleFontSize,
+                        height: _titleLineHeight,
+                        letterSpacing: _letterSpacing,
+                        color: HelpColors.black.withOpacity(_titleOpacity),
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 6.2, bottom: 15.8),
+                  padding: const EdgeInsets.only(top: 6.2, bottom: 15),
                   child: Text(
                     description,
                     style: TextThemes.mainFont.copyWith(
