@@ -22,7 +22,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - packages/lib/assets/svg/
+    - lib/assets/svg/
 
   fonts:
     - family: sficonsets

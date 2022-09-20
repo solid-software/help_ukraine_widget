@@ -36,12 +36,6 @@ class CardRounded extends StatelessWidget {
   /// Icon for a close button
   final Widget? closeButtonIcon;
 
-  /// A vatiable thats sets vertical position by top side
-  final double topPosition;
-
-  /// A vatiable thats sets horizontal position by right  side
-  final double rightPosition;
-
   static const _elevation = 4.0;
   static const _borderRadius = 12.8;
 
@@ -63,8 +57,6 @@ class CardRounded extends StatelessWidget {
       vertical: 10,
       horizontal: 10,
     ),
-    this.topPosition = 0,
-    this.rightPosition = 0,
   }) : super(key: key);
 
   @override
@@ -110,10 +102,11 @@ class CardRounded extends StatelessWidget {
         onTap: onClose,
         child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
-      _positionedCloseButton = Positioned(
-        top: topPosition,
-        right: rightPosition,
-        child: button,
+      _positionedCloseButton = Positioned.fill(
+        child: Align(
+          alignment: closeButtonAlignment,
+          child: button,
+        ),
       );
     } else {
       _positionedCloseButton = const SizedBox();

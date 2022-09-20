@@ -32,13 +32,10 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _titleFontSize = 20.8;
   static const _titleLineHeight = 1.23;
   static const _titleOpacity = 0.8;
-  static const _titleFlagSize = 19.0;
+  static const _titleFlagSize = 18.5;
   static const _letterSpacing = 0.3;
   static const _subTitleFontSize = 19.2;
   static const _subTitleOpacity = 0.6;
-
-  static const _rightPosition = -2.0;
-  static const _topPosition = -1.0;
 
   static const _widgetWidth = 246.39;
 
@@ -73,8 +70,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
       mainView: CardRounded(
         height: _cardHeight,
         padding: const EdgeInsets.only(right: 12.8),
-        rightPosition: _rightPosition,
-        topPosition: _topPosition,
+        closeButtonAlignment: const Alignment(1.022, -1.022),
         onClose: _controller.goBack,
         child: Row(
           mainAxisSize: MainAxisSize.min,
