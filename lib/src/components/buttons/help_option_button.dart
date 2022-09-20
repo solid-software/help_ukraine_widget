@@ -24,7 +24,7 @@ class HelpOptionButton extends StatelessWidget {
 
   static const _defaultHeight = 40.94;
   static const _fontSize = 17.92;
-  // static const _wordSpacing = 1.0;
+  static const _wordSpacing = -0.5;
 
   ///Constructor
   const HelpOptionButton({
@@ -54,12 +54,10 @@ class HelpOptionButton extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.headline4?.copyWith(
-                color: HelpColors.blue,
-                fontWeight: FontWeight.w600,
-                fontSize: _fontSize,
-                // letterSpacing: _letterSpacing,
-                // wordSpacing: _wordSpacing,
-              ),
+                  color: HelpColors.blue,
+                  fontWeight: FontWeight.w600,
+                  fontSize: _fontSize,
+                  wordSpacing: _wordSpacing),
             ),
             child,
           ],
