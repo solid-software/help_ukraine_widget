@@ -102,10 +102,11 @@ class CardRounded extends StatelessWidget {
         child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
       _positionedCloseButton = Positioned.fill(
-          child: Align(
-        alignment: closeButtonAlignment,
-        child: button,
-      ));
+        child: Align(
+          alignment: closeButtonAlignment,
+          child: button,
+        ),
+      );
     } else {
       _positionedCloseButton = const SizedBox();
     }
