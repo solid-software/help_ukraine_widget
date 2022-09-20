@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
@@ -84,6 +85,34 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
               children: [
                 const SizedBox(
                   height: 4,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "data",
+                      style: TextThemes.mainFont.copyWith(
+                        fontWeight: FontWeight.w900,
+                        fontSize: _titleFontSize,
+                        height: _titleLineHeight,
+                        letterSpacing: _letterSpacing,
+                        color: HelpColors.black.withOpacity(_titleOpacity),
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      "assets/svg/Flag.svg",
+                      width: 10,
+                    ),
+                    Text(
+                      "data",
+                      style: TextThemes.mainFont.copyWith(
+                        fontWeight: FontWeight.w900,
+                        fontSize: _titleFontSize,
+                        height: _titleLineHeight,
+                        letterSpacing: _letterSpacing,
+                        color: HelpColors.black.withOpacity(_titleOpacity),
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   title,
