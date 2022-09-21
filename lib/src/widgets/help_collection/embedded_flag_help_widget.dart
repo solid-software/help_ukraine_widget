@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
+import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 
 /// Variation of a [HelpWidget] with flag embedded into the card.
 class EmbeddedFlagHelpWidget extends StatelessWidget {
