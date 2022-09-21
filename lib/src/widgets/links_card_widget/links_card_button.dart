@@ -8,8 +8,15 @@ class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
+  /// Sets letter size
+  final double? fontSize;
+
   /// Constructor
-  const LinksCardButton({Key? key, required this.onTap}) : super(key: key);
+  const LinksCardButton({
+    Key? key,
+    required this.onTap,
+    this.fontSize,
+  }) : super(key: key);
 
   @override
   State<LinksCardButton> createState() => _LinksCardButtonState();
@@ -18,7 +25,7 @@ class LinksCardButton extends StatefulWidget {
 class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
-  static const _fontSize = 16.64;
+  static const _dafaultFontSize = 16.64;
   static const _letterSpacing = 0.0;
   static const _angle = 3.1515;
 
@@ -48,7 +55,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: _fontSize,
+                  fontSize: widget.fontSize ?? _dafaultFontSize,
                   fontWeight: FontWeight.w600,
                   letterSpacing: _letterSpacing,
                 ),

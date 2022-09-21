@@ -13,11 +13,33 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  /// Sets close button`s letter size
+  final double? closeButtonFontSize;
+
+  /// Sets huge modification
+  final bool isHuge;
+
+  static const _defaultPadding = EdgeInsets.only(
+    left: 12.8,
+    right: 12.8,
+    bottom: 10.4,
+    top: 7.4,
+  );
+
+  static const _hugePadding = EdgeInsets.only(
+    left: 12.8,
+    right: 12.8,
+    bottom: 8.4,
+    top: 7.4,
+  );
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
+    this.closeButtonFontSize,
+    this.isHuge = false,
   }) : super(key: key);
 
   @override
@@ -29,18 +51,16 @@ class LinksCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: options,
         ),
-        const Padding(
-          padding: EdgeInsets.only(
-            left: 12.8,
-            right: 12.8,
-            bottom: 10.4,
-            top: 7.4,
-          ),
-          child: Divider(
+        Padding(
+          padding: isHuge ? _hugePadding : _defaultPadding,
+          child: const Divider(
             height: 0,
           ),
         ),
-        LinksCardButton(onTap: onClose),
+        LinksCardButton(
+          onTap: onClose,
+          fontSize: closeButtonFontSize,
+        ),
         const SizedBox(
           height: 2,
         )

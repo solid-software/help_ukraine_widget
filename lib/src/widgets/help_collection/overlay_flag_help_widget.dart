@@ -99,7 +99,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                         letterSpacing: _letterSpacing,
                         wordSpacing: _wordSpacing,
                       ),
-                      const SizedBox(width: 6),
+                      const SizedBox(width: 12),
                     ],
                   )
                 ],

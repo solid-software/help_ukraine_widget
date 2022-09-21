@@ -23,7 +23,9 @@ class HorizontalHelpWidget extends StatelessWidget {
   static const _letterSpacing = -0.12;
 
   /// It's a word spacing for details button's title
-  static const _wordSpacing = 0.3;
+  static const _wordSpacing = 0.7;
+
+  static const _closeButtonFontSize = 19.2;
 
   /// Constructor
   HorizontalHelpWidget({
@@ -39,10 +41,12 @@ class HorizontalHelpWidget extends StatelessWidget {
       optionsView: Container(
         constraints: const BoxConstraints.tightFor(width: 340),
         child: CardRounded(
-          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
+          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 8, top: 6),
           child: LinksCardWidget(
-            options: defaultOptionsList,
+            options: hugeOptionsList,
             onClose: _controller.goBack,
+            closeButtonFontSize: _closeButtonFontSize,
+            isHuge: true,
           ),
         ),
       ),
@@ -54,6 +58,7 @@ class HorizontalHelpWidget extends StatelessWidget {
           right: 12.1,
         ),
         onClose: _controller.goBack,
+        closeButtonAlignment: const Alignment(1.015, -1.05),
         child: Padding(
           padding: const EdgeInsets.only(top: 0.5),
           child: Row(

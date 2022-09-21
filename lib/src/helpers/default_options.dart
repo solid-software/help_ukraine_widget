@@ -35,3 +35,39 @@ final defaultOptionsList = [
     ),
   ),
 ];
+
+///
+final hugeOptionsList = [
+  const HelpOptionButton(
+    title: 'Donate',
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalPadding: 25.6,
+    child: Text(
+      Emojis.moneyWithWings,
+      style: _textStyle,
+    ),
+  ),
+  HelpOptionButton(
+    title: 'Support Ukraine',
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalPadding: 25.6,
+    child: Text(
+      Emojis.heart,
+      style: _textStyle.apply(
+        color: Colors.redAccent,
+      ),
+    ),
+  ),
+  const HelpOptionButton(
+    title: 'Share this widget',
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalPadding: 25.6,
+    child: Text(
+      Emojis.pushpin,
+      style: _textStyle,
+    ),
+  ),
+];

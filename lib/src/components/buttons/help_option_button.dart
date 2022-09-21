@@ -22,8 +22,15 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
+  /// Sets size of letters
+  final double fontSize;
+
+  /// Sets horizontal spacing
+  final double horizontalPadding;
+
   static const _defaultHeight = 40.94;
-  static const _fontSize = 17.92;
+  static const _dafaultFontSize = 17.92;
+  static const _defaultHorizontalPadding = 20.48;
   static const _wordSpacing = -0.5;
 
   ///Constructor
@@ -35,6 +42,8 @@ class HelpOptionButton extends StatelessWidget {
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
+    this.fontSize = _dafaultFontSize,
+    this.horizontalPadding = _defaultHorizontalPadding,
   }) : super(key: key);
 
   @override
@@ -47,7 +56,7 @@ class HelpOptionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 20.48),
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -56,7 +65,7 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: _fontSize,
+                fontSize: fontSize,
                 wordSpacing: _wordSpacing,
               ),
             ),
