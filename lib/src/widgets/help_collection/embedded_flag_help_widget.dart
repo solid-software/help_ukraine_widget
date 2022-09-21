@@ -23,8 +23,8 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   /// A description for the button that will be shown on the main card.
   final String detailsButtonDescription;
 
-  static const _defaultFirstTitle = 'Help ';
-  static const _defaultSecondTitle = ' Ukraine win!';
+  static const _defaultFirstTitle = 'Help';
+  static const _defaultSecondTitle = 'Ukraine win!';
   static const _defaultDescription = '#StandWithUkraine';
   static const _defaultDetailsButtonDesc = 'See how to help';
 
@@ -39,6 +39,9 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _subTitleOpacity = 0.6;
 
   static const _widgetWidth = 246.39;
+
+  static const _letterSpacing = -0.1;
+  static const _wordSpacing = 0.2;
 
   /// Constructor
   EmbeddedFlagHelpWidget({
@@ -100,10 +103,13 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                         color: HelpColors.black.withOpacity(_titleOpacity),
                       ),
                     ),
-                    SvgPicture.asset(
-                      "lib/assets/svg/flag.svg",
-                      package: "help_ukraine_widget",
-                      width: _titleFlagSize,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6, right: 4.95),
+                      child: SvgPicture.asset(
+                        "lib/assets/svg/flag.svg",
+                        package: "help_ukraine_widget",
+                        width: _titleFlagSize,
+                      ),
                     ),
                     Text(
                       secondPartOfTitle,
@@ -111,6 +117,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                         fontSize: _titleFontSize,
                         height: _titleLineHeight,
+                        letterSpacing: _letterSpacing,
                         color: HelpColors.black.withOpacity(_titleOpacity),
                       ),
                     ),
@@ -124,6 +131,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: _subTitleFontSize,
                       color: HelpColors.black.withOpacity(_subTitleOpacity),
+                      letterSpacing: _letterSpacing,
                     ),
                   ),
                 ),
@@ -131,6 +139,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
                   title: detailsButtonDescription,
                   color: HelpColors.blue,
                   onTap: _controller.goForward,
+                  wordSpacing: _wordSpacing,
                 ),
               ],
             ),

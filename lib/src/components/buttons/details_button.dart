@@ -44,9 +44,6 @@ class DetailsButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(
-              width: 1.0,
-            ),
             Text(
               title,
               style: const TextStyle(
