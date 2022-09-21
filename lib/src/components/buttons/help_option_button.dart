@@ -54,10 +54,11 @@ class HelpOptionButton extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.headline4?.copyWith(
-                  color: HelpColors.blue,
-                  fontWeight: FontWeight.w600,
-                  fontSize: _fontSize,
-                  wordSpacing: _wordSpacing),
+                color: HelpColors.blue,
+                fontWeight: FontWeight.w600,
+                fontSize: _fontSize,
+                wordSpacing: _wordSpacing,
+              ),
             ),
             child,
           ],
