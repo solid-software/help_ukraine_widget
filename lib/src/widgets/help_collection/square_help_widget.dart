@@ -79,7 +79,7 @@ class SquareHelpWidget extends StatelessWidget {
           right: 12.8,
         ),
         onClose: _controller.goBack,
-        closeButtonAlignment: const Alignment(1.022, -1),
+        closeButtonAlignment: const Alignment(1.032, -0.993),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -101,7 +101,7 @@ class SquareHelpWidget extends StatelessWidget {
                 color: HelpColors.yellow.withOpacity(_textOpacity),
               ),
             ),
-            const SizedBox(height: 12.8),
+            const SizedBox(height: 13.7),
             RoundedButton(
               onTap: _controller.goForward,
               title: _defaultDetailsButtonDesc,
