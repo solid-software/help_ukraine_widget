@@ -34,15 +34,12 @@ class _RoundedButtonState extends State<RoundedButton> {
   static const _lineHeight = 1.2;
   static const _iconSize = 15.0;
 
-  static const _letterSpacing = -0.0;
-
   static const _lineWidth = 4.0;
   static const _angle = -3.1415 / 2;
   static const _scale = 0.5;
   static const _offset = Offset(6, 5);
 
-  static const _additionalSpace = 10.0;
-  static const _wordSpacing = 1.0;
+  static const _additionalSpace = 8.0;
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +70,6 @@ class _RoundedButtonState extends State<RoundedButton> {
                     color: HelpColors.blue,
                     fontSize: _fontSize,
                     height: _lineHeight,
-                    letterSpacing: _letterSpacing,
-                    wordSpacing: _wordSpacing,
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
