@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/helpers/default_options.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {

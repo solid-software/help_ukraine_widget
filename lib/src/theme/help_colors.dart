@@ -11,5 +11,11 @@ class HelpColors {
   ///
   static const lightBlue = Color.fromRGBO(231, 242, 249, 1);
 
+  ///
+  static const separatorColor = Color(0xffe5e5e5);
+
+  ///
+  static const black = Color(0x00000000);
+
   const HelpColors._();
 }
