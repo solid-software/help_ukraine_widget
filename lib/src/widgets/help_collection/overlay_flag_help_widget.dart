@@ -43,7 +43,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
       optionsView: SizedBox(
         width: _optionsWidth,
         child: CardRounded(
-          padding: const EdgeInsets.only(top: 12.8, bottom: 15.8),
+          padding: const EdgeInsets.only(top: 12.0, bottom: 15.8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
