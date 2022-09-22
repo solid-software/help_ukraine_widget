@@ -3,9 +3,6 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
-  /// A variable that is used to set the height of the button.
-  final double height;
-
   /// A variable that is used to set the title of the button.
   final String title;
 
@@ -22,34 +19,43 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  static const _defaultHeight = 53.0;
+  /// Sets huge modifcation
+  final bool huge;
+
+  static const _hugeHeight = 51.19;
+  static const _defaultHeight = 40.94;
+
+  static const _hugeFontSize = 20.8;
+  static const _defaultFontSize = 17.92;
+
+  static const _hugePadding = 25.6;
+  static const _defaultPadding = 20.48;
+
+  static const _wordSpacing = -0.5;
 
   ///Constructor
   const HelpOptionButton({
     required this.title,
     required this.child,
     Key? key,
-    this.height = _defaultHeight,
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
+    this.huge = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    const lineHeight = 0.6;
-    const letterSpacing = 0.3;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
       highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
       onTap: onTap,
       child: Container(
-        height: height,
-        padding: const EdgeInsets.only(
-          left: 25,
-          right: 28,
+        height: huge ? _hugeHeight : _defaultHeight,
+        padding: EdgeInsets.symmetric(
+          horizontal: huge ? _hugePadding : _defaultPadding,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,8 +65,8 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                height: lineHeight,
-                letterSpacing: letterSpacing,
+                fontSize: huge ? _hugeFontSize : _defaultFontSize,
+                wordSpacing: _wordSpacing,
               ),
             ),
             child,

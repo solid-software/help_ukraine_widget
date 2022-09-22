@@ -13,11 +13,28 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  ///Sets huge modification
+  final bool huge;
+
+  static const _hugePadding = EdgeInsets.only(
+    top: 7,
+    bottom: 9,
+    left: 6.4,
+    right: 6.4,
+  );
+  static const _defaultPadding = EdgeInsets.only(
+    top: 7,
+    bottom: 10,
+    left: 6.4,
+    right: 6.4,
+  );
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
+    this.huge = false,
   }) : super(key: key);
 
   @override
@@ -30,18 +47,14 @@ class LinksCardWidget extends StatelessWidget {
           children: options,
         ),
         Padding(
-          padding: const EdgeInsets.only(
-            top: 1,
-            bottom: 10,
-            left: 3,
-            right: 3,
-          ),
-          child: Container(
-            color: const Color(0xffe5e5e5),
-            height: 1,
-          ),
+            padding: huge ? _hugePadding : _defaultPadding,
+            child: const Divider(
+              height: 0,
+            )),
+        LinksCardButton(
+          onTap: onClose,
+          huge: huge,
         ),
-        LinksCardButton(onTap: onClose),
       ],
     );
   }

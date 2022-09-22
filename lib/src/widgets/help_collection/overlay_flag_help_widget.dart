@@ -43,7 +43,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
       optionsView: SizedBox(
         width: _optionsWidth,
         child: CardRounded(
-          padding: const EdgeInsets.symmetric(vertical: 12.8),
+          padding: const EdgeInsets.only(top: 12.8, bottom: 15.8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -62,7 +62,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
             width: _mainWidth,
             child: CardRounded(
               padding: const EdgeInsets.fromLTRB(10, 40, 10, 13.8),
-              closeButtonAlignment: const Alignment(1.022, -1),
+              closeButtonAlignment: const Alignment(1.022, -1.01),
               onClose: _controller.goBack,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

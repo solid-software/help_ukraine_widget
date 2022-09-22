@@ -8,8 +8,12 @@ class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
+  /// Sets huge modification
+  final bool huge;
+
   /// Constructor
-  const LinksCardButton({Key? key, required this.onTap}) : super(key: key);
+  const LinksCardButton({Key? key, required this.onTap, this.huge = false})
+      : super(key: key);
 
   @override
   State<LinksCardButton> createState() => _LinksCardButtonState();
@@ -20,6 +24,9 @@ class _LinksCardButtonState extends State<LinksCardButton> {
 
   static const _iconSize = 13.0;
 
+  static const _defaultFontSize = 16.64;
+  static const _hugeFontSize = 19.2;
+
   void _onHoverChanged(bool value) {
     setState(() {
       _isHovered = value;
@@ -29,7 +36,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   @override
   Widget build(BuildContext context) {
     final color = _isHovered ? HelpColors.blue : Colors.black;
-    const fontSize = 19.0;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -37,12 +43,12 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 2),
+          const SizedBox(width: 8),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: fontSize,
+                  fontSize: widget.huge ? _hugeFontSize : _defaultFontSize,
                 ),
           ),
           const SizedBox(width: 5),

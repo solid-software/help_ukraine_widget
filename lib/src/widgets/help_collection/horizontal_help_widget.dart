@@ -39,10 +39,11 @@ class HorizontalHelpWidget extends StatelessWidget {
       optionsView: Container(
         constraints: const BoxConstraints.tightFor(width: 340),
         child: CardRounded(
-          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 12, top: 6),
+          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 10, top: 6),
           child: LinksCardWidget(
-            options: defaultOptionsList,
+            options: hugeOptionsList,
             onClose: _controller.goBack,
+            huge: true,
           ),
         ),
       ),

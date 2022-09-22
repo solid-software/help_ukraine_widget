@@ -5,6 +5,12 @@ import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 const _textStyle = TextStyle(
   fontFamily: FontConfig.family,
+  fontSize: 17.92,
+  fontWeight: FontWeight.w500,
+);
+
+const _hugeTextStyle = TextStyle(
+  fontFamily: FontConfig.family,
   fontSize: 20.8,
   fontWeight: FontWeight.w500,
 );
@@ -32,6 +38,35 @@ final defaultOptionsList = [
     child: Text(
       Emojis.pushpin,
       style: _textStyle,
+    ),
+  ),
+];
+
+final hugeOptionsList = [
+  const HelpOptionButton(
+    title: 'Donate',
+    huge: true,
+    child: Text(
+      Emojis.moneyWithWings,
+      style: _hugeTextStyle,
+    ),
+  ),
+  HelpOptionButton(
+    title: 'Support Ukraine',
+    huge: true,
+    child: Text(
+      Emojis.heart,
+      style: _hugeTextStyle.apply(
+        color: Colors.redAccent,
+      ),
+    ),
+  ),
+  const HelpOptionButton(
+    title: 'Share this widget',
+    huge: true,
+    child: Text(
+      Emojis.pushpin,
+      style: _hugeTextStyle,
     ),
   ),
 ];
