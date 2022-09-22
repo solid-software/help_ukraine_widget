@@ -43,6 +43,7 @@ class HorizontalHelpWidget extends StatelessWidget {
           child: LinksCardWidget(
             options: defaultOptionsList,
             onClose: _controller.goBack,
+            chevronSize: const Size.square(9),
           ),
         ),
       ),

@@ -50,6 +50,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
               LinksCardWidget(
                 options: defaultOptionsList,
                 onClose: _controller.goBack,
+                chevronSize: const Size.square(6.5),
               ),
             ],
           ),

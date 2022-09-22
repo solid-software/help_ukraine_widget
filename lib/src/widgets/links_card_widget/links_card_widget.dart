@@ -13,11 +13,15 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  /// The size of the chevron to the right of the text.
+  final Size chevronSize;
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
+    required this.chevronSize,
   }) : super(key: key);
 
   @override
@@ -41,7 +45,10 @@ class LinksCardWidget extends StatelessWidget {
             height: 1,
           ),
         ),
-        LinksCardButton(onTap: onClose),
+        LinksCardButton(
+          onTap: onClose,
+          chevronSize: chevronSize,
+        ),
       ],
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// chevron Icon
-class ChevronDown extends StatelessWidget {
+class Chevron extends StatelessWidget {
   /// size of the canvas to draw a chevron on.
   final Size size;
 
@@ -11,24 +11,56 @@ class ChevronDown extends StatelessWidget {
   /// width of chevron lines.
   final double lineWidth;
 
+  /// Direction where the chevron point will be facing.
+  final ChevronDirection direction;
+
   /// Constructor
-  const ChevronDown({
+  const Chevron({
     Key? key,
     required this.size,
     required this.color,
     required this.lineWidth,
+    required this.direction,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: size,
-      painter: _CrossPainter(
-        color: color,
-        lineWidth: lineWidth,
+    return RotatedBox(
+      quarterTurns: _quartedTurnsForDirection(direction),
+      child: CustomPaint(
+        size: size,
+        painter: _CrossPainter(
+          color: color,
+          lineWidth: lineWidth,
+        ),
       ),
     );
   }
+
+  int _quartedTurnsForDirection(ChevronDirection direction) {
+    return const {
+          ChevronDirection.down: 0,
+          ChevronDirection.left: 1,
+          ChevronDirection.up: 2,
+          ChevronDirection.right: 3,
+        }[direction] ??
+        0;
+  }
+}
+
+/// The direction where the chevron arrow will be pointing.
+enum ChevronDirection {
+  /// Chevron pointing upwards
+  up,
+
+  /// Chevron pointing to the right
+  right,
+
+  /// Chevron pointing downwards
+  down,
+
+  /// Chevron pointing to the left
+  left
 }
 
 class _CrossPainter extends CustomPainter {
