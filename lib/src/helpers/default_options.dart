@@ -46,7 +46,9 @@ final defaultOptionsList = [
 final hugeOptionsList = [
   const HelpOptionButton(
     title: 'Donate',
-    huge: true,
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalSpacing: 25.6,
     child: Text(
       Emojis.moneyWithWings,
       style: _hugeTextStyle,
@@ -54,7 +56,9 @@ final hugeOptionsList = [
   ),
   HelpOptionButton(
     title: 'Support Ukraine',
-    huge: true,
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalSpacing: 25.6,
     child: Text(
       Emojis.heart,
       style: _hugeTextStyle.apply(
@@ -64,7 +68,9 @@ final hugeOptionsList = [
   ),
   const HelpOptionButton(
     title: 'Share this widget',
-    huge: true,
+    height: 51.19,
+    fontSize: 20.8,
+    horizontalSpacing: 25.6,
     child: Text(
       Emojis.pushpin,
       style: _hugeTextStyle,

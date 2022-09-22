@@ -19,17 +19,18 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  /// Sets huge modifcation
-  final bool huge;
+  /// Sets height of widget
+  final double? height;
 
-  static const _hugeHeight = 51.19;
+  /// Sets horizontal spacing
+  final double? horizontalSpacing;
+
+  /// It's letters size
+  final double? fontSize;
+
   static const _defaultHeight = 40.94;
-
-  static const _hugeFontSize = 20.8;
   static const _defaultFontSize = 17.92;
-
-  static const _hugePadding = 25.6;
-  static const _defaultPadding = 20.48;
+  static const _defaultHorizontalSpacing = 20.48;
 
   static const _wordSpacing = -0.5;
 
@@ -41,7 +42,9 @@ class HelpOptionButton extends StatelessWidget {
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
-    this.huge = false,
+    this.height,
+    this.horizontalSpacing,
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -53,9 +56,9 @@ class HelpOptionButton extends StatelessWidget {
       highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
       onTap: onTap,
       child: Container(
-        height: huge ? _hugeHeight : _defaultHeight,
+        height: height ?? _defaultHeight,
         padding: EdgeInsets.symmetric(
-          horizontal: huge ? _hugePadding : _defaultPadding,
+          horizontal: horizontalSpacing ?? _defaultHorizontalSpacing,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +68,7 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: huge ? _hugeFontSize : _defaultFontSize,
+                fontSize: fontSize ?? _defaultFontSize,
                 wordSpacing: _wordSpacing,
               ),
             ),

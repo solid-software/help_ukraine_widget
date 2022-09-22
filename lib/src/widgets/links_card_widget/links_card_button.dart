@@ -8,11 +8,11 @@ class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
-  /// Sets huge modification
-  final bool huge;
+  /// Sets close button letter size
+  final double? fontSize;
 
   /// Constructor
-  const LinksCardButton({Key? key, required this.onTap, this.huge = false})
+  const LinksCardButton({Key? key, required this.onTap, this.fontSize})
       : super(key: key);
 
   @override
@@ -25,7 +25,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   static const _iconSize = 13.0;
 
   static const _defaultFontSize = 16.64;
-  static const _hugeFontSize = 19.2;
 
   void _onHoverChanged(bool value) {
     setState(() {
@@ -48,7 +47,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: widget.huge ? _hugeFontSize : _defaultFontSize,
+                  fontSize: widget.fontSize ?? _defaultFontSize,
                 ),
           ),
           const SizedBox(width: 5),
