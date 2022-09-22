@@ -46,7 +46,16 @@ dependencies:
     help_ukraine_widget: <latest version>
 ```
 
-in your code:
+In the project, the [flutter_sfsymbols](https://pub.dev/packages/flutter_sfsymbols) package is used. Thus, import the following fonts in your __pubspec.yaml__:
+
+``` yaml
+fonts:
+  - family: sficonsets
+    fonts:
+      - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
+```
+
+Then, in your code:
 
 ``` dart
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
