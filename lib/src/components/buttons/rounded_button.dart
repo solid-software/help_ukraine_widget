@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
+import 'package:help_ukraine_widget/src/components/components.dart';
 
 /// [RoundedButton] is a rounded button with text that states underlined
 /// when onHover active.
@@ -61,10 +60,11 @@ class _RoundedButtonState extends State<RoundedButton> {
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
-            const Icon(
-              SFSymbols.chevron_right,
-              size: _iconSize,
+            const Chevron(
+              size: Size.square(_iconSize / 2),
               color: Colors.blueAccent,
+              lineWidth: 2,
+              direction: ChevronDirection.right,
             ),
           ],
         ),
