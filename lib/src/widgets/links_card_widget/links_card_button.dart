@@ -49,10 +49,9 @@ class _LinksCardButtonState extends State<LinksCardButton> {
                   fontSize: fontSize,
                 ),
           ),
-          const SizedBox(width: 5),
           Padding(
             padding: const EdgeInsets.only(
-              left: 2,
+              left: 7,
               bottom: 2.5,
             ),
             child: Chevron(
