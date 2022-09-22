@@ -47,10 +47,11 @@ class LinksCardWidget extends StatelessWidget {
           children: options,
         ),
         Padding(
-            padding: huge ? _hugePadding : _defaultPadding,
-            child: const Divider(
-              height: 0,
-            )),
+          padding: huge ? _hugePadding : _defaultPadding,
+          child: const Divider(
+            height: 0,
+          ),
+        ),
         LinksCardButton(
           onTap: onClose,
           huge: huge,

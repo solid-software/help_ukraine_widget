@@ -42,6 +42,7 @@ final defaultOptionsList = [
   ),
 ];
 
+///
 final hugeOptionsList = [
   const HelpOptionButton(
     title: 'Donate',
