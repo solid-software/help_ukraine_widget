@@ -5,7 +5,11 @@ import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+    [
+      HelpWidgetView.collapsed,
+      HelpWidgetView.main,
+      HelpWidgetView.options,
+    ],
   );
 
   /// A title of widget.
@@ -25,10 +29,9 @@ class SquareHelpWidget extends StatelessWidget {
   static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
   static const _optionsWidth = 246.39;
-  static const _lineWidth = 2.5;
-  static const _iconSize = 15.0;
+  static const _lineWidth = 2.0;
+  static const _chevronSize = 5.625;
   static const _chevronOffset = Offset(-1.5, 0);
-  static const _chevronScale = 0.75;
 
   /// Constructor
   SquareHelpWidget({
@@ -45,17 +48,14 @@ class SquareHelpWidget extends StatelessWidget {
       axis: Axis.horizontal,
       optionsView: CardRounded(
         onClose: _controller.goBack,
-        closeButtonIcon: Transform.scale(
-          scale: _chevronScale,
-          child: Transform.translate(
-            offset: _chevronOffset,
-            child: const Center(
-              child: Chevron(
-                size: Size.square(_iconSize / 2),
-                color: Colors.white,
-                lineWidth: _lineWidth,
-                direction: ChevronDirection.left,
-              ),
+        closeButtonIcon: Transform.translate(
+          offset: _chevronOffset,
+          child: const Center(
+            child: Chevron(
+              size: Size.square(_chevronSize),
+              color: Colors.white,
+              lineWidth: _lineWidth,
+              direction: ChevronDirection.left,
             ),
           ),
         ),
