@@ -23,7 +23,7 @@ class HorizontalHelpWidget extends StatelessWidget {
   static const _letterSpacing = -0.12;
 
   /// It's a word spacing for details button's title
-  static const _wordSpacing = 0.3;
+  static const _wordSpacing = 0.5;
 
   // It's fontSize for "Hide" button in options
   static const _hideButtonFontSize = 19.2;
