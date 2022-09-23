@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/helpers/emojis.dart';
+import 'package:help_ukraine_widget/src/helpers/help_actions.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 const _textStyle = TextStyle(
@@ -11,15 +12,17 @@ const _textStyle = TextStyle(
 
 ///
 final defaultOptionsList = [
-  const HelpOptionButton(
+  HelpOptionButton(
     title: 'Donate',
-    child: Text(
+    onTap: HelpActions.defaults.donate,
+    child: const Text(
       Emojis.moneyWithWings,
       style: _textStyle,
     ),
   ),
   HelpOptionButton(
     title: 'Support Ukraine',
+    onTap: HelpActions.defaults.support,
     child: Text(
       Emojis.heart,
       style: _textStyle.apply(
@@ -27,9 +30,10 @@ final defaultOptionsList = [
       ),
     ),
   ),
-  const HelpOptionButton(
+  HelpOptionButton(
     title: 'Share this widget',
-    child: Text(
+    onTap: HelpActions.defaults.share,
+    child: const Text(
       Emojis.pushpin,
       style: _textStyle,
     ),
