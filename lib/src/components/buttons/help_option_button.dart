@@ -25,7 +25,7 @@ class HelpOptionButton extends StatelessWidget {
   ///Horizontal padding
   final double? outerHorizontalPadding;
 
-  /// It's letters size
+  /// Widget text size
   final double? fontSize;
 
   static const _defaultHeight = 40.94;
