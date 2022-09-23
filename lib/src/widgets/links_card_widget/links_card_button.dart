@@ -10,11 +10,16 @@ class LinksCardButton extends StatefulWidget {
   /// Sets close button letter size
   final double? fontSize;
 
-  /// Constructor
-  const LinksCardButton({Key? key, required this.onTap, this.fontSize, required this.chevronSize,})
-      : super(key: key);
   /// The size of the chevron to the right of the text.
   final Size chevronSize;
+
+  /// Constructor
+  const LinksCardButton({
+    Key? key,
+    required this.onTap,
+    this.fontSize,
+    required this.chevronSize,
+  }) : super(key: key);
 
   @override
   State<LinksCardButton> createState() => _LinksCardButtonState();
@@ -24,7 +29,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
   static const _defaultFontSize = 16.64;
-  
+
   void _onHoverChanged(bool value) {
     setState(() {
       _isHovered = value;
