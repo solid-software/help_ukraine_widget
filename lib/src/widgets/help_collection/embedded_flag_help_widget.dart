@@ -40,7 +40,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
   static const _widgetWidth = 246.39;
 
   static const _letterSpacing = -0.1;
-  static const _wordSpacing = 0.2;
+  static const _wordSpacing = -0.1;
 
   /// Constructor
   EmbeddedFlagHelpWidget({

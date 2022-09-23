@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/src/components/components.dart';
+import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
@@ -46,6 +47,7 @@ class DetailsButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
+                fontFamily: FontConfig.family,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
                 letterSpacing: letterSpacing ?? 0,
