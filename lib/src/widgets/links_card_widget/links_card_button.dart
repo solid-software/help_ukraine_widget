@@ -48,6 +48,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
                   fontSize: widget.fontSize ?? _defaultFontSize,
+                  fontWeight: FontWeight.w600,
                 ),
           ),
           const SizedBox(width: 5),

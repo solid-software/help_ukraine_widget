@@ -22,15 +22,15 @@ class HelpOptionButton extends StatelessWidget {
   /// Sets height of widget
   final double? height;
 
-  /// Sets horizontal spacing
-  final double? horizontalSpacing;
+  ///Horizontal padding
+  final double? outerHorizontalPadding;
 
   /// It's letters size
   final double? fontSize;
 
   static const _defaultHeight = 40.94;
   static const _defaultFontSize = 17.92;
-  static const _defaultHorizontalSpacing = 20.48;
+  static const _defaultHorizontalPadding = 20.48;
 
   static const _wordSpacing = -0.5;
 
@@ -43,7 +43,7 @@ class HelpOptionButton extends StatelessWidget {
     this.backgroundColor,
     this.hoverColor,
     this.height,
-    this.horizontalSpacing,
+    this.outerHorizontalPadding,
     this.fontSize,
   }) : super(key: key);
 
@@ -58,7 +58,7 @@ class HelpOptionButton extends StatelessWidget {
       child: Container(
         height: height ?? _defaultHeight,
         padding: EdgeInsets.symmetric(
-          horizontal: horizontalSpacing ?? _defaultHorizontalSpacing,
+          horizontal: outerHorizontalPadding ?? _defaultHorizontalPadding,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
