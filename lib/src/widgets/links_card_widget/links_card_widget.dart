@@ -25,6 +25,7 @@ class LinksCardWidget extends StatelessWidget {
     left: 6.4,
     right: 6.4,
   );
+
   /// The size of the chevron to the right of the text.
   final Size chevronSize;
 
