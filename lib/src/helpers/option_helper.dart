@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/helpers/emojis.dart';
+import 'package:help_ukraine_widget/src/helpers/help_actions.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// Class that helps get correct options list
@@ -25,6 +26,7 @@ class OptionHelper {
     return [
       HelpOptionButton(
         title: 'Donate',
+        onTap: HelpActions.defaults.donate,
         fontSize: fontSize,
         height: height,
         outerHorizontalPadding: outerHorizontalPadding,
@@ -37,6 +39,7 @@ class OptionHelper {
       ),
       HelpOptionButton(
         title: 'Support Ukraine',
+        onTap: HelpActions.defaults.support,
         fontSize: fontSize,
         height: height,
         outerHorizontalPadding: outerHorizontalPadding,
@@ -49,6 +52,7 @@ class OptionHelper {
       ),
       HelpOptionButton(
         title: 'Share this widget',
+        onTap: HelpActions.defaults.share,
         fontSize: fontSize,
         height: height,
         outerHorizontalPadding: outerHorizontalPadding,
