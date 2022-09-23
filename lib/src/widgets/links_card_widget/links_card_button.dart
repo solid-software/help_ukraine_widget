@@ -7,6 +7,9 @@ class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
+  /// Sets close button letter size
+  final double? fontSize;
+
   /// The size of the chevron to the right of the text.
   final Size chevronSize;
 
@@ -14,6 +17,7 @@ class LinksCardButton extends StatefulWidget {
   const LinksCardButton({
     Key? key,
     required this.onTap,
+    this.fontSize,
     required this.chevronSize,
   }) : super(key: key);
 
@@ -24,6 +28,8 @@ class LinksCardButton extends StatefulWidget {
 class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
+  static const _defaultFontSize = 16.64;
+
   void _onHoverChanged(bool value) {
     setState(() {
       _isHovered = value;
@@ -33,7 +39,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   @override
   Widget build(BuildContext context) {
     final color = _isHovered ? HelpColors.blue : Colors.black;
-    const fontSize = 19.0;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -41,12 +46,13 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 2),
+          const SizedBox(width: 8),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: fontSize,
+                  fontSize: widget.fontSize ?? _defaultFontSize,
+                  fontWeight: FontWeight.w600,
                 ),
           ),
           Padding(

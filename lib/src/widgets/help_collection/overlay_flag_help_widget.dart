@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
-import 'package:help_ukraine_widget/src/helpers/default_options.dart';
+import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 
 /// Variation of a [HelpWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
@@ -43,12 +43,12 @@ class OverlayFlagHelpWidget extends StatelessWidget {
       optionsView: SizedBox(
         width: _optionsWidth,
         child: CardRounded(
-          padding: const EdgeInsets.symmetric(vertical: 12.8),
+          padding: const EdgeInsets.only(top: 12.0, bottom: 15.8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               LinksCardWidget(
-                options: defaultOptionsList,
+                options: OptionHelper.getOptionsList(),
                 onClose: _controller.goBack,
                 chevronSize: const Size.square(6.5),
               ),
@@ -63,7 +63,7 @@ class OverlayFlagHelpWidget extends StatelessWidget {
             width: _mainWidth,
             child: CardRounded(
               padding: const EdgeInsets.fromLTRB(10, 40, 10, 13.8),
-              closeButtonAlignment: const Alignment(1.022, -1),
+              closeButtonAlignment: const Alignment(1.022, -1.01),
               onClose: _controller.goBack,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
