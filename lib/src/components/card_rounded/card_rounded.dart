@@ -12,10 +12,10 @@ class CardRounded extends StatelessWidget {
   /// The background color of the card.
   final Color? backgroundColor;
 
-  /// A variable that sets the height of the card.
+  /// Height of the card.
   final double? height;
 
-  /// A variable that sets the width of the card.
+  /// Width of the card.
   final double? width;
 
   /// A padding for the cards content.
@@ -27,7 +27,7 @@ class CardRounded extends StatelessWidget {
   /// to a non-null value.
   final VoidCallback? onClose;
 
-  /// A variable that sets the position of the close button.
+  /// Position of the close button.
   ///
   /// Note that currently card accepts only 2 types of Alignment:
   /// Alignment.topRight and Alignment.bottomRight

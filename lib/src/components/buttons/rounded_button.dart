@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/src/components/components.dart';
+import 'package:help_ukraine_widget/src/theme/theme.dart';
 
 /// [RoundedButton] is a rounded button with text that states underlined
 /// when onHover active.
@@ -25,17 +26,20 @@ class _RoundedButtonState extends State<RoundedButton> {
   bool _isHovered = false;
 
   static const _width = 135.0;
-  static const _height = 40.0;
+  static const _height = 41.59;
 
-  static const _borderRadius = 13.0;
+  static const _borderRadius = 6.4;
 
-  static const _fontSize = 18.0;
+  static const _fontSize = 19.2;
+  static const _lineHeight = 1.2;
   static const _iconSize = 15.0;
+
+  static const _additionalSpace = 1.0;
+
+  static const _defaultChevronOffset = Offset(4, 2);
 
   @override
   Widget build(BuildContext context) {
-    final color = Colors.blueAccent.withOpacity(0.2);
-
     return HoverWrapper(
       onHoverChanged: (value) {
         setState(() => _isHovered = value);
@@ -47,24 +51,33 @@ class _RoundedButtonState extends State<RoundedButton> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(_borderRadius),
-          color: color,
+          color: HelpColors.lightBlue,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              width: _additionalSpace,
+            ),
             Text(
               widget.title,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
+                    color: HelpColors.blue,
                     fontSize: _fontSize,
+                    height: _lineHeight,
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
-            const Chevron(
-              size: Size.square(_iconSize / 2),
-              color: Colors.blueAccent,
-              lineWidth: 2,
-              direction: ChevronDirection.right,
+            Transform.translate(
+              offset: _defaultChevronOffset,
+              child: const Chevron(
+                size: Size.square(_iconSize / 2),
+                color: HelpColors.blue,
+                lineWidth: 2,
+                direction: ChevronDirection.right,
+              ),
             ),
           ],
         ),
