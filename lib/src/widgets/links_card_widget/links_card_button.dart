@@ -13,12 +13,20 @@ class LinksCardButton extends StatefulWidget {
   /// The size of the chevron to the right of the text.
   final Size chevronSize;
 
+  /// Chevron padding
+  final EdgeInsets? chevronPadding;
+
+  /// Additional spacing before text
+  final double? additionalSpacing;
+
   /// Constructor
   const LinksCardButton({
     Key? key,
     required this.onTap,
     this.fontSize,
     required this.chevronSize,
+    this.chevronPadding,
+    this.additionalSpacing,
   }) : super(key: key);
 
   @override
@@ -29,6 +37,11 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
   static const _defaultFontSize = 16.64;
+  static const _defaultChevronPadding = EdgeInsets.only(
+    left: 7,
+    bottom: 2.5,
+  );
+  static const double _defaultAdditionalSpacing = 4.0;
 
   void _onHoverChanged(bool value) {
     setState(() {
@@ -46,7 +59,9 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 8),
+          SizedBox(
+            width: widget.additionalSpacing ?? _defaultAdditionalSpacing,
+          ),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -56,10 +71,7 @@ class _LinksCardButtonState extends State<LinksCardButton> {
                 ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              left: 7,
-              bottom: 2.5,
-            ),
+            padding: widget.chevronPadding ?? _defaultChevronPadding,
             child: Chevron(
               direction: ChevronDirection.up,
               size: widget.chevronSize,
