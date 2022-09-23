@@ -29,6 +29,12 @@ class LinksCardWidget extends StatelessWidget {
   /// The size of the chevron to the right of the text.
   final Size chevronSize;
 
+  /// Padding for chevron
+  final EdgeInsets? chevronPadding;
+
+  /// Additional spacing before text
+  final double? additionalSpacing;
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
@@ -37,6 +43,8 @@ class LinksCardWidget extends StatelessWidget {
     this.hideButtonFontSize,
     this.dividerPadding = _defaultPadding,
     required this.chevronSize,
+    this.chevronPadding,
+    this.additionalSpacing,
   }) : super(key: key);
 
   @override
@@ -58,6 +66,8 @@ class LinksCardWidget extends StatelessWidget {
           onTap: onClose,
           fontSize: hideButtonFontSize,
           chevronSize: chevronSize,
+          chevronPadding: chevronPadding,
+          additionalSpacing: additionalSpacing,
         ),
       ],
     );
