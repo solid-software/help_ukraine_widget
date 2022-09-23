@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
@@ -8,8 +7,19 @@ class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;
 
+  /// Sets close button letter size
+  final double? fontSize;
+
+  /// The size of the chevron to the right of the text.
+  final Size chevronSize;
+
   /// Constructor
-  const LinksCardButton({Key? key, required this.onTap}) : super(key: key);
+  const LinksCardButton({
+    Key? key,
+    required this.onTap,
+    this.fontSize,
+    required this.chevronSize,
+  }) : super(key: key);
 
   @override
   State<LinksCardButton> createState() => _LinksCardButtonState();
@@ -18,7 +28,7 @@ class LinksCardButton extends StatefulWidget {
 class _LinksCardButtonState extends State<LinksCardButton> {
   bool _isHovered = false;
 
-  static const _iconSize = 13.0;
+  static const _defaultFontSize = 16.64;
 
   void _onHoverChanged(bool value) {
     setState(() {
@@ -29,7 +39,6 @@ class _LinksCardButtonState extends State<LinksCardButton> {
   @override
   Widget build(BuildContext context) {
     final color = _isHovered ? HelpColors.blue : Colors.black;
-    const fontSize = 19.0;
 
     return HoverWrapper(
       onHoverChanged: _onHoverChanged,
@@ -37,19 +46,26 @@ class _LinksCardButtonState extends State<LinksCardButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 2),
+          const SizedBox(width: 8),
           Text(
             'Hide',
             style: Theme.of(context).textTheme.headline6?.copyWith(
                   color: color,
-                  fontSize: fontSize,
+                  fontSize: widget.fontSize ?? _defaultFontSize,
+                  fontWeight: FontWeight.w600,
                 ),
           ),
-          const SizedBox(width: 5),
-          Icon(
-            SFSymbols.chevron_up,
-            color: color,
-            size: _iconSize,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 7,
+              bottom: 2.5,
+            ),
+            child: Chevron(
+              direction: ChevronDirection.up,
+              size: widget.chevronSize,
+              color: color,
+              lineWidth: 1.0,
+            ),
           ),
         ],
       ),

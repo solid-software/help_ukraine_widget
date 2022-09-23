@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/components/components.dart';
+import 'package:help_ukraine_widget/src/theme/theme.dart';
 
 /// [RoundedButton] is a rounded button with text that states underlined
 /// when onHover active.
@@ -34,12 +34,9 @@ class _RoundedButtonState extends State<RoundedButton> {
   static const _lineHeight = 1.2;
   static const _iconSize = 15.0;
 
-  static const _lineWidth = 4.0;
-  static const _angle = -3.1415 / 2;
-  static const _scale = 0.5;
-  static const _offset = Offset(6, 5);
+  static const _additionalSpace = 1.0;
 
-  static const _additionalSpace = 8.0;
+  static const _defaultChevronOffset = Offset(4, 2);
 
   @override
   Widget build(BuildContext context) {
@@ -73,19 +70,13 @@ class _RoundedButtonState extends State<RoundedButton> {
                     decoration: _isHovered ? TextDecoration.underline : null,
                   ),
             ),
-            Transform.scale(
-              scale: _scale,
-              alignment: Alignment.centerLeft,
-              child: Transform.translate(
-                offset: _offset,
-                child: Transform.rotate(
-                  angle: _angle,
-                  child: const ChevronDown(
-                    size: Size.square(_iconSize),
-                    color: HelpColors.blue,
-                    lineWidth: _lineWidth,
-                  ),
-                ),
+            Transform.translate(
+              offset: _defaultChevronOffset,
+              child: const Chevron(
+                size: Size.square(_iconSize / 2),
+                color: HelpColors.blue,
+                lineWidth: 2,
+                direction: ChevronDirection.right,
               ),
             ),
           ],

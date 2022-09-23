@@ -13,11 +13,30 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  ///Fontsize for "Hide" button
+  final double? hideButtonFontSize;
+
+  /// Padding for diveder
+  final EdgeInsets dividerPadding;
+
+  static const _defaultPadding = EdgeInsets.only(
+    top: 7,
+    bottom: 9,
+    left: 6.4,
+    right: 6.4,
+  );
+
+  /// The size of the chevron to the right of the text.
+  final Size chevronSize;
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
+    this.hideButtonFontSize,
+    this.dividerPadding = _defaultPadding,
+    required this.chevronSize,
   }) : super(key: key);
 
   @override
@@ -30,18 +49,16 @@ class LinksCardWidget extends StatelessWidget {
           children: options,
         ),
         Padding(
-          padding: const EdgeInsets.only(
-            top: 1,
-            bottom: 10,
-            left: 3,
-            right: 3,
-          ),
-          child: Container(
-            color: const Color(0xffe5e5e5),
+          padding: dividerPadding,
+          child: const Divider(
             height: 1,
           ),
         ),
-        LinksCardButton(onTap: onClose),
+        LinksCardButton(
+          onTap: onClose,
+          fontSize: hideButtonFontSize,
+          chevronSize: chevronSize,
+        ),
       ],
     );
   }

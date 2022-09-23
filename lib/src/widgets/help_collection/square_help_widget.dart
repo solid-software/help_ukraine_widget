@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
-import 'package:help_ukraine_widget/src/components/chevron_down.dart';
-import 'package:help_ukraine_widget/src/helpers/default_options.dart';
+import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 
 /// Variation of a [HelpWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
@@ -26,11 +25,10 @@ class SquareHelpWidget extends StatelessWidget {
   static const _fontWeight = FontWeight.w900;
   static const _textOpacity = 0.8;
   static const _optionsWidth = 246.39;
-  static const _lineWidth = 6.0;
-  static const _iconSize = 7.0;
-  static const _angle = 3.1415 / 2;
-  static const _scale = 0.3;
-  static const _offset = Offset(16, 0);
+  static const _lineWidth = 2.5;
+  static const _iconSize = 15.0;
+  static const _chevronOffset = Offset(-1.5, 0);
+  static const _chevronScale = 0.75;
 
   /// Constructor
   SquareHelpWidget({
@@ -48,16 +46,15 @@ class SquareHelpWidget extends StatelessWidget {
       optionsView: CardRounded(
         onClose: _controller.goBack,
         closeButtonIcon: Transform.scale(
-          scale: _scale,
-          alignment: Alignment.centerLeft,
+          scale: _chevronScale,
           child: Transform.translate(
-            offset: _offset,
-            child: Transform.rotate(
-              angle: _angle,
-              child: const ChevronDown(
-                size: Size.square(_iconSize),
+            offset: _chevronOffset,
+            child: const Center(
+              child: Chevron(
+                size: Size.square(_iconSize / 2),
                 color: Colors.white,
                 lineWidth: _lineWidth,
+                direction: ChevronDirection.left,
               ),
             ),
           ),
@@ -68,7 +65,7 @@ class SquareHelpWidget extends StatelessWidget {
           width: _optionsWidth,
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: defaultOptionsList,
+            children: OptionHelper.getOptionsList(),
           ),
         ),
       ),
