@@ -34,7 +34,6 @@ class DetailsButton extends StatelessWidget {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-
     const fontSize = 19.2;
 
     return MouseRegion(
@@ -69,7 +68,7 @@ class DetailsButton extends StatelessWidget {
                   lineWidth: lineWidth,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

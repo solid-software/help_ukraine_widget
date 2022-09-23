@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^1.1.5
   provider: ^6.0.3
   url_launcher: ^6.1.5
 
@@ -20,6 +21,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - lib/assets/svg/
 
   fonts:
     - family: Roboto

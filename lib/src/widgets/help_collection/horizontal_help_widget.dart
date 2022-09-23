@@ -74,6 +74,7 @@ class HorizontalHelpWidget extends StatelessWidget {
           right: 12.1,
         ),
         onClose: _controller.goBack,
+        closeButtonAlignment: const Alignment(1.015, -1.05),
         child: Padding(
           padding: const EdgeInsets.only(top: 0.5),
           child: Row(
