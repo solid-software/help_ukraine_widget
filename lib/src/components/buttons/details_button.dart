@@ -45,10 +45,9 @@ class DetailsButton extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
-              ).copyWith(
                 letterSpacing: letterSpacing ?? 0,
                 wordSpacing: wordSpacing ?? 0,
                 color: color,
