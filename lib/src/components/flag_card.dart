@@ -13,6 +13,7 @@ class FlagCard extends StatelessWidget {
       key: key,
       cursor: SystemMouseCursors.click,
       child: const CardRounded(
+        padding: EdgeInsets.all(9.6),
         child: UkraineFlagWidget(),
       ),
     );

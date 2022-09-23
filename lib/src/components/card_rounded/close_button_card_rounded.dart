@@ -19,7 +19,7 @@ class CloseButtonCardRounded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const _size = 20.0;
+    const _size = 19.2;
 
     return Container(
       height: _size,

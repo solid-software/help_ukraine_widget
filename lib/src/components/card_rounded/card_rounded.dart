@@ -12,10 +12,10 @@ class CardRounded extends StatelessWidget {
   /// The background color of the card.
   final Color? backgroundColor;
 
-  /// A variable that sets the height of the card.
+  /// Height of the card.
   final double? height;
 
-  /// A variable that sets the width of the card.
+  /// Width of the card.
   final double? width;
 
   /// A padding for the cards content.
@@ -27,7 +27,7 @@ class CardRounded extends StatelessWidget {
   /// to a non-null value.
   final VoidCallback? onClose;
 
-  /// A variable that sets the position of the close button.
+  /// Position of the close button.
   ///
   /// Note that currently card accepts only 2 types of Alignment:
   /// Alignment.topRight and Alignment.bottomRight
@@ -37,7 +37,7 @@ class CardRounded extends StatelessWidget {
   final Widget? closeButtonIcon;
 
   static const _elevation = 4.0;
-  static const _borderRadius = 13.0;
+  static const _borderRadius = 12.8;
 
   static const _defaultOffset = 5.0;
 
@@ -81,7 +81,7 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
-      const _iconSize = 10.0;
+      const _iconSize = 12.0;
       const _padding = 6.4;
       const _lineWidth = 2.0;
       final _defaultCloseButtonIcon = Container(
@@ -98,7 +98,10 @@ class CardRounded extends StatelessWidget {
         child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
       _positionedCloseButton = Positioned.fill(
-        child: Align(alignment: closeButtonAlignment, child: button),
+        child: Align(
+          alignment: closeButtonAlignment,
+          child: button,
+        ),
       );
     } else {
       _positionedCloseButton = const SizedBox();
