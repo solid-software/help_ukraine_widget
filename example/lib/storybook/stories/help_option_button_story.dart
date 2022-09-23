@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 import 'package:widgetbook/widgetbook.dart';
@@ -36,9 +35,11 @@ WidgetbookComponent get helpOptionButtonStory => WidgetbookComponent(
                 onTap: onTap,
                 title: title,
                 backgroundColor: color,
-                child: const Icon(
-                  SFSymbols.chevron_down,
-                  size: 14,
+                child: const Chevron(
+                  direction: ChevronDirection.up,
+                  size: Size.square(10),
+                  color: Colors.black,
+                  lineWidth: 2,
                 ),
               ),
             );

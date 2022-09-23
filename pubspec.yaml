@@ -10,9 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_sfsymbols: ^2.0.0
   flutter_svg: ^1.1.5
   provider: ^6.0.3
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_test:
@@ -26,9 +26,6 @@ flutter:
     - lib/assets/svg/
 
   fonts:
-    - family: sficonsets
-      fonts:
-        - asset: packages/flutter_sfsymbols/fonts/sficonsets.ttf
     - family: Roboto
       fonts:
         - asset: lib/fonts/Roboto-Thin.ttf

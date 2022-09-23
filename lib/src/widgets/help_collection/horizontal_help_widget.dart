@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
-import 'package:help_ukraine_widget/src/helpers/default_options.dart';
+import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
 /// Shortest and widest of variations of [HelpWidget].
@@ -25,7 +25,12 @@ class HorizontalHelpWidget extends StatelessWidget {
   /// It's a word spacing for details button's title
   static const _wordSpacing = 0.7;
 
-  static const _closeButtonFontSize = 19.2;
+  // It's fontSize for "Hide" button in options
+  static const _hideButtonFontSize = 19.2;
+
+  static const _optionsFontSize = 20.8;
+  static const _optionHeight = 51.19;
+  static const _outerHorizontalPadding = 25.6;
 
   /// Constructor
   HorizontalHelpWidget({
@@ -41,12 +46,23 @@ class HorizontalHelpWidget extends StatelessWidget {
       optionsView: Container(
         constraints: const BoxConstraints.tightFor(width: 340),
         child: CardRounded(
-          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 8, top: 6),
+          padding: const EdgeInsets.only(right: 3, left: 3, bottom: 10, top: 6),
           child: LinksCardWidget(
-            options: hugeOptionsList,
+            options: OptionHelper.getOptionsList(
+              height: _optionHeight,
+              outerHorizontalPadding: _outerHorizontalPadding,
+              fontSize: _optionsFontSize,
+            ),
+            dividerPadding: const EdgeInsets.only(
+              top: 7,
+              bottom: 8,
+              left: 6.4,
+              right: 6.4,
+            ),
             onClose: _controller.goBack,
-            closeButtonFontSize: _closeButtonFontSize,
-            isHuge: true,
+            hideButtonFontSize: _hideButtonFontSize,
+            chevronSize: const Size.square(9),
+            chevronPadding: const EdgeInsets.only(left: 6, bottom: 3.5),
           ),
         ),
       ),

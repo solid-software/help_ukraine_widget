@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sfsymbols/flutter_sfsymbols.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -18,24 +17,15 @@ WidgetbookComponent get helpOptionsListStory => WidgetbookComponent(
                     children: const [
                       HelpOptionButton(
                         title: 'Donate',
-                        child: Icon(
-                          SFSymbols.money_dollar,
-                          size: 19,
-                        ),
+                        child: Text("💸"),
                       ),
                       HelpOptionButton(
                         title: 'Support Ukraine',
-                        child: Icon(
-                          SFSymbols.heart,
-                          size: 19,
-                        ),
+                        child: Text("❤️"),
                       ),
                       HelpOptionButton(
                         title: 'Share this widget',
-                        child: Icon(
-                          SFSymbols.pin,
-                          size: 19,
-                        ),
+                        child: Text("📌"),
                       ),
                     ],
                   ),

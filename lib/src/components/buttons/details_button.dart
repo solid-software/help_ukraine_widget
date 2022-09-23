@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_ukraine_widget/src/components/chevron_down.dart';
+import 'package:help_ukraine_widget/src/components/components.dart';
 
 /// It's a button that changes color when you hover over it
 class DetailsButton extends StatelessWidget {
@@ -33,7 +33,6 @@ class DetailsButton extends StatelessWidget {
     const lineWidth = 1.8;
     const chevronWidth = 6.4;
     const chevronHeight = 6.4;
-    const _offset = Offset(6, 2);
     const fontSize = 19.2;
 
     return MouseRegion(
@@ -55,12 +54,18 @@ class DetailsButton extends StatelessWidget {
                 color: color,
               ),
             ),
-            Transform.translate(
-              offset: _offset,
-              child: ChevronDown(
-                color: color,
-                size: const Size(chevronWidth, chevronHeight),
-                lineWidth: lineWidth,
+            const SizedBox(width: 6),
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: SizedBox(
+                width: chevronWidth,
+                height: chevronHeight,
+                child: Chevron(
+                  direction: ChevronDirection.down,
+                  color: color,
+                  size: const Size(chevronWidth, chevronHeight),
+                  lineWidth: lineWidth,
+                ),
               ),
             )
           ],

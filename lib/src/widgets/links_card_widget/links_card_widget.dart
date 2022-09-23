@@ -13,33 +13,38 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
-  /// Sets close button`s letter size
-  final double? closeButtonFontSize;
+  ///Fontsize for "Hide" button
+  final double? hideButtonFontSize;
 
-  /// Sets huge modification
-  final bool isHuge;
+  /// Padding for diveder
+  final EdgeInsets dividerPadding;
 
   static const _defaultPadding = EdgeInsets.only(
-    left: 12.8,
-    right: 12.8,
-    bottom: 10.4,
-    top: 7.4,
+    top: 7,
+    bottom: 9,
+    left: 6.4,
+    right: 6.4,
   );
 
-  static const _hugePadding = EdgeInsets.only(
-    left: 12.8,
-    right: 12.8,
-    bottom: 8.4,
-    top: 7.4,
-  );
+  /// The size of the chevron to the right of the text.
+  final Size chevronSize;
+
+  /// Padding for chevron
+  final EdgeInsets? chevronPadding;
+
+  /// Additional spacing before text
+  final double? additionalSpacing;
 
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
-    this.closeButtonFontSize,
-    this.isHuge = false,
+    this.hideButtonFontSize,
+    this.dividerPadding = _defaultPadding,
+    required this.chevronSize,
+    this.chevronPadding,
+    this.additionalSpacing,
   }) : super(key: key);
 
   @override
@@ -52,18 +57,18 @@ class LinksCardWidget extends StatelessWidget {
           children: options,
         ),
         Padding(
-          padding: isHuge ? _hugePadding : _defaultPadding,
+          padding: dividerPadding,
           child: const Divider(
-            height: 0,
+            height: 1,
           ),
         ),
         LinksCardButton(
           onTap: onClose,
-          fontSize: closeButtonFontSize,
+          fontSize: hideButtonFontSize,
+          chevronSize: chevronSize,
+          chevronPadding: chevronPadding,
+          additionalSpacing: additionalSpacing,
         ),
-        const SizedBox(
-          height: 2,
-        )
       ],
     );
   }

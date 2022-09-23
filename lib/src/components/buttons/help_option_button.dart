@@ -3,9 +3,6 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
-  /// A variable that is used to set the height of the button.
-  final double height;
-
   /// A variable that is used to set the title of the button.
   final String title;
 
@@ -22,15 +19,19 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  /// Sets size of letters
-  final double fontSize;
+  /// Sets height of widget
+  final double? height;
 
-  /// Sets horizontal spacing
-  final double horizontalPadding;
+  ///Horizontal padding
+  final double? outerHorizontalPadding;
+
+  /// Widget text size
+  final double? fontSize;
 
   static const _defaultHeight = 40.94;
-  static const _dafaultFontSize = 17.92;
+  static const _defaultFontSize = 17.92;
   static const _defaultHorizontalPadding = 20.48;
+
   static const _wordSpacing = -0.5;
 
   ///Constructor
@@ -38,12 +39,12 @@ class HelpOptionButton extends StatelessWidget {
     required this.title,
     required this.child,
     Key? key,
-    this.height = _defaultHeight,
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
-    this.fontSize = _dafaultFontSize,
-    this.horizontalPadding = _defaultHorizontalPadding,
+    this.height,
+    this.outerHorizontalPadding,
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -55,8 +56,10 @@ class HelpOptionButton extends StatelessWidget {
       highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
       onTap: onTap,
       child: Container(
-        height: height,
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+        height: height ?? _defaultHeight,
+        padding: EdgeInsets.symmetric(
+          horizontal: outerHorizontalPadding ?? _defaultHorizontalPadding,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -65,7 +68,7 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: fontSize,
+                fontSize: fontSize ?? _defaultFontSize,
                 wordSpacing: _wordSpacing,
               ),
             ),
