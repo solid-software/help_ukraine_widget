@@ -61,6 +61,7 @@ class HorizontalHelpWidget extends StatelessWidget {
             ),
             onClose: _controller.goBack,
             hideButtonFontSize: _hideButtonFontSize,
+            chevronSize: const Size.square(9),
           ),
         ),
       ),
