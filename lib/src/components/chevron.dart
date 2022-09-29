@@ -25,26 +25,14 @@ class Chevron extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RotatedBox(
-      quarterTurns: _quartedTurnsForDirection(direction),
-      child: CustomPaint(
-        size: size,
-        painter: _CrossPainter(
-          color: color,
-          lineWidth: lineWidth,
-        ),
+    return CustomPaint(
+      size: size,
+      painter: _ChevronPainter(
+        color: color,
+        lineWidth: lineWidth,
+        direction: direction,
       ),
     );
-  }
-
-  int _quartedTurnsForDirection(ChevronDirection direction) {
-    return const {
-          ChevronDirection.down: 0,
-          ChevronDirection.left: 1,
-          ChevronDirection.up: 2,
-          ChevronDirection.right: 3,
-        }[direction] ??
-        0;
   }
 }
 
@@ -63,15 +51,35 @@ enum ChevronDirection {
   left
 }
 
-class _CrossPainter extends CustomPainter {
+class _ChevronPainter extends CustomPainter {
   final double lineWidth;
   final Color color;
+  final ChevronDirection? direction;
 
   /// constructor
-  _CrossPainter({
+  _ChevronPainter({
     required this.color,
     required this.lineWidth,
+    this.direction,
   });
+
+  double _getRadiansForDirection(ChevronDirection? direction) {
+    const double _pi = 3.1415;
+    const double _halfOfPi = _pi / 2;
+
+    switch (direction) {
+      case ChevronDirection.down:
+        return 0.0;
+      case ChevronDirection.left:
+        return _halfOfPi;
+      case ChevronDirection.up:
+        return _pi;
+      case ChevronDirection.right:
+        return -_halfOfPi;
+      default:
+        return 0.0;
+    }
+  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -86,6 +94,8 @@ class _CrossPainter extends CustomPainter {
     final halfLine = lineWidth / 2;
 
     final x = halfLine / 2;
+
+    canvas.rotate(_getRadiansForDirection(direction));
 
     canvas.drawLine(
       Offset.zero,

@@ -36,7 +36,7 @@ class _RoundedButtonState extends State<RoundedButton> {
 
   static const _additionalSpace = 1.0;
 
-  static const _defaultChevronOffset = Offset(4, 2);
+  static const _defaultChevronOffset = Offset(3.0, 9);
 
   @override
   Widget build(BuildContext context) {

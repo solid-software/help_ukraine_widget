@@ -31,7 +31,7 @@ class SquareHelpWidget extends StatelessWidget {
   static const _optionsWidth = 246.39;
   static const _lineWidth = 2.0;
   static const _chevronSize = 5.625;
-  static const _chevronOffset = Offset(-1.5, 0);
+  static const _chevronOffset = Offset(4.5, 0);
 
   /// Constructor
   SquareHelpWidget({
