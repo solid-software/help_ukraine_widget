@@ -28,6 +28,7 @@ class HorizontalHelpWidget extends StatelessWidget {
   // It's fontSize for "Hide" button in options
   static const _hideButtonFontSize = 19.2;
 
+  static const _additionalSpacing = 14.0;
   static const _optionsFontSize = 20.8;
   static const _optionHeight = 51.19;
   static const _outerHorizontalPadding = 25.6;
@@ -62,7 +63,8 @@ class HorizontalHelpWidget extends StatelessWidget {
             onClose: _controller.goBack,
             hideButtonFontSize: _hideButtonFontSize,
             chevronSize: const Size.square(9),
-            chevronPadding: const EdgeInsets.only(left: 6, bottom: 3.5),
+            chevronPadding: const EdgeInsets.only(left: 15, top: 13.5),
+            additionalSpacing: _additionalSpacing,
           ),
         ),
       ),

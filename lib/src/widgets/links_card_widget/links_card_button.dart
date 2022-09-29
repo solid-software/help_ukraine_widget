@@ -38,10 +38,10 @@ class _LinksCardButtonState extends State<LinksCardButton> {
 
   static const _defaultFontSize = 16.64;
   static const _defaultChevronPadding = EdgeInsets.only(
-    left: 7,
-    bottom: 2.5,
+    left: 13.0,
+    top: 10.0,
   );
-  static const double _defaultAdditionalSpacing = 4.0;
+  static const double _defaultAdditionalSpacing = 10.0;
 
   void _onHoverChanged(bool value) {
     setState(() {
