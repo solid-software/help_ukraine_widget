@@ -3,11 +3,6 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
 /// [HelpOptionButton] uses for actions
 class HelpOptionButton extends StatelessWidget {
-  /// TextStyle for title
-
-  /// A variable that is used to set the height of the button.
-  final double height;
-
   /// A variable that is used to set the title of the button.
   final String title;
 
@@ -24,33 +19,47 @@ class HelpOptionButton extends StatelessWidget {
   /// hovering over it.
   final Color? hoverColor;
 
-  static const _defaultHeight = 41.0;
+  /// Sets height of widget
+  final double? height;
+
+  ///Horizontal padding
+  final double? outerHorizontalPadding;
+
+  /// Widget text size
+  final double? fontSize;
+
+  static const _defaultHeight = 40.94;
+  static const _defaultFontSize = 17.92;
+  static const _defaultHorizontalPadding = 20.48;
+
+  static const _wordSpacing = -0.5;
 
   ///Constructor
   const HelpOptionButton({
     required this.title,
     required this.child,
     Key? key,
-    this.height = _defaultHeight,
     this.onTap,
     this.backgroundColor,
     this.hoverColor,
+    this.height,
+    this.outerHorizontalPadding,
+    this.fontSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const hoverOpacity = 0.1;
-    const letterSpacing = -0.2;
-    const fontSize = 17.92;
-    const wordSpacing = 1.0;
 
     return HoverWrapper(
       backgroundColor: backgroundColor,
       highlightColor: hoverColor ?? HelpColors.blue.withOpacity(hoverOpacity),
       onTap: onTap,
       child: Container(
-        height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 20.48),
+        height: height ?? _defaultHeight,
+        padding: EdgeInsets.symmetric(
+          horizontal: outerHorizontalPadding ?? _defaultHorizontalPadding,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -59,9 +68,8 @@ class HelpOptionButton extends StatelessWidget {
               style: theme.textTheme.headline4?.copyWith(
                 color: HelpColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: fontSize,
-                letterSpacing: letterSpacing,
-                wordSpacing: wordSpacing,
+                fontSize: fontSize ?? _defaultFontSize,
+                wordSpacing: _wordSpacing,
               ),
             ),
             child,

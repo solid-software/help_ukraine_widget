@@ -13,11 +13,38 @@ class LinksCardWidget extends StatelessWidget {
   /// on the 'Hide' button.
   final VoidCallback onClose;
 
+  ///Fontsize for "Hide" button
+  final double? hideButtonFontSize;
+
+  /// Padding for diveder
+  final EdgeInsets dividerPadding;
+
+  static const _defaultPadding = EdgeInsets.only(
+    top: 7,
+    bottom: 9,
+    left: 6.4,
+    right: 6.4,
+  );
+
+  /// The size of the chevron to the right of the text.
+  final Size chevronSize;
+
+  /// Padding for chevron
+  final EdgeInsets? chevronPadding;
+
+  /// Additional spacing before text
+  final double? additionalSpacing;
+
   /// Constructor
   const LinksCardWidget({
     Key? key,
     required this.options,
     required this.onClose,
+    this.hideButtonFontSize,
+    this.dividerPadding = _defaultPadding,
+    required this.chevronSize,
+    this.chevronPadding,
+    this.additionalSpacing,
   }) : super(key: key);
 
   @override
@@ -30,27 +57,18 @@ class LinksCardWidget extends StatelessWidget {
           children: options,
         ),
         Padding(
-          padding: const EdgeInsets.only(
-            left: 12.8,
-            right: 12.8,
-            top: 7.4,
-            bottom: 9.4,
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Container(
-                  color: HelpColors.separatorColor,
-                  height: 1,
-                ),
-              )
-            ],
+          padding: dividerPadding,
+          child: const Divider(
+            height: 1,
           ),
         ),
-        LinksCardButton(onTap: onClose),
-        const SizedBox(
-          height: 3,
-        )
+        LinksCardButton(
+          onTap: onClose,
+          fontSize: hideButtonFontSize,
+          chevronSize: chevronSize,
+          chevronPadding: chevronPadding,
+          additionalSpacing: additionalSpacing,
+        ),
       ],
     );
   }

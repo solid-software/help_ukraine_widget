@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
-import 'package:help_ukraine_widget/src/helpers/default_options.dart';
+import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 
 /// Variation of a [HelpUkraineWidget] with flag overlaping the card.
 class OverlayFlagHelpWidget extends StatelessWidget {
@@ -24,6 +24,12 @@ class OverlayFlagHelpWidget extends StatelessWidget {
   static const _mainWidth = 258.0;
   static const _optionsWidth = 255.56;
 
+  /// It's a letter spacing for details button's title
+  static const _letterSpacing = -0.2;
+
+  /// It's a word spacing for details button's title
+  static const _wordSpacing = 1.0;
+
   /// Constructor
   OverlayFlagHelpWidget({
     Key? key,
@@ -41,13 +47,14 @@ class OverlayFlagHelpWidget extends StatelessWidget {
       optionsView: SizedBox(
         width: _optionsWidth,
         child: CardRounded(
-          padding: const EdgeInsets.symmetric(vertical: 12.8),
+          padding: const EdgeInsets.only(top: 12.0, bottom: 15.8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               LinksCardWidget(
-                options: defaultOptionsList,
+                options: OptionHelper.getOptionsList(),
                 onClose: _controller.goBack,
+                chevronSize: const Size.square(6.5),
               ),
             ],
           ),
@@ -59,8 +66,8 @@ class OverlayFlagHelpWidget extends StatelessWidget {
           SizedBox(
             width: _mainWidth,
             child: CardRounded(
-              padding: const EdgeInsets.fromLTRB(10, 40.4, 10, 13.8),
-              closeButtonAlignment: const Alignment(1.02, -1),
+              padding: const EdgeInsets.fromLTRB(10, 40, 10, 13.8),
+              closeButtonAlignment: const Alignment(1.022, -1.01),
               onClose: _controller.goBack,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,10 +94,18 @@ class OverlayFlagHelpWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  DetailsButton(
-                    onTap: _controller.goForward,
-                    color: HelpColors.blue,
-                    title: _defaultDetailsButtonDesc,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      DetailsButton(
+                        onTap: _controller.goForward,
+                        color: HelpColors.blue,
+                        title: _defaultDetailsButtonDesc,
+                        letterSpacing: _letterSpacing,
+                        wordSpacing: _wordSpacing,
+                      ),
+                      const SizedBox(width: 6),
+                    ],
                   )
                 ],
               ),

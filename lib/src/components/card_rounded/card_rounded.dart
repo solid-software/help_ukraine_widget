@@ -12,10 +12,10 @@ class CardRounded extends StatelessWidget {
   /// The background color of the card.
   final Color? backgroundColor;
 
-  /// A variable that sets the height of the card.
+  /// Height of the card.
   final double? height;
 
-  /// A variable that sets the width of the card.
+  /// Width of the card.
   final double? width;
 
   /// A padding for the cards content.
@@ -27,7 +27,7 @@ class CardRounded extends StatelessWidget {
   /// to a non-null value.
   final VoidCallback? onClose;
 
-  /// A variable that sets the position of the close button.
+  /// Position of the close button.
   ///
   /// Note that currently card accepts only 2 types of Alignment:
   /// Alignment.topRight and Alignment.bottomRight
@@ -41,8 +41,6 @@ class CardRounded extends StatelessWidget {
 
   static const _defaultOffset = 5.0;
 
-  static const _scale = 1.2;
-
   /// Constructor
   const CardRounded({
     Key? key,
@@ -52,7 +50,7 @@ class CardRounded extends StatelessWidget {
     this.width,
     this.onClose,
     this.closeButtonIcon,
-    this.closeButtonAlignment = const Alignment(1.04, -1.05),
+    this.closeButtonAlignment = const Alignment(1.02, -1.05),
     this.padding = const EdgeInsets.symmetric(
       vertical: 10,
       horizontal: 10,
@@ -83,18 +81,15 @@ class CardRounded extends StatelessWidget {
     );
 
     if (onClose != null) {
-      const _iconSize = 10.0;
+      const _iconSize = 12.0;
       const _padding = 6.4;
       const _lineWidth = 2.0;
       final _defaultCloseButtonIcon = Container(
         padding: const EdgeInsets.all(_padding),
-        child: Transform.scale(
-          scale: _scale,
-          child: const XMark(
-            size: Size.square(_iconSize),
-            color: Colors.white,
-            lineWidth: _lineWidth,
-          ),
+        child: const XMark(
+          size: Size.square(_iconSize),
+          color: Colors.white,
+          lineWidth: _lineWidth,
         ),
       );
 
@@ -103,7 +98,10 @@ class CardRounded extends StatelessWidget {
         child: closeButtonIcon ?? _defaultCloseButtonIcon,
       );
       _positionedCloseButton = Positioned.fill(
-        child: Align(alignment: closeButtonAlignment, child: button),
+        child: Align(
+          alignment: closeButtonAlignment,
+          child: button,
+        ),
       );
     } else {
       _positionedCloseButton = const SizedBox();
