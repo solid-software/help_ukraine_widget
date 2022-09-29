@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 
-/// Button that redirects to links view of [HelpWidget]
+/// Button that redirects to links view of [HelpUkraineWidget]
 class LinksCardButton extends StatefulWidget {
   /// onTap for [HoverWrapper]
   final VoidCallback onTap;

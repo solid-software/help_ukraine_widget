@@ -4,10 +4,14 @@ import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
 import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 
-/// Variation of a [HelpWidget] with flag embedded into the card.
+/// Variation of a [HelpUkraineWidget] with flag embedded into the card.
 class EmbeddedFlagHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+    [
+      HelpUkraineWidgetView.collapsed,
+      HelpUkraineWidgetView.main,
+      HelpUkraineWidgetView.options
+    ],
   );
 
   /// part before flag
@@ -53,7 +57,7 @@ class EmbeddedFlagHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HelpWidget(
+    return HelpUkraineWidget(
       controller: _controller,
       optionsView: CardRounded(
         padding: const EdgeInsets.only(top: 12.0, bottom: 15.8),

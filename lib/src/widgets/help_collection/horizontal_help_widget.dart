@@ -4,10 +4,14 @@ import 'package:help_ukraine_widget/src/components/buttons/details_button.dart';
 import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 import 'package:help_ukraine_widget/src/theme/font_config.dart';
 
-/// Shortest and widest of variations of [HelpWidget].
+/// Shortest and widest of variations of [HelpUkraineWidget].
 class HorizontalHelpWidget extends StatelessWidget {
-  final _controller = TraverseController(
-    [HelpWidgetView.collapsed, HelpWidgetView.main, HelpWidgetView.options],
+  final _controller = TraverseController<HelpUkraineWidgetView>(
+    [
+      HelpUkraineWidgetView.collapsed,
+      HelpUkraineWidgetView.main,
+      HelpUkraineWidgetView.options
+    ],
   );
 
   /// A title of a widget.
@@ -41,7 +45,7 @@ class HorizontalHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HelpWidget(
+    return HelpUkraineWidget(
       controller: _controller,
       optionsView: Container(
         constraints: const BoxConstraints.tightFor(width: 340),

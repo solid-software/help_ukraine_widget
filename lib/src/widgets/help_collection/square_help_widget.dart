@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:help_ukraine_widget/help_ukraine_widget.dart';
 import 'package:help_ukraine_widget/src/helpers/option_helper.dart';
 
-/// Variation of a [HelpWidget] with almost equal height and width.
+/// Variation of a [HelpUkraineWidget] with almost equal height and width.
 class SquareHelpWidget extends StatelessWidget {
   final _controller = TraverseController(
     [
-      HelpWidgetView.collapsed,
-      HelpWidgetView.main,
-      HelpWidgetView.options,
+      HelpUkraineWidgetView.collapsed,
+      HelpUkraineWidgetView.main,
+      HelpUkraineWidgetView.options,
     ],
   );
 
@@ -43,7 +43,7 @@ class SquareHelpWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HelpWidget(
+    return HelpUkraineWidget(
       controller: _controller,
       axis: Axis.horizontal,
       optionsView: CardRounded(
