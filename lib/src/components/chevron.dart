@@ -30,22 +30,9 @@ class Chevron extends StatelessWidget {
       painter: _ChevronPainter(
         color: color,
         lineWidth: lineWidth,
-        radians: _getRadiansForDirection(direction),
+        direction: direction,
       ),
     );
-  }
-
-  double _getRadiansForDirection(ChevronDirection direction) {
-    const double _pi = 3.1415;
-    const double _halfOfPi = _pi / 2;
-
-    return {
-          ChevronDirection.down: 0.0,
-          ChevronDirection.left: _halfOfPi,
-          ChevronDirection.up: _pi,
-          ChevronDirection.right: -_halfOfPi,
-        }[direction] ??
-        0.0;
   }
 }
 
@@ -67,14 +54,27 @@ enum ChevronDirection {
 class _ChevronPainter extends CustomPainter {
   final double lineWidth;
   final Color color;
-  final double radians;
+  final ChevronDirection direction;
 
   /// constructor
   _ChevronPainter({
     required this.color,
     required this.lineWidth,
-    required this.radians,
+    required this.direction,
   });
+
+  double _getRadiansForDirection(ChevronDirection direction) {
+    const double _pi = 3.1415;
+    const double _halfOfPi = _pi / 2;
+
+    return {
+          ChevronDirection.down: 0.0,
+          ChevronDirection.left: _halfOfPi,
+          ChevronDirection.up: _pi,
+          ChevronDirection.right: -_halfOfPi,
+        }[direction] ??
+        0.0;
+  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -90,7 +90,7 @@ class _ChevronPainter extends CustomPainter {
 
     final x = halfLine / 2;
 
-    canvas.rotate(radians);
+    canvas.rotate(_getRadiansForDirection(direction));
 
     canvas.drawLine(
       Offset.zero,
