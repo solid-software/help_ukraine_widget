@@ -54,26 +54,31 @@ enum ChevronDirection {
 class _ChevronPainter extends CustomPainter {
   final double lineWidth;
   final Color color;
-  final ChevronDirection direction;
+  final ChevronDirection? direction;
 
   /// constructor
   _ChevronPainter({
     required this.color,
     required this.lineWidth,
-    required this.direction,
+    this.direction,
   });
 
-  double _getRadiansForDirection(ChevronDirection direction) {
+  double _getRadiansForDirection(ChevronDirection? direction) {
     const double _pi = 3.1415;
     const double _halfOfPi = _pi / 2;
 
-    return {
-          ChevronDirection.down: 0.0,
-          ChevronDirection.left: _halfOfPi,
-          ChevronDirection.up: _pi,
-          ChevronDirection.right: -_halfOfPi,
-        }[direction] ??
-        0.0;
+    switch (direction) {
+      case ChevronDirection.down:
+        return 0.0;
+      case ChevronDirection.left:
+        return _halfOfPi;
+      case ChevronDirection.up:
+        return _pi;
+      case ChevronDirection.right:
+        return -_halfOfPi;
+      default:
+        return 0.0;
+    }
   }
 
   @override
